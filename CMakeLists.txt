@@ -1,0 +1,67 @@
+project( libdscpp C CXX )
+
+cmake_minimum_required( VERSION 3.8 )
+
+set( LIBDSCPP_STABLE_VERSION 0 )
+set( LIBDSCPP_RELEASE 0 )
+set( LIBDSCPP_PATCH_VERSION 1 )
+set( LIBDSCPP_VERSION "${LIBDSCPP_STABLE_VERSION}.${LIBDSCPP_RELEASE}.${LIBDSCPP_PATCH_VERSION}" )
+
+set ( PROJECT_NAME "${CMAKE_PROJECT_NAME}" )
+set ( PROJECT_VERSION "${LIBDSCPP_VERSION}" )
+set ( PROJECT_DESCRIPTION "A C++/C library for data processing in data science." )
+
+set( CMAKE_CXX_STANDARD 23 )
+set( CMAKE_C_STANDARD 17 )
+
+
+if( DSCPP_DESTDIR )
+else()
+	set( DSCPP_DESTDIR "${CMAKE_INSTALL_PREFIX}" )
+endif()
+
+
+include_directories( ${PROJECT_SOURCE_DIR}/include )
+
+file (GLOB LIBDSCPP_HEADERS ${PROJECT_SOURCE_DIR}/include/*.hpp )
+file (GLOB LIBDSCPP_SOURCE_C ${PROJECT_SOURCE_DIR}/src/*.c )
+file (GLOB LIBDSCPP_SOURCE ${PROJECT_SOURCE_DIR}/src/*.cpp )
+
+if( DSCPP_SHARED )
+	add_library( dscpp SHARED ${LIBDSCPP_SOURCE} ${LIBDSCPP_SOURCE_C} )
+else()
+	add_library( dscpp STATIC ${LIBDSCPP_SOURCE} ${LIBDSCPP_SOURCE_C} )
+endif()
+
+
+
+if( BUILD_DSCPP_TEST )
+	add_executable( dscpp_test ${PROJECT_SOURCE_DIR}/examples/main.cpp )
+	target_link_libraries( dscpp_test dscpp ${Qt5Core_LIBRARIES} )
+endif()
+
+if( DSCPP_HEADER_INSTALL_DIR )
+else()
+	set( DSCPP_HEADER_INSTALL_DIR ${DSCPP_DESTDIR}/include/libdscpp )
+endif()
+
+if ( DSCPP_LIB_INSTALL_DIR )
+else()
+	set ( DSCPP_LIB_INSTALL_DIR ${DSCPP_DESTDIR}/lib )
+endif()
+
+if( DSCPP_INSTALL_LIBS )
+	install(TARGETS dscpp DESTINATION ${DSCPP_LIB_INSTALL_DIR} )
+	install(FILES ${LIBDSCPP_HEADERS} DESTINATION ${DSCPP_HEADER_INSTALL_DIR} )
+	install(FILES ${PROJECT_SOURCE_DIR}/lib/LIBDSCPPConfig.cmake DESTINATION "${DSCPP_LIB_INSTALL_DIR}/cmake/LIBDSCPP" )
+	configure_file(${PROJECT_SOURCE_DIR}/lib/LIBDSCPP.pc.in ${CMAKE_CURRENT_BINARY_DIR}/LIBDSCPP.pc @ONLY)
+	install(FILES ${CMAKE_CURRENT_BINARY_DIR}/LIBDSCPP.pc DESTINATION "${DSCPP_LIB_INSTALL_DIR}/pkgconfig" )
+endif()
+
+
+find_package(Doxygen)
+if(DOXYGEN_FOUND)
+	message("-- Enabled doc_dscpp target for make")
+	configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
+	add_custom_target(doc_dscpp ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} COMMENT "Generating documentation with Doxygen")
+endif()
