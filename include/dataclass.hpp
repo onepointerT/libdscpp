@@ -21,13 +21,22 @@ extern "C" {
 #include <concepts>
 #include <string>
 #include <string_view>
-#include <typeinfo>
+#include <type_traits>
 
 
 namespace dscpp {
 
+class OwnDataClass {
+protected:
+    virtual void* getDT() = 0;
+
+    template< class DT >
+    DT& getDataType() { (*(DT*) this->getDT()); }
+};
+
+
 template< class InheritingClass, class DataType >
-    requires dscpp::is_datatype< DataType >::value
+    requires std::is_base_of< OwnDataClass, InheritingClass >::value
 class DataClass
     :   public ClassFactory::dataclass
     ,   public Datatype<DataType>
@@ -38,6 +47,8 @@ protected:
     virtual bool setupVariables( DataClass<InheritingClass, DataType>& dc ) {
         return InheritingClass::setupVariables(*this, dc);
     }
+
+    virtual void* getDT() final { return (DataType*) this; }
 
 public:
     virtual InheritingClass& toDataStructure( const Dictionary::Section& section ) {
@@ -56,5 +67,8 @@ public:
     }
 };
 
+
+#define DSC_DEFINE_DATACLASS(functional_cls, datatype) template class dscpp::DataClass< functional_cls, datatype >;
+#define DSC_MAKE_DATACLASS(functional_cls, datatype, nameCLS) typedef typename dscpp::DataClass< functional_cls, datatype > nameCLS;
 
 } // namespace dscpp
