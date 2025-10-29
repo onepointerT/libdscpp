@@ -1,13 +1,10 @@
 
 /*-------------------------------------------------------------------------*/
 /**
-   @file    dictionary.h
+   @file    cutils.c
    @author  N. Devillard
-   @brief   Implements a dictionary for string variables.
+   @brief   Implements utilities for the programming language C.
 
-   This module implements a simple dictionary object, i.e. a list
-   of string/string associations. This object is useful to store e.g.
-   informations retrieved from a configuration file (ds files).
 */
 /*--------------------------------------------------------------------------*/
 

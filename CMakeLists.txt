@@ -4,12 +4,13 @@ cmake_minimum_required( VERSION 3.8 )
 
 set( LIBDSCPP_STABLE_VERSION 0 )
 set( LIBDSCPP_RELEASE 0 )
-set( LIBDSCPP_PATCH_VERSION 1 )
+set( LIBDSCPP_PATCH_VERSION 2 )
 set( LIBDSCPP_VERSION "${LIBDSCPP_STABLE_VERSION}.${LIBDSCPP_RELEASE}.${LIBDSCPP_PATCH_VERSION}" )
 
 set ( PROJECT_NAME "${CMAKE_PROJECT_NAME}" )
 set ( PROJECT_VERSION "${LIBDSCPP_VERSION}" )
-set ( PROJECT_DESCRIPTION "A C++/C library for data processing in data science." )
+set ( PROJECT_DESCRIPTION "A C++/C library for data design and processing in data science." )
+set ( PROJECT_IMAGE "${PROJECT_SOURCE_DIR}/img/projectlogo.jpg" )
 
 set( CMAKE_CXX_STANDARD 23 )
 set( CMAKE_C_STANDARD 17 )
@@ -28,16 +29,20 @@ file (GLOB LIBDSCPP_SOURCE_C ${PROJECT_SOURCE_DIR}/src/*.c )
 file (GLOB LIBDSCPP_SOURCE ${PROJECT_SOURCE_DIR}/src/*.cpp )
 
 if( DSCPP_SHARED )
+	add_library( dsc SHARED ${LIBDSCPP_SOURCE_C} )
 	add_library( dscpp SHARED ${LIBDSCPP_SOURCE} ${LIBDSCPP_SOURCE_C} )
 else()
+	add_library( dsc STATIC ${LIBDSCPP_SOURCE_C} )
 	add_library( dscpp STATIC ${LIBDSCPP_SOURCE} ${LIBDSCPP_SOURCE_C} )
 endif()
 
 
 
 if( BUILD_DSCPP_TEST )
+	add_executable( dsc_test ${PROJECT_SOURCE_DIR}/examples/castcompat.c )
+	target_link_libraries( dsc_test dsc )
 	add_executable( dscpp_test ${PROJECT_SOURCE_DIR}/examples/main.cpp )
-	target_link_libraries( dscpp_test dscpp ${Qt5Core_LIBRARIES} )
+	target_link_libraries( dscpp_test dscpp )
 endif()
 
 if( DSCPP_HEADER_INSTALL_DIR )

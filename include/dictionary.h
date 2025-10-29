@@ -10,6 +10,10 @@
    informations retrieved from a configuration file (ds files).
 */
 /*--------------------------------------------------------------------------*/
+/*
+    LibDataScienceC++: A C++/C library for data science processing and data design
+    Copyright (C) 2025 Sebastian Lau <sebastianlau995@gmail.com>
+*/
 
 #ifndef _DICTIONARY_H_
 #define _DICTIONARY_H_

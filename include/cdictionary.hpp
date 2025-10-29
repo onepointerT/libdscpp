@@ -1,10 +1,10 @@
 /**
- * @file ds.hpp
- * @brief A file that defines *.ds dictionaries for C++.
+ * @file cdictionary.hpp
+ * @brief A file that defines dictionaries from `dictionary.h` of `libdsC` for C++.
  * @author Sebastian Lau <sebastianlau995 [at] gmail [dot] com>
  **/
 /*
-    LibIniC++: A C++/C library for *.ds files and dictionaries.
+    LibDataScienceC++: A C++/C library for data science processing and data design
     Copyright (C) 2025 Sebastian Lau <sebastianlau995@gmail.com>
 */
 
@@ -12,9 +12,10 @@
 
 extern "C" {
 #include "dictionary.h"
+#include "dictionary_element.h"
 }
 
-#include "dictionary.hpp"
+namespace dscpp { class Dictionary; }
 
 
 namespace dsc {
@@ -25,7 +26,13 @@ class DictionaryC
     ,   public _dictionary_
 {
 public:
-    Dictionary( const _dictionary_& cdict );
+    DictionaryC( const struct _dictionary_* cdict );
+
+    bool update( const struct _dictionary_* cdict );
+    bool update( const struct _dictionary_element_* cdict_elem );
+
+    DictionaryC& operator<<( const struct _dictionary_* cdict );
+    DictionaryC& operator<<( const struct _dictionary_element_* cdict_elem );
 };
 
 

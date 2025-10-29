@@ -1,9 +1,10 @@
 
 /*-------------------------------------------------------------------------*/
 /**
-   @file    dictionary.c
+   @file    dictionary_compat.c
    @author  N. Devillard
-   @brief   Parser for ini files.
+   @brief   All functions to use `struct _dictionary_*` more than defined in
+            `dictionary.h`.
 */
 /*--------------------------------------------------------------------------*/
 /*---------------------------- Includes ------------------------------------*/

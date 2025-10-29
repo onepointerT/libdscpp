@@ -1,11 +1,15 @@
 
 /*-------------------------------------------------------------------------*/
 /**
-   @file    dictionary.h
+   @file    dictionary_iterator.h
    @author  N. Devillard
-   @brief   Parser for ini files.
+   @brief   An iterator for the `struct _dictionary_`
 */
 /*--------------------------------------------------------------------------*/
+/*
+    LibDataScienceC++: A C++/C library for data science processing and data design
+    Copyright (C) 2025 Sebastian Lau <sebastianlau995@gmail.com>
+*/
 
 #ifndef _DICTIONARY_ITERATOR_H_
 #define _DICTIONARY_ITERATOR_H_

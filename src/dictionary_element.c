@@ -2,11 +2,7 @@
 /**
    @file    dictionary_element.c
    @author  N. Devillard
-   @brief   Implements a dictionary for string variables.
-
-   This module implements a simple dictionary object, i.e. a list
-   of string/string associations. This object is useful to store e.g.
-   informations retrieved from a configuration file (ini files).
+   @brief   The `struct _dictionary_` element-wise.
 */
 /*--------------------------------------------------------------------------*/
 
@@ -27,9 +23,14 @@
                             Private functions
  ---------------------------------------------------------------------------*/
 dictionary_element* dictionary_elem_new( const char* key, const char* value, const unsigned int npos ) {
-    dictionary_element de = { .npos = npos, .section = dictionary_key_getsec(key)
-                            , .key = dictionary_key_getkey(key), .value = value };
-    return &de;
+    struct _dictionary_element_* de = (struct _dictionary_element_*) malloc(sizeof(struct _dictionary_element_));
+
+    de->npos = npos;
+    de->section = dictionary_key_getsec(key);
+    de->key = dictionary_key_getkey(key);
+    de->value = value;
+    
+    return de;
 }
 
 /*---------------------------------------------------------------------------

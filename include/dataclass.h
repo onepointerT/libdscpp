@@ -10,6 +10,10 @@
    informations retrieved from a configuration file (ds files).
 */
 /*--------------------------------------------------------------------------*/
+/*
+    LibDataScienceC++: A C++/C library for data science processing and data design
+    Copyright (C) 2025 Sebastian Lau <sebastianlau995@gmail.com>
+*/
 
 #ifndef _DATACLASS_H_
 #define _DATACLASS_H_
@@ -30,6 +34,10 @@ extern "C" {
                                 New types
  ---------------------------------------------------------------------------*/
 
+/**
+ * @brief The generic type of data classes for e.g. use in inheritance of other
+ *      libraries or parts of the dsAPI.
+ */
 typedef struct _dataclass_ {
     const size_t elements;
     struct _datatype_* data;

@@ -1,13 +1,12 @@
 
 /*-------------------------------------------------------------------------*/
 /**
-   @file    dictionary.h
+   @file    datatype.c
    @author  N. Devillard
-   @brief   Implements a dictionary for string variables.
+   @brief   Implements the general data type of `libdsC`
 
-   This module implements a simple dictionary object, i.e. a list
-   of string/string associations. This object is useful to store e.g.
-   informations retrieved from a configuration file (ds files).
+   This module implements a simple generic data type object, since data is
+   provided in many different ways, structs, classes and read-methods.
 */
 /*--------------------------------------------------------------------------*/
 
@@ -30,50 +29,42 @@ extern "C" {
  ---------------------------------------------------------------------------*/
 
 
-struct _datatype_* datatype_init( void* variables ) {
+struct _datatype_* datatype_init( void* variables, const char* datatype_name ) {
     struct _datatype_* dt = (struct _datatype_*) malloc(sizeof(struct _datatype_));
 
+    dt->dt_name = datatype_name;
 
-    dt->update = NULL;
-    dt->copyFrom = &copyFrom;
-    dt->fromDataclass = &fromDataclass;
-    dt->init = &initFromVoidStruct;
-    dt->initCopy = &initCopy;
-    dt->initDatatype = &initDatatype;
+    dt->update = &update;
+    dt->copyFrom = &datatype_copyFrom;
+    dt->fromDataclass = &datatype_fromDataclass;
+    dt->init = &datatype_initFromVoidStruct;
+    dt->initCopy = &datatype_initCopy;
+    dt->initDatatype = &datatype_initDatatype;
 
     dt->vars = variables;
 
     return dt;
 }
 
-struct _datatype_* initCopy( const struct _datatype_* other ) {
-
+struct _datatype_* datatype_initCopy( const struct _datatype_* other ) {
+    struct _datatype_* dt = (struct _datatype_*) malloc(sizeof(struct _datatype_));
+    if ( copyFrom(dt, other) ) return dt;
+    return NULL;
 }
 
-struct _datatype_* initDatatype( const struct _datatype_* other ) {
-
+struct _datatype_* datatype_initDatatype( const struct _datatype_* other ) {
+    return datatype_init( other->vars, other->dt_name );
 }
 
-struct _datatype_* initFromVoidStruct( const struct _void_struct_* vd ) {
-
+struct _datatype_* datatype_initFromVoidStruct( const struct _void_struct_* vd ) {
+    struct _datatype_* dt = (struct _datatype_*) malloc(sizeof(struct _datatype_));
+    return datatype_castFromVoid( vd );
 }
 
-struct _datatype_* castFromVoid( const struct _void_struct_* vd ) {
-    return initFromVoidStruct( vd );
-}
-
-struct _void_struct_* castToVoid( const struct _datatype_* dt ) {
-    struct _void_struct_* vd = void_struct_init(dt->dt_name);
+struct _void_struct_* datatype_castToVoid( const struct _datatype_* dt ) {
+    struct _void_struct_* vd = void_struct_init(dt->dt_name, ORIGINAL);
     vd->vs = dt->vars;
     return vd;
-}
-
-bool copyFrom( const struct _datatype_* other ) {
-
-}
-
-bool fromDataclass( const struct _dataclass_* some_other ) {
-
 }
 
 #ifdef __cplusplus

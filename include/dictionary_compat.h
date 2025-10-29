@@ -1,11 +1,16 @@
 
 /*-------------------------------------------------------------------------*/
 /**
-   @file    dictionary.h
+   @file    dictionary_compat.h
    @author  N. Devillard
-   @brief   Parser for ini files.
+   @brief   All functions to use `struct _dictionary_*` more than defined in
+            `dictionary.h`.
 */
 /*--------------------------------------------------------------------------*/
+/*
+    LibDataScienceC++: A C++/C library for data science processing and data design
+    Copyright (C) 2025 Sebastian Lau <sebastianlau995@gmail.com>
+*/
 
 #ifndef _DICTIONARY_COMPAT_H_
 #define _DICTIONARY_COMPAT_H_

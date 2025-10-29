@@ -1,11 +1,15 @@
 
 /*-------------------------------------------------------------------------*/
 /**
-   @file    dictionary.h
+   @file    dictionary_element.h
    @author  N. Devillard
-   @brief   Parser for ini files.
+   @brief   The `struct _dictionary_` element-wise.
 */
 /*--------------------------------------------------------------------------*/
+/*
+    LibDataScienceC++: A C++/C library for data science processing and data design
+    Copyright (C) 2025 Sebastian Lau <sebastianlau995@gmail.com>
+*/
 
 #ifndef _DICTIONARY_ELEMENT_H_
 #define _DICTIONARY_ELEMENT_H_

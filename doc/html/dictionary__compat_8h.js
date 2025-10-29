@@ -1,0 +1,27 @@
+var dictionary__compat_8h =
+[
+    [ "dictionary_dump", "dictionary__compat_8h.html#a10f430dc03fb23658129d4fff9d5f112", null ],
+    [ "dictionary_dump_ini", "dictionary__compat_8h.html#a1b3854112a567ac29fd6fa42b91634ae", null ],
+    [ "dictionary_dumpsection_ini", "dictionary__compat_8h.html#a6cb28520725ebd554877e31570553519", null ],
+    [ "dictionary_find_entry", "dictionary__compat_8h.html#a2c7f3195c9f3c3b0feffb94da5057ed7", null ],
+    [ "dictionary_freedict", "dictionary__compat_8h.html#a5373adb071585c40a9920b40c82ab404", null ],
+    [ "dictionary_getboolean", "dictionary__compat_8h.html#a23af361b758b75201e090393c8b64d46", null ],
+    [ "dictionary_getdouble", "dictionary__compat_8h.html#a46cba741125ffae3739b9fd7c7a304ed", null ],
+    [ "dictionary_getint", "dictionary__compat_8h.html#a31a501f03e5ac3a87387dbfdc0df523a", null ],
+    [ "dictionary_getint64", "dictionary__compat_8h.html#ae043e9f306afa11faed184006f8b045c", null ],
+    [ "dictionary_getlongint", "dictionary__compat_8h.html#aa711575e2beee885fe7e70cc7cad2f4a", null ],
+    [ "dictionary_getnsec", "dictionary__compat_8h.html#ac6ff1d4574bfaaf1955aac76253a2b87", null ],
+    [ "dictionary_getseckeys", "dictionary__compat_8h.html#a7a885a126d1acbedfc3d86bcdff85ba5", null ],
+    [ "dictionary_getsecname", "dictionary__compat_8h.html#a147fbde7f8f1b2f1b26aed47a2628a31", null ],
+    [ "dictionary_getsecnkeys", "dictionary__compat_8h.html#a0aabcb68086a9816bf1333a846fc004e", null ],
+    [ "dictionary_getstring", "dictionary__compat_8h.html#a7759835f6c0ee3155ebf5af4dd649111", null ],
+    [ "dictionary_getuint64", "dictionary__compat_8h.html#a501330fd23b51fb8428b817ca0293fcc", null ],
+    [ "dictionary_key_getkey", "dictionary__compat_8h.html#a9df67cb9014605bf111bb585fb544029", null ],
+    [ "dictionary_key_getnpos", "dictionary__compat_8h.html#a71db75b66c1649893251b0423adfbf76", null ],
+    [ "dictionary_key_getsec", "dictionary__compat_8h.html#ab5bca31a3945b5774bb2fb0653d355e7", null ],
+    [ "dictionary_load", "dictionary__compat_8h.html#a633d8c9106e90406dd04806a68bdd18b", null ],
+    [ "dictionary_load_file", "dictionary__compat_8h.html#a35db07fa47fbd202a7e6bc296ee937ed", null ],
+    [ "dictionary_set", "dictionary__compat_8h.html#aa69cf50dc57544c914349c93de522ed5", null ],
+    [ "dictionary_set_error_callback", "dictionary__compat_8h.html#a57b6d5a3a3290bafa84aaadc642a405e", null ],
+    [ "dictionary_unset", "dictionary__compat_8h.html#aeffe64e347a0cc25333619b7bb4f839d", null ]
+];

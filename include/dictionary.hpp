@@ -1,6 +1,6 @@
 /**
- * @file ds.hpp
- * @brief A file that defines *.ds dictionaries for C++.
+ * @file dictionary.hpp
+ * @brief A file that defines dictionaries for C++.
  * @author Sebastian Lau <sebastianlau995 [at] gmail [dot] com>
  **/
 /*
@@ -70,5 +70,9 @@ public:
 };
 
 
+#include "cdictionary.hpp"
+
+using CDictionary = dsc::DictionaryC;
+using DictionaryC = dsc::DictionaryC;
 
 } // namespace dscpp

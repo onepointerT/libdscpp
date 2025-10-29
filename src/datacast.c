@@ -1,13 +1,11 @@
 
 /*-------------------------------------------------------------------------*/
 /**
-   @file    dictionary.h
+   @file    datacast.c
    @author  N. Devillard
-   @brief   Implements a dictionary for string variables.
+   @brief   Implements datacasting for datatypes of the `libdsC` backend and
+            a library for specific datacasting per-datatype.
 
-   This module implements a simple dictionary object, i.e. a list
-   of string/string associations. This object is useful to store e.g.
-   informations retrieved from a configuration file (ds files).
 */
 /*--------------------------------------------------------------------------*/
 
@@ -38,19 +36,22 @@ struct _datacast_* datacast_init( const char* dt_name
                         , const fromDictToDT fromDictDataType
                         , unsigned npos
 ) {
-    struct _datacast_ dc = { .datatype_name = dt_name
-                , .npos = npos
-                , .toVS = toVoidStruct
-                , .fromVS = fromVoidStruct
-                , .toDictDT = toDictDataType
-                , .fromDictDT = fromDictDataType
-    };
+    struct _datacast_* dc = (struct _datacast_*) malloc(sizeof(struct _datacast_));
+    
+    dc->datatype_name = dt_name;
+    dc->toVS = toVoidStruct;
+    dc->fromVS = fromVoidStruct;
+    dc->toDictDT = toDictDataType;
+    dc->fromDictDT = fromDictDataType;
+    dc->npos = npos;
 
-    return &dc;
+    return dc;
 }
 
 
 struct _datacast_functions_list_ dc_functions_new() {
+    if ( dc_functions_initialized ) return dc_functions;
+
     struct _datacast_functions_list_ dfl = {
             .dnames = (char**) malloc(sizeof(char*)*DC_FUNCTIONS_INITIAL_SIZE)
           , .n = 0
@@ -59,6 +60,8 @@ struct _datacast_functions_list_ dc_functions_new() {
           , .dc = (struct _datacast_**) malloc(sizeof(struct _datacast_*)*DC_FUNCTIONS_INITIAL_SIZE)
     };
 
+    dc_functions_initialized = true;
+
     return dfl;
 }
 
@@ -66,6 +69,7 @@ struct _datacast_functions_list_ dc_functions_new() {
 size_t dc_functions_resize( const size_t new_size ) {
     if ( dc_functions.size >= dc_functions.max_size
       || new_size >= dc_functions.max_size ) return dc_functions.max_size+1;
+    else if ( new_size < dc_functions.size ) return dc_functions.size;
     
     char** new_dnames = (char**) malloc(sizeof(char*)*new_size);
     memcpy( new_dnames, dc_functions.dnames, sizeof(char*)*dc_functions.size);

@@ -1,10 +1,10 @@
 /**
  * @file ds.hpp
- * @brief A file that defines *.ds dictionaries for C++.
+ * @brief A file that defines common datatype facilities for C++.
  * @author Sebastian Lau <sebastianlau995 [at] gmail [dot] com>
  **/
 /*
-    LibIniC++: A C++/C library for *.ds files and dictionaries.
+    LibDataScienceC++: A C++/C library for data science processing and data design
     Copyright (C) 2025 Sebastian Lau <sebastianlau995@gmail.com>
 */
 

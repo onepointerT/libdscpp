@@ -1,0 +1,25 @@
+var dir_d44c64559bbebec7f509842c48db8b23 =
+[
+    [ "castcompat.h", "castcompat_8h.html", "castcompat_8h" ],
+    [ "cdictionary.hpp", "cdictionary_8hpp.html", "cdictionary_8hpp" ],
+    [ "classfactory.hpp", "classfactory_8hpp.html", "classfactory_8hpp" ],
+    [ "cutils.h", "cutils_8h.html", "cutils_8h" ],
+    [ "datacast.h", "datacast_8h.html", "datacast_8h" ],
+    [ "dataclass.h", "dataclass_8h_source.html", null ],
+    [ "dataclass.hpp", "dataclass_8hpp.html", "dataclass_8hpp" ],
+    [ "datascience.h", "datascience_8h.html", null ],
+    [ "datascience.hpp", "datascience_8hpp.html", null ],
+    [ "datastructure.hpp", "datastructure_8hpp.html", "datastructure_8hpp" ],
+    [ "datatype.h", "datatype_8h.html", "datatype_8h" ],
+    [ "datatype.hpp", "datatype_8hpp_source.html", null ],
+    [ "dictionary.h", "dictionary_8h.html", "dictionary_8h" ],
+    [ "dictionary.hpp", "dictionary_8hpp.html", "dictionary_8hpp" ],
+    [ "dictionary_compat.h", "dictionary__compat_8h.html", "dictionary__compat_8h" ],
+    [ "dictionary_element.h", "dictionary__element_8h.html", "dictionary__element_8h" ],
+    [ "dictionary_iterator.h", "dictionary__iterator_8h.html", "dictionary__iterator_8h" ],
+    [ "dictionary_rest.h", "dictionary__rest_8h.html", null ],
+    [ "map.hpp", "map_8hpp.html", "map_8hpp" ],
+    [ "typefactory.hpp", "typefactory_8hpp.html", "typefactory_8hpp" ],
+    [ "void_ptr.hpp", "void__ptr_8hpp.html", "void__ptr_8hpp" ],
+    [ "void_struct.h", "void__struct_8h.html", "void__struct_8h" ]
+];
