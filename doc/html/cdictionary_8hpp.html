@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -99,7 +99,9 @@ $(document).ready(function(){initNavTree('cdictionary_8hpp.html',''); initResiza
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">cdictionary.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -108,13 +110,33 @@ $(document).ready(function(){initNavTree('cdictionary_8hpp.html',''); initResiza
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="dictionary_8h_source.html">dictionary.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dictionary__element_8h_source.html">dictionary_element.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dictionary_8hpp_source.html">dictionary.hpp</a>&quot;</code><br />
 </div>
 <p><a href="cdictionary_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdsc_1_1DictionaryC.html">dsc::DictionaryC</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The compatibility-layer <a class="el" href="classdscpp_1_1Dictionary.html" title="This class implements a dictionary with sections.">dscpp::Dictionary</a> for C <code>dictionary</code> structs.  <a href="classdsc_1_1DictionaryC.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacedscpp" id="r_namespacedscpp"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedscpp.html">dscpp</a></td></tr>
+<tr class="memdesc:namespacedscpp"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>LibdsC++</code>: An intuitive and highly usable API backend for data science and data design with C/C++ <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacedsc" id="r_namespacedsc"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedsc.html">dsc</a></td></tr>
+<tr class="memdesc:namespacedsc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>LibdsC</code>: An intuitive and highly usable API backend for data science and data design with C/C++ <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ac486c43c06a6618a87720cb9b212eb60" id="r_ac486c43c06a6618a87720cb9b212eb60"><td class="memItemLeft" align="right" valign="top"><a id="ac486c43c06a6618a87720cb9b212eb60" name="ac486c43c06a6618a87720cb9b212eb60"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>dscpp::CDictionary</b> = <a class="el" href="classdsc_1_1DictionaryC.html">dsc::DictionaryC</a></td></tr>
+<tr class="separator:ac486c43c06a6618a87720cb9b212eb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ff062ba940469d451fd56460b7b01f" id="r_a28ff062ba940469d451fd56460b7b01f"><td class="memItemLeft" align="right" valign="top"><a id="a28ff062ba940469d451fd56460b7b01f" name="a28ff062ba940469d451fd56460b7b01f"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>dscpp::DictionaryC</b> = <a class="el" href="classdsc_1_1DictionaryC.html">dsc::DictionaryC</a></td></tr>
+<tr class="separator:a28ff062ba940469d451fd56460b7b01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A file that defines dictionaries from <code><a class="el" href="dictionary_8h.html" title="Implements a dictionary for string variables.">dictionary.h</a></code> of <code>libdsC</code> for C++. </p>
@@ -125,7 +147,7 @@ Data Structures</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="cdictionary_8hpp.html">cdictionary.hpp</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:34:59 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

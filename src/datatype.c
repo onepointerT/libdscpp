@@ -48,7 +48,7 @@ struct _datatype_* datatype_init( void* variables, const char* datatype_name ) {
 
 struct _datatype_* datatype_initCopy( const struct _datatype_* other ) {
     struct _datatype_* dt = (struct _datatype_*) malloc(sizeof(struct _datatype_));
-    if ( copyFrom(dt, other) ) return dt;
+    if ( datatype_copyFrom(dt, other) ) return dt;
     return NULL;
 }
 
@@ -57,7 +57,6 @@ struct _datatype_* datatype_initDatatype( const struct _datatype_* other ) {
 }
 
 struct _datatype_* datatype_initFromVoidStruct( const struct _void_struct_* vd ) {
-    struct _datatype_* dt = (struct _datatype_*) malloc(sizeof(struct _datatype_));
     return datatype_castFromVoid( vd );
 }
 

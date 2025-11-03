@@ -1,5 +1,5 @@
 # LibDataScienceC++
-##### An intuitive and highly usable API backend for data science with C/C++
+##### An intuitive and highly usable API backend for data science and data design with C/C++
 ###### v0.1.1
 
 This library aims to be simple, but highly usable backend this provides an front-end to usability of data

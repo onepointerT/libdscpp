@@ -35,10 +35,10 @@ extern "C" {
                                 New types
  ---------------------------------------------------------------------------*/
 
-struct _void_struct_* void_struct_init( const char* dt_name, const enum ptr_type_void_struct ptr_type ) {
+struct _void_struct_* void_struct_init( const char* dt_name, const enum _void_struct_ptr_type_ ptr_type ) {
     struct _void_struct_* vs = (struct _void_struct_*) malloc(sizeof(struct _void_struct_));
 
-    strcpy( vs->datatype_name, dt_name );
+    memcpy( vs->datatype_name, dt_name, sizeof(char)*strlen(dt_name) );
     vs->vs = NULL;
     vs->toDict = &toDict;
     vs->fromDict = &fromDict;
@@ -122,7 +122,7 @@ void* castFromVoidStruct( struct _datatype_* dt, void* (castFunctionForDatatype)
     else if ( dt->vs == NULL ) {
         datacast* dc = dc_functions_get_datacast( dt->dt_name );
         if ( dc != NULL )
-            vs = dc->toVS( dt->vars );
+            vs = dc->toVS( dt->vars, dt->dt_name );
         else {
             vs = void_struct_init( dt->dt_name, ORIGINAL );
             vs->vs = dt->vars;
@@ -134,7 +134,7 @@ void* castFromVoidStruct( struct _datatype_* dt, void* (castFunctionForDatatype)
     } else {
         vs = void_struct_init( dt->dt_name, DICTIONARY );
         if ( dt->toDict != NULL ) vs->vs = dt->toDict(dt);
-        else vs = castToVoid(dt);
+        else vs = datatype_castToVoid(dt);
     }
 
     return castFunctionForDatatype(vs);

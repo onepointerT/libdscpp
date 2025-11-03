@@ -19,14 +19,15 @@
                                 Includes
  ---------------------------------------------------------------------------*/
 
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 #include "dictionary.h"
 #include <stdint.h>
 
-#ifdef __cplusplus
-namespace dsc {
-
-extern "C" {
-#endif
 
 /*-------------------------------------------------------------------------*/
 /**
@@ -482,8 +483,6 @@ void dictionary_freedict(dictionary * d);
 
 #ifdef __cplusplus
 }
-
-} // namespace dsc
 #endif
 
 #endif

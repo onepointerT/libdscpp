@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -129,9 +129,9 @@ enum <a class="el" href="void__struct_8h.html#aecafa0783538ae5a61995dfeb37d2ed0"
 <tr class="memitem:a6b1cd52fadd88cbdd8cb324959811746" id="r_a6b1cd52fadd88cbdd8cb324959811746"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct__void__struct__.html">_void_struct_</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__void__struct__.html#a6b1cd52fadd88cbdd8cb324959811746">fromDict</a> )(const <a class="el" href="struct__dictionary__.html">dictionary</a> *dict)</td></tr>
 <tr class="memdesc:a6b1cd52fadd88cbdd8cb324959811746"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that is to be able to cast/read a <code>_dictionary_*</code> into especially this type of <code>_void_struct_*</code>  <br /></td></tr>
 <tr class="separator:a6b1cd52fadd88cbdd8cb324959811746"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d946861acedaf35efda2df564aac9a9" id="r_a3d946861acedaf35efda2df564aac9a9"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct__void__struct__.html">_void_struct_</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__void__struct__.html#a3d946861acedaf35efda2df564aac9a9">castDatatype</a> )(<a class="el" href="void__struct_8h.html#ad278f484ea40bc7e1226c75a6a37a760">voidptr</a> data)</td></tr>
-<tr class="memdesc:a3d946861acedaf35efda2df564aac9a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast an data type that is unpredictable by a data science backend API to a <code>_void_struct_*</code> pointer of the same type.  <br /></td></tr>
-<tr class="separator:a3d946861acedaf35efda2df564aac9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabd39910501c2479d56608d6004499fd" id="r_aabd39910501c2479d56608d6004499fd"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct__void__struct__.html">_void_struct_</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__void__struct__.html#aabd39910501c2479d56608d6004499fd">castDatatype</a> )(<a class="el" href="void__struct_8h.html#ad278f484ea40bc7e1226c75a6a37a760">voidptr</a> data, const char *<a class="el" href="struct__void__struct__.html#ab8970cecad908e1efd2b9819df255320">datatype_name</a>)</td></tr>
+<tr class="memdesc:aabd39910501c2479d56608d6004499fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast an data type that is unpredictable by a data science backend API to a <code>_void_struct_*</code> pointer of the same type.  <br /></td></tr>
+<tr class="separator:aabd39910501c2479d56608d6004499fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa719e585a7331eca2a1012525d1aa3e8" id="r_aa719e585a7331eca2a1012525d1aa3e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="void__struct_8h.html#ad278f484ea40bc7e1226c75a6a37a760">voidptr</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__void__struct__.html#aa719e585a7331eca2a1012525d1aa3e8">castFrom</a> )(struct <a class="el" href="struct__void__struct__.html">_void_struct_</a> *data)</td></tr>
 <tr class="memdesc:aa719e585a7331eca2a1012525d1aa3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast an data type that is unpredictable by a data science backend API to a <code>voidptr</code> pointer from a <code>_void_struct_*</code>  <br /></td></tr>
 <tr class="separator:aa719e585a7331eca2a1012525d1aa3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,14 +140,14 @@ enum <a class="el" href="void__struct_8h.html#aecafa0783538ae5a61995dfeb37d2ed0"
 <div class="textblock"><p>This struct implements a basic void pointer struct with datatype naming for further use on difficult-to-predict generic data formats on a lower backend api that thus can be casted to own datatypes. </p>
 <dl class="section note"><dt>Note</dt><dd>Function pointers can be altered on initialization to have the correct and ease-to-use cast function at developer's near distance. </dd></dl>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a3d946861acedaf35efda2df564aac9a9" name="a3d946861acedaf35efda2df564aac9a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d946861acedaf35efda2df564aac9a9">&#9670;&#160;</a></span>castDatatype</h2>
+<a id="aabd39910501c2479d56608d6004499fd" name="aabd39910501c2479d56608d6004499fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd39910501c2479d56608d6004499fd">&#9670;&#160;</a></span>castDatatype</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct__void__struct__.html">_void_struct_</a> *(* _void_struct_::castDatatype) (<a class="el" href="void__struct_8h.html#ad278f484ea40bc7e1226c75a6a37a760">voidptr</a> data)</td>
+          <td class="memname">struct <a class="el" href="struct__void__struct__.html">_void_struct_</a> *(* _void_struct_::castDatatype) (<a class="el" href="void__struct_8h.html#ad278f484ea40bc7e1226c75a6a37a760">voidptr</a> data, const char *<a class="el" href="struct__void__struct__.html#ab8970cecad908e1efd2b9819df255320">datatype_name</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -217,7 +217,7 @@ enum <a class="el" href="void__struct_8h.html#aecafa0783538ae5a61995dfeb37d2ed0"
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="struct__void__struct__.html">_void_struct_</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:35:00 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

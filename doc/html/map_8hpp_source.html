@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -117,181 +117,259 @@ $(document).ready(function(){initNavTree('map_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;ranges&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span>dscpp {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T, <span class="keyword">class</span> Compare = std::less&lt;Key&gt; &gt;</div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1Map.html">Map</a></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    :   <span class="keyword">protected</span> std::map&lt; Key, T, Compare &gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> std::map&lt; Key, T, Compare &gt; stlmap_t;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map_1_1Value.html">   29</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1Map_1_1Value.html">Value</a></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        :   <span class="keyword">protected</span> std::pair&lt; Key, T &gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_class" href="classdscpp_1_1Map_1_1Value.html">Value</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* key, T val )</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            :   std::pair&lt; Key, T &gt;{ key, val }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {}</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        std::string&amp; key() { <span class="keywordflow">return</span> this-&gt;first; }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">const</span> std::string&amp; key()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;first; }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        T&amp; value() { <span class="keywordflow">return</span> this-&gt;second; }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">const</span> T&amp; value()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;second; }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    };</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedscpp.html">dscpp</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T, <span class="keyword">class</span> Compare = std::less&lt;Key&gt; &gt;</div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html">   34</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1Map.html">Map</a></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    :   <span class="keyword">protected</span> std::map&lt; Key, T, Compare &gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a3ce2e698138e3b3ac2a90082a1238101">   39</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> std::map&lt; Key, T, Compare &gt; <a class="code hl_typedef" href="classdscpp_1_1Map.html#a3ce2e698138e3b3ac2a90082a1238101">stlmap_t</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map_1_1Value.html">   45</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1Map_1_1Value.html">Value</a></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        :   <span class="keyword">protected</span> std::pair&lt; Key, T &gt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map_1_1Value.html#a2229809412d243e10ede436b8a78cb09">   54</a></span>        <a class="code hl_function" href="classdscpp_1_1Map_1_1Value.html#a2229809412d243e10ede436b8a78cb09">Value</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="classdscpp_1_1Map_1_1Value.html#a95e9bd95090b182b3d74d960c56e0b9c">key</a>, T val )</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            :   <a class="code hl_namespace" href="namespacestd.html">std</a>::pair&lt; Key, T &gt;{ <a class="code hl_function" href="classdscpp_1_1Map_1_1Value.html#a95e9bd95090b182b3d74d960c56e0b9c">key</a>, val }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {}</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_class" href="classdscpp_1_1Map.html">Map</a>()</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        :   stlmap_t()</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {}</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">bool</span> contains( <span class="keyword">const</span> Key key ) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> stlmap_t::contains(key);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">const</span> Value*&amp; get( <span class="keyword">const</span> <span class="keywordtype">char</span>* key )<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span> ( ! this-&gt;contains(key) ) <span class="keywordflow">return</span> std::nullptr_t();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">return</span> (*<span class="keyword">this</span>)(key, std::nullptr_t());</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    T&amp; operator[]( <span class="keyword">const</span> Key key ) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span> stlmap_t::operator[](key);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">const</span> T&amp; operator[]( <span class="keyword">const</span> Key key )<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">return</span> stlmap_t::operator[](key);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> stlmap_t::iterator iterator;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> stlmap_t::const_iterator const_iterator;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    iterator begin() {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> stlmap_t::begin();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    iterator end() {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">return</span> stlmap_t::end();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    const_iterator cbegin()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span> stlmap_t::cbegin();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    const_iterator cend()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">return</span> stlmap_t::cend();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map_1_1Value.html#a95e9bd95090b182b3d74d960c56e0b9c">   62</a></span>        std::string&amp; <a class="code hl_function" href="classdscpp_1_1Map_1_1Value.html#a95e9bd95090b182b3d74d960c56e0b9c">key</a>() { <span class="keywordflow">return</span> this-&gt;first; }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map_1_1Value.html#accf436977fa694485439b8d37c76abbd">   67</a></span>        <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classdscpp_1_1Map_1_1Value.html#accf436977fa694485439b8d37c76abbd">key</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;first; }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map_1_1Value.html#a2dc40bc6ea89ea7404f3d7cb2b073698">   73</a></span>        T&amp; <a class="code hl_function" href="classdscpp_1_1Map_1_1Value.html#a2dc40bc6ea89ea7404f3d7cb2b073698">value</a>() { <span class="keywordflow">return</span> this-&gt;second; }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map_1_1Value.html#a3b845fbacab3b61c2f1e4972a92c69b2">   78</a></span>        <span class="keyword">const</span> T&amp; <a class="code hl_function" href="classdscpp_1_1Map_1_1Value.html#a3b845fbacab3b61c2f1e4972a92c69b2">value</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;second; }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    };</div>
+</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    Value&amp; operator()( <span class="keyword">const</span> Key key, T default_value = T() )<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">for</span> ( iterator it : { this-&gt;begin(), this-&gt;end() } ) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">if</span> ( it-&gt;first == key ) <span class="keywordflow">return</span> this-&gt;getValue(it);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">return</span> *<span class="keyword">new</span> Value(key, default_value);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#af7a47f35c32616946ea79f6d0d8d6179">   84</a></span>    <a class="code hl_function" href="classdscpp_1_1Map.html#af7a47f35c32616946ea79f6d0d8d6179">Map</a>()</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        :   <a class="code hl_typedef" href="classdscpp_1_1Map.html#a3ce2e698138e3b3ac2a90082a1238101">stlmap_t</a>()</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {}</div>
+</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">bool</span> apply( <span class="keyword">const</span> Value&amp; value ) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        (*this)[value.key()] = value.value();</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">static</span> Value&amp; getValue( <span class="keyword">const</span> <span class="keyword">typename</span> stlmap_t::iterator it ) {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">return</span> *<span class="keyword">new</span> Value(it-&gt;first, it-&gt;second);</div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a7f607b3cab0961f00fada34e5aa3081e">   92</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1Map.html#a7f607b3cab0961f00fada34e5aa3081e">contains</a>( <span class="keyword">const</span> Key key ) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">return</span> stlmap_t::contains(key);</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">size_t</span> append_range( std::ranges::subrange&lt;iterator&gt;&amp; rng ) {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        stlmap_t::insert_range( rng );</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">size_t</span> size()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> stlmap_t::size();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a8448271aff5ec7662d80ac498fbdfc07">  102</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classdscpp_1_1Map_1_1Value.html">Value</a>*&amp; <a class="code hl_function" href="classdscpp_1_1Map.html#a8448271aff5ec7662d80ac498fbdfc07">get</a>( <span class="keyword">const</span> <span class="keywordtype">char</span>* key )<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span> ( ! this-&gt;<a class="code hl_function" href="classdscpp_1_1Map.html#a7f607b3cab0961f00fada34e5aa3081e">contains</a>(key) ) <span class="keywordflow">return</span> std::nullptr_t();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">return</span> (*<span class="keyword">this</span>)(key, std::nullptr_t());</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T, <span class="keyword">class</span> Compare = std::less&lt;Key&gt; &gt;</div>
-<div class="foldopen" id="foldopen00107" data-start="{" data-end="};">
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap.html">  107</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1MMap.html">MMap</a></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    :   <span class="keyword">public</span> <a class="code hl_class" href="classdscpp_1_1Map.html">Map</a>&lt; Key, Map&lt; Key, T, Compare &gt;*, Compare &gt;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_class" href="classdscpp_1_1Map.html">Map&lt; Key, T, Compare &gt;</a> <a class="code hl_class" href="classdscpp_1_1Map.html">submap_t</a>;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> Map&lt; Key, submap_t*, Compare &gt;::iterator map_iterator_t;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="foldopen" id="foldopen00114" data-start="{" data-end="};">
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap_1_1Iterator.html">  114</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">Iterator</a></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        :   <span class="keyword">public</span> map_iterator_t</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> submap_t::iterator sub_iterator_t;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1MMap.html">MMap</a>&lt; Key, T, Compare &gt;;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        sub_iterator_t* submap_it;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">Iterator</a>( <span class="keyword">const</span> map_iterator_t&amp; pos, <span class="keyword">const</span> sub_iterator_t&amp; subpos )</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            :   map_iterator_t( pos )</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            ,   submap_it( subpos )</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        {}</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        sub_iterator_t&amp; operator_() {</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">return</span> *this-&gt;submap_it;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        sub_iterator_t&amp; sub() {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="keywordflow">return</span> *this-&gt;submap_it;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">Iterator</a>&amp; operator++() {</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            map_iterator_t::operator++();</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            this-&gt;submap_it = this-&gt;second-&gt;begin();</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        }</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">Iterator</a>&amp; operator--() {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            map_iterator_t::operator--();</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            this-&gt;submap_it = this-&gt;second-&gt;end();</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    };</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#ab09e2f2c53d26bd1b721b90837c50c6f">  112</a></span>    T&amp; <a class="code hl_function" href="classdscpp_1_1Map.html#ab09e2f2c53d26bd1b721b90837c50c6f">operator[]</a>( <span class="keyword">const</span> Key key ) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <span class="keywordflow">return</span> stlmap_t::operator[](key);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        } <span class="keywordflow">catch</span> ( std::out_of_range&amp; oor ) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            stlmap_t::insert( { key, std::nullptr_t() } );</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordflow">return</span> stlmap_t::operator[](key);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
 </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">typedef</span> <a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">Iterator</a> <a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">iterator</a>;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">typedef</span> <span class="keyword">const</span> <a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">Iterator</a> <a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">const_iterator</a>;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">iterator</a>&amp; begin() {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">return</span> *<span class="keyword">new</span> <a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">Iterator</a>( this-&gt;begin(), (*this-&gt;begin())-&gt;begin() );</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    iterator&amp; end() {</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">return</span> *<span class="keyword">new</span> Iterator( this-&gt;end(), NULL );</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>};</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">  122</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> stlmap_t::iterator <a class="code hl_typedef" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">iterator</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a763ff55fd7c03d858d0267b92ad7cae9">  124</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> stlmap_t::const_iterator <a class="code hl_typedef" href="classdscpp_1_1Map.html#a763ff55fd7c03d858d0267b92ad7cae9">const_iterator</a>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a1acb086c10e0e180401947cae3164e9c">  130</a></span>    <a class="code hl_typedef" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">iterator</a> <a class="code hl_function" href="classdscpp_1_1Map.html#a1acb086c10e0e180401947cae3164e9c">begin</a>() {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">return</span> stlmap_t::begin();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
 </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T &gt;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classdscpp_1_1DMap.html">  162</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1DMap.html">DMap</a> : <span class="keyword">public</span> <a class="code hl_class" href="classdscpp_1_1MMap.html">MMap</a>&lt; Key, T &gt; {};</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>} <span class="comment">// namespace dscpp</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a> {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T, <span class="keyword">typename</span> Compare = std::less&lt;Key&gt; &gt;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="keyword">using </span>dict_map = <span class="keyword">typename</span> <a class="code hl_class" href="classdscpp_1_1DMap.html">dscpp::DMap&lt; Key, T &gt;</a>;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T, <span class="keyword">typename</span> Compare = std::less&lt;Key&gt; &gt;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="keyword">using </span>mmap = <span class="keyword">typename</span> <a class="code hl_class" href="classdscpp_1_1MMap.html">dscpp::MMap&lt; Key, T, Compare &gt;</a>;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T, <span class="keyword">typename</span> Compare = std::less&lt;Key&gt; &gt;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword">using </span>submap_iterator = <span class="keyword">typename</span> <a class="code hl_class" href="classdscpp_1_1MMap_1_1Iterator.html">dscpp::MMap&lt; Key, T, Compare &gt;::Iterator</a>;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="ttc" id="aclassdscpp_1_1DMap_html"><div class="ttname"><a href="classdscpp_1_1DMap.html">dscpp::DMap</a></div><div class="ttdef"><b>Definition</b> map.hpp:162</div></div>
-<div class="ttc" id="aclassdscpp_1_1MMap_1_1Iterator_html"><div class="ttname"><a href="classdscpp_1_1MMap_1_1Iterator.html">dscpp::MMap::Iterator</a></div><div class="ttdef"><b>Definition</b> map.hpp:116</div></div>
-<div class="ttc" id="aclassdscpp_1_1MMap_html"><div class="ttname"><a href="classdscpp_1_1MMap.html">dscpp::MMap</a></div><div class="ttdef"><b>Definition</b> map.hpp:109</div></div>
-<div class="ttc" id="aclassdscpp_1_1Map_1_1Value_html"><div class="ttname"><a href="classdscpp_1_1Map_1_1Value.html">dscpp::Map::Value</a></div><div class="ttdef"><b>Definition</b> map.hpp:31</div></div>
-<div class="ttc" id="aclassdscpp_1_1Map_html"><div class="ttname"><a href="classdscpp_1_1Map.html">dscpp::Map</a></div><div class="ttdef"><b>Definition</b> map.hpp:25</div></div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a04a9353f1bc3422e401829eefecf0cbb">  137</a></span>    <a class="code hl_typedef" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">iterator</a> <a class="code hl_function" href="classdscpp_1_1Map.html#a04a9353f1bc3422e401829eefecf0cbb">end</a>() {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">return</span> stlmap_t::end();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a92c650794b6e06209dcd217a85342572">  144</a></span>    <a class="code hl_typedef" href="classdscpp_1_1Map.html#a763ff55fd7c03d858d0267b92ad7cae9">const_iterator</a> <a class="code hl_function" href="classdscpp_1_1Map.html#a92c650794b6e06209dcd217a85342572">cbegin</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">return</span> stlmap_t::cbegin();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a97c8f15e769858de428adb4458a3872a">  151</a></span>    <a class="code hl_typedef" href="classdscpp_1_1Map.html#a763ff55fd7c03d858d0267b92ad7cae9">const_iterator</a> <a class="code hl_function" href="classdscpp_1_1Map.html#a97c8f15e769858de428adb4458a3872a">cend</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">return</span> stlmap_t::cend();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#aa59c335834f5429b4fddc2eeba3ddf1e">  162</a></span>    <a class="code hl_class" href="classdscpp_1_1Map_1_1Value.html">Value</a>&amp; <a class="code hl_function" href="classdscpp_1_1Map.html#aa59c335834f5429b4fddc2eeba3ddf1e">operator()</a>( <span class="keyword">const</span> Key key, T default_value = T() )<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">for</span> ( <a class="code hl_typedef" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">iterator</a> it : { this-&gt;<a class="code hl_function" href="classdscpp_1_1Map.html#a1acb086c10e0e180401947cae3164e9c">begin</a>(), this-&gt;<a class="code hl_function" href="classdscpp_1_1Map.html#a04a9353f1bc3422e401829eefecf0cbb">end</a>() } ) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordflow">if</span> ( it-&gt;first == key ) <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classdscpp_1_1Map.html#a16e2c1c423a5412dc42d9f81569a132f">getValue</a>(it);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">return</span> *<span class="keyword">new</span> <a class="code hl_class" href="classdscpp_1_1Map_1_1Value.html">Value</a>(key, default_value);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00174" data-start="{" data-end="}">
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a6ccebbab7db4894dc83f7adb8cec58a5">  174</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1Map.html#a6ccebbab7db4894dc83f7adb8cec58a5">apply</a>( <span class="keyword">const</span> <a class="code hl_class" href="classdscpp_1_1Map_1_1Value.html">Value</a>&amp; value ) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            (*this)[value.<a class="code hl_function" href="classdscpp_1_1Map_1_1Value.html#a95e9bd95090b182b3d74d960c56e0b9c">key</a>()] = value.<a class="code hl_function" href="classdscpp_1_1Map_1_1Value.html#a2dc40bc6ea89ea7404f3d7cb2b073698">value</a>();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        } <span class="keywordflow">catch</span> ( std::out_of_range&amp; oor ) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a16e2c1c423a5412dc42d9f81569a132f">  186</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classdscpp_1_1Map_1_1Value.html">Value</a>&amp; <a class="code hl_function" href="classdscpp_1_1Map.html#a16e2c1c423a5412dc42d9f81569a132f">getValue</a>( <span class="keyword">const</span> <span class="keyword">typename</span> stlmap_t::iterator it ) {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordflow">return</span> *<span class="keyword">new</span> <a class="code hl_class" href="classdscpp_1_1Map_1_1Value.html">Value</a>(it-&gt;first, it-&gt;second);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#a72bb970e217c63efe73f7e12efa365b1">  194</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classdscpp_1_1Map.html#a72bb970e217c63efe73f7e12efa365b1">append_range</a>( std::ranges::subrange&lt;iterator&gt;&amp; rng ) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keywordflow">return</span> stlmap_t::insert_range( rng );</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00201" data-start="{" data-end="}">
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classdscpp_1_1Map.html#acbb1d43e7f9f7a6dd20fad207a9a72fd">  201</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classdscpp_1_1Map.html#acbb1d43e7f9f7a6dd20fad207a9a72fd">size</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordflow">return</span> stlmap_t::size();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    }</div>
+</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>};</div>
+</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T, <span class="keyword">class</span> Compare = std::less&lt;Key&gt; &gt;</div>
+<div class="foldopen" id="foldopen00220" data-start="{" data-end="};">
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap.html">  220</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1MMap.html">MMap</a></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    :   <span class="keyword">public</span> <a class="code hl_class" href="classdscpp_1_1Map.html">Map</a>&lt; Key, Map&lt; Key, T, Compare &gt;*, Compare &gt;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>{</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap.html#afb1563ac02c44226addbe69dc0002866">  225</a></span>    <span class="keyword">typedef</span> <a class="code hl_class" href="classdscpp_1_1Map.html">Map&lt; Key, Map&lt; Key, T, Compare &gt;</a>*, Compare &gt; <a class="code hl_typedef" href="classdscpp_1_1MMap.html#afb1563ac02c44226addbe69dc0002866">map_t</a>;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap.html#a510e2cda239b2a8909f0585bb379a307">  227</a></span>    <span class="keyword">typedef</span> <a class="code hl_class" href="classdscpp_1_1Map.html">Map&lt; Key, T, Compare &gt;</a> <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a510e2cda239b2a8909f0585bb379a307">submap_t</a>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap.html#a844d798a0a544a9c265a0e5521b1d96a">  229</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">Map&lt; Key, submap_t*, Compare &gt;::iterator</a> <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a844d798a0a544a9c265a0e5521b1d96a">map_iterator_t</a>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap.html#a1df3e4fde7401cec5ed9232e78832fde">  231</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_class" href="classdscpp_1_1Map.html">Map&lt; Key, T, Compare &gt;::iterator</a> <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a1df3e4fde7401cec5ed9232e78832fde">submap_iterator_t</a>;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="foldopen" id="foldopen00238" data-start="{" data-end="};">
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap_1_1MapIterator.html">  238</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1MMap_1_1MapIterator.html">MapIterator</a></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        :   <span class="keyword">public</span> <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a844d798a0a544a9c265a0e5521b1d96a">map_iterator_t</a></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap_1_1MapIterator.html#ad737afb324c7bd97f44cd4b92c39ca58">  246</a></span>        <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a1df3e4fde7401cec5ed9232e78832fde">submap_iterator_t</a> <a class="code hl_variable" href="classdscpp_1_1MMap_1_1MapIterator.html#ad737afb324c7bd97f44cd4b92c39ca58">submap_it</a>;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00255" data-start="{" data-end="}">
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap_1_1MapIterator.html#a2078e97860deff53bc264b640d06ef72">  255</a></span>        <a class="code hl_function" href="classdscpp_1_1MMap_1_1MapIterator.html#a2078e97860deff53bc264b640d06ef72">MapIterator</a>( <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a844d798a0a544a9c265a0e5521b1d96a">map_iterator_t</a> pos, <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a1df3e4fde7401cec5ed9232e78832fde">submap_iterator_t</a> subpos )</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            :   <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a844d798a0a544a9c265a0e5521b1d96a">map_iterator_t</a>( pos )</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            ,   <a class="code hl_variable" href="classdscpp_1_1MMap_1_1MapIterator.html#ad737afb324c7bd97f44cd4b92c39ca58">submap_it</a>( subpos )</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        {}</div>
+</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="foldopen" id="foldopen00265" data-start="{" data-end="}">
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap_1_1MapIterator.html#aaaabbb433674ba23eafd30120eaf1258">  265</a></span>        <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a1df3e4fde7401cec5ed9232e78832fde">submap_iterator_t</a> <a class="code hl_function" href="classdscpp_1_1MMap_1_1MapIterator.html#aaaabbb433674ba23eafd30120eaf1258">operator_</a>() {</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            <span class="keywordflow">return</span> *this-&gt;<a class="code hl_variable" href="classdscpp_1_1MMap_1_1MapIterator.html#ad737afb324c7bd97f44cd4b92c39ca58">submap_it</a>;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        }</div>
+</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="foldopen" id="foldopen00274" data-start="{" data-end="}">
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap_1_1MapIterator.html#a88ac0f4eabe28fb1e967ad0c49d6a117">  274</a></span>        submap_iterator_t <a class="code hl_function" href="classdscpp_1_1MMap_1_1MapIterator.html#a88ac0f4eabe28fb1e967ad0c49d6a117">sub</a>() {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            <span class="keywordflow">return</span> *this-&gt;<a class="code hl_variable" href="classdscpp_1_1MMap_1_1MapIterator.html#ad737afb324c7bd97f44cd4b92c39ca58">submap_it</a>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        }</div>
+</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="foldopen" id="foldopen00283" data-start="{" data-end="}">
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap_1_1MapIterator.html#a6d23f75c17faffe167b7a13f0afe04b9">  283</a></span>        <a class="code hl_class" href="classdscpp_1_1MMap_1_1MapIterator.html">MapIterator</a> <a class="code hl_function" href="classdscpp_1_1MMap_1_1MapIterator.html#a6d23f75c17faffe167b7a13f0afe04b9">operator++</a>() {</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            map_iterator_t::operator++();</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            this-&gt;submap_it = (*this)-&gt;second-&gt;begin();</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        }</div>
+</div>
+<div class="foldopen" id="foldopen00293" data-start="{" data-end="}">
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap_1_1MapIterator.html#a90dfc95555203b41e475515d8c3ae5fd">  293</a></span>        <a class="code hl_class" href="classdscpp_1_1MMap_1_1MapIterator.html">MapIterator</a> <a class="code hl_function" href="classdscpp_1_1MMap_1_1MapIterator.html#a90dfc95555203b41e475515d8c3ae5fd">operator--</a>() {</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            map_iterator_t::operator--();</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>            this-&gt;submap_it = (*this)-&gt;second-&gt;end();</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        }</div>
+</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    };</div>
+</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap.html#a434fe9b9d4005f513aa4d4f843bff283">  301</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classdscpp_1_1MMap.html#a434fe9b9d4005f513aa4d4f843bff283">stlmap_t</a> = <span class="keyword">typename</span> <a class="code hl_class" href="classdscpp_1_1Map.html">Map&lt; Key, Map&lt; Key, T, Compare &gt;</a>*, Compare &gt;<a class="code hl_typedef" href="classdscpp_1_1MMap.html#a434fe9b9d4005f513aa4d4f843bff283">::stlmap_t</a>;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="foldopen" id="foldopen00306" data-start="{" data-end="}">
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap.html#af932f2b303efda87626f873044a72678">  306</a></span>    <a class="code hl_class" href="classdscpp_1_1MMap_1_1MapIterator.html">MMap&lt; Key, T, Compare &gt;::MapIterator</a> <a class="code hl_function" href="classdscpp_1_1MMap.html#af932f2b303efda87626f873044a72678">begin</a>() {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <span class="keywordflow">return</span> *<span class="keyword">new</span> <a class="code hl_class" href="classdscpp_1_1MMap_1_1MapIterator.html">MapIterator</a>( <a class="code hl_function" href="classdscpp_1_1Map.html#a1acb086c10e0e180401947cae3164e9c">map_t::begin</a>(), <a class="code hl_function" href="classdscpp_1_1Map.html#a1acb086c10e0e180401947cae3164e9c">map_t::begin</a>()-&gt;second-&gt;begin() );</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    }</div>
+</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="foldopen" id="foldopen00314" data-start="{" data-end="}">
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno"><a class="line" href="classdscpp_1_1MMap.html#aa410a49ee450c52287c09ea4bad8c598">  314</a></span>    <a class="code hl_class" href="classdscpp_1_1MMap_1_1MapIterator.html">MMap&lt; Key, T, Compare &gt;::MapIterator</a> <a class="code hl_function" href="classdscpp_1_1MMap.html#aa410a49ee450c52287c09ea4bad8c598">end</a>() {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        <span class="keywordflow">return</span> *<span class="keyword">new</span> <a class="code hl_class" href="classdscpp_1_1MMap_1_1MapIterator.html">MapIterator</a>( <a class="code hl_function" href="classdscpp_1_1Map.html#a04a9353f1bc3422e401829eefecf0cbb">map_t::end</a>(), (<span class="keyword">new</span> <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a510e2cda239b2a8909f0585bb379a307">submap_t</a>())-&gt;<a class="code hl_function" href="classdscpp_1_1MMap.html#aa410a49ee450c52287c09ea4bad8c598">end</a>() );</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    }</div>
+</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>};</div>
+</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T &gt;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="classdscpp_1_1DMap.html">  330</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1DMap.html">DMap</a> : <span class="keyword">public</span> <a class="code hl_class" href="classdscpp_1_1MMap.html">MMap</a>&lt; Key, T &gt; {};</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>} <span class="comment">// namespace dscpp</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a> {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T &gt;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="keyword">using </span>dict_map = <span class="keyword">typename</span> <a class="code hl_class" href="classdscpp_1_1DMap.html">dscpp::DMap&lt; Key, T &gt;</a>;</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T, <span class="keyword">typename</span> Compare = std::less&lt;Key&gt; &gt;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="keyword">using </span>mmap = <span class="keyword">typename</span> <a class="code hl_class" href="classdscpp_1_1MMap.html">dscpp::MMap&lt; Key, T, Compare &gt;</a>;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T, <span class="keyword">typename</span> Compare = std::less&lt;Key&gt; &gt;</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="keyword">using </span>submap_iterator = <span class="keyword">typename</span> <a class="code hl_typedef" href="classdscpp_1_1MMap.html#a1df3e4fde7401cec5ed9232e78832fde">dscpp::MMap&lt; Key, T, Compare &gt;::submap_iterator_t</a>;</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Key, <span class="keyword">typename</span> T, <span class="keyword">typename</span> Compare = std::less&lt;Key&gt; &gt;</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="keyword">using </span>mmap_iterator = <span class="keyword">typename</span> <a class="code hl_class" href="classdscpp_1_1MMap_1_1MapIterator.html">dscpp::MMap&lt; Key, T, Compare &gt;::MapIterator</a>;</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>}</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
+<div class="ttc" id="aclassdscpp_1_1DMap_html"><div class="ttname"><a href="classdscpp_1_1DMap.html">dscpp::DMap</a></div><div class="ttdoc">This class makes dictionary maps containing maps more easy to use by providing an MMap&lt; Key,...</div><div class="ttdef"><b>Definition</b> map.hpp:330</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_1_1MapIterator_html"><div class="ttname"><a href="classdscpp_1_1MMap_1_1MapIterator.html">dscpp::MMap::MapIterator</a></div><div class="ttdoc">The iterator of a MMap&lt; Key, T, Compare &gt;. You can access the submaps with sub()</div><div class="ttdef"><b>Definition</b> map.hpp:240</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_1_1MapIterator_html_a2078e97860deff53bc264b640d06ef72"><div class="ttname"><a href="classdscpp_1_1MMap_1_1MapIterator.html#a2078e97860deff53bc264b640d06ef72">dscpp::MMap::MapIterator::MapIterator</a></div><div class="ttdeci">MapIterator(map_iterator_t pos, submap_iterator_t subpos)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> map.hpp:255</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_1_1MapIterator_html_a6d23f75c17faffe167b7a13f0afe04b9"><div class="ttname"><a href="classdscpp_1_1MMap_1_1MapIterator.html#a6d23f75c17faffe167b7a13f0afe04b9">dscpp::MMap::MapIterator::operator++</a></div><div class="ttdeci">MapIterator operator++()</div><div class="ttdoc">Alter the position of the MapIterator to the next position behind the current element and set this-&gt;s...</div><div class="ttdef"><b>Definition</b> map.hpp:283</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_1_1MapIterator_html_a88ac0f4eabe28fb1e967ad0c49d6a117"><div class="ttname"><a href="classdscpp_1_1MMap_1_1MapIterator.html#a88ac0f4eabe28fb1e967ad0c49d6a117">dscpp::MMap::MapIterator::sub</a></div><div class="ttdeci">submap_iterator_t sub()</div><div class="ttdoc">Dereference the submap_iterator_t of the submap at the current position of this instance's MapIterato...</div><div class="ttdef"><b>Definition</b> map.hpp:274</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_1_1MapIterator_html_a90dfc95555203b41e475515d8c3ae5fd"><div class="ttname"><a href="classdscpp_1_1MMap_1_1MapIterator.html#a90dfc95555203b41e475515d8c3ae5fd">dscpp::MMap::MapIterator::operator--</a></div><div class="ttdeci">MapIterator operator--()</div><div class="ttdoc">Alter the position of the MapIterator to the next position before the current element and set this-&gt;s...</div><div class="ttdef"><b>Definition</b> map.hpp:293</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_1_1MapIterator_html_aaaabbb433674ba23eafd30120eaf1258"><div class="ttname"><a href="classdscpp_1_1MMap_1_1MapIterator.html#aaaabbb433674ba23eafd30120eaf1258">dscpp::MMap::MapIterator::operator_</a></div><div class="ttdeci">submap_iterator_t operator_()</div><div class="ttdoc">Dereference the submap_iterator_t of the submap at the current position of this instance's MapIterato...</div><div class="ttdef"><b>Definition</b> map.hpp:265</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_1_1MapIterator_html_ad737afb324c7bd97f44cd4b92c39ca58"><div class="ttname"><a href="classdscpp_1_1MMap_1_1MapIterator.html#ad737afb324c7bd97f44cd4b92c39ca58">dscpp::MMap::MapIterator::submap_it</a></div><div class="ttdeci">submap_iterator_t submap_it</div><div class="ttdoc">The submap_iterator_t, an iterator for the submap at each position of this MMap</div><div class="ttdef"><b>Definition</b> map.hpp:246</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_html"><div class="ttname"><a href="classdscpp_1_1MMap.html">dscpp::MMap</a></div><div class="ttdoc">This class makes maps containing maps more easy to use by providing an MMap&lt; Key, T,...</div><div class="ttdef"><b>Definition</b> map.hpp:222</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_html_a1df3e4fde7401cec5ed9232e78832fde"><div class="ttname"><a href="classdscpp_1_1MMap.html#a1df3e4fde7401cec5ed9232e78832fde">dscpp::MMap::submap_iterator_t</a></div><div class="ttdeci">Map&lt; Key, T, Compare &gt;::iterator submap_iterator_t</div><div class="ttdoc">The type of the submap iterator.</div><div class="ttdef"><b>Definition</b> map.hpp:231</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_html_a434fe9b9d4005f513aa4d4f843bff283"><div class="ttname"><a href="classdscpp_1_1MMap.html#a434fe9b9d4005f513aa4d4f843bff283">dscpp::MMap::stlmap_t</a></div><div class="ttdeci">typename Map&lt; Key, Map&lt; Key, T, Compare &gt; *, Compare &gt;::stlmap_t stlmap_t</div><div class="ttdoc">The stlmap_t type of the base class.</div><div class="ttdef"><b>Definition</b> map.hpp:301</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_html_a510e2cda239b2a8909f0585bb379a307"><div class="ttname"><a href="classdscpp_1_1MMap.html#a510e2cda239b2a8909f0585bb379a307">dscpp::MMap::submap_t</a></div><div class="ttdeci">Map&lt; Key, T, Compare &gt; submap_t</div><div class="ttdoc">The type of the submaps stored at each key.</div><div class="ttdef"><b>Definition</b> map.hpp:227</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_html_a844d798a0a544a9c265a0e5521b1d96a"><div class="ttname"><a href="classdscpp_1_1MMap.html#a844d798a0a544a9c265a0e5521b1d96a">dscpp::MMap::map_iterator_t</a></div><div class="ttdeci">Map&lt; Key, submap_t *, Compare &gt;::iterator map_iterator_t</div><div class="ttdoc">The type of the map iterator.</div><div class="ttdef"><b>Definition</b> map.hpp:229</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_html_aa410a49ee450c52287c09ea4bad8c598"><div class="ttname"><a href="classdscpp_1_1MMap.html#aa410a49ee450c52287c09ea4bad8c598">dscpp::MMap::end</a></div><div class="ttdeci">MMap&lt; Key, T, Compare &gt;::MapIterator end()</div><div class="ttdoc">Get a new MapIterator at the behind-the-last element's position of this MMap&lt; Key,...</div><div class="ttdef"><b>Definition</b> map.hpp:314</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_html_af932f2b303efda87626f873044a72678"><div class="ttname"><a href="classdscpp_1_1MMap.html#af932f2b303efda87626f873044a72678">dscpp::MMap::begin</a></div><div class="ttdeci">MMap&lt; Key, T, Compare &gt;::MapIterator begin()</div><div class="ttdoc">Get a new MapIterator at the begin position of this MMap&lt; Key, T, Compare &gt;</div><div class="ttdef"><b>Definition</b> map.hpp:306</div></div>
+<div class="ttc" id="aclassdscpp_1_1MMap_html_afb1563ac02c44226addbe69dc0002866"><div class="ttname"><a href="classdscpp_1_1MMap.html#afb1563ac02c44226addbe69dc0002866">dscpp::MMap::map_t</a></div><div class="ttdeci">Map&lt; Key, Map&lt; Key, T, Compare &gt; *, Compare &gt; map_t</div><div class="ttdoc">The own type of the MMap</div><div class="ttdef"><b>Definition</b> map.hpp:225</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_1_1Value_html"><div class="ttname"><a href="classdscpp_1_1Map_1_1Value.html">dscpp::Map::Value</a></div><div class="ttdoc">This nested class comprises a value tuple consisting of a Key and an object T per element.</div><div class="ttdef"><b>Definition</b> map.hpp:47</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_1_1Value_html_a2229809412d243e10ede436b8a78cb09"><div class="ttname"><a href="classdscpp_1_1Map_1_1Value.html#a2229809412d243e10ede436b8a78cb09">dscpp::Map::Value::Value</a></div><div class="ttdeci">Value(const char *key, T val)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> map.hpp:54</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_1_1Value_html_a2dc40bc6ea89ea7404f3d7cb2b073698"><div class="ttname"><a href="classdscpp_1_1Map_1_1Value.html#a2dc40bc6ea89ea7404f3d7cb2b073698">dscpp::Map::Value::value</a></div><div class="ttdeci">T &amp; value()</div><div class="ttdoc">Get the value as reference.</div><div class="ttdef"><b>Definition</b> map.hpp:73</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_1_1Value_html_a3b845fbacab3b61c2f1e4972a92c69b2"><div class="ttname"><a href="classdscpp_1_1Map_1_1Value.html#a3b845fbacab3b61c2f1e4972a92c69b2">dscpp::Map::Value::value</a></div><div class="ttdeci">const T &amp; value() const</div><div class="ttdoc">Get the value as reference.</div><div class="ttdef"><b>Definition</b> map.hpp:78</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_1_1Value_html_a95e9bd95090b182b3d74d960c56e0b9c"><div class="ttname"><a href="classdscpp_1_1Map_1_1Value.html#a95e9bd95090b182b3d74d960c56e0b9c">dscpp::Map::Value::key</a></div><div class="ttdeci">std::string &amp; key()</div><div class="ttdoc">Get the saved key as reference to a std::string</div><div class="ttdef"><b>Definition</b> map.hpp:62</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_1_1Value_html_accf436977fa694485439b8d37c76abbd"><div class="ttname"><a href="classdscpp_1_1Map_1_1Value.html#accf436977fa694485439b8d37c76abbd">dscpp::Map::Value::key</a></div><div class="ttdeci">const std::string &amp; key() const</div><div class="ttdoc">Get the saved key as reference to a const std::string</div><div class="ttdef"><b>Definition</b> map.hpp:67</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html"><div class="ttname"><a href="classdscpp_1_1Map.html">dscpp::Map</a></div><div class="ttdoc">This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.</div><div class="ttdef"><b>Definition</b> map.hpp:36</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a041e5ac936344e4654149a8f072910cb"><div class="ttname"><a href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">dscpp::Map::iterator</a></div><div class="ttdeci">stlmap_t::iterator iterator</div><div class="ttdoc">The default iterator of Map&lt; Key, T, Compare &gt; from stlmap_t</div><div class="ttdef"><b>Definition</b> map.hpp:122</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a04a9353f1bc3422e401829eefecf0cbb"><div class="ttname"><a href="classdscpp_1_1Map.html#a04a9353f1bc3422e401829eefecf0cbb">dscpp::Map::end</a></div><div class="ttdeci">iterator end()</div><div class="ttdoc">Get Map&lt; Key, T, Compare &gt;::front() as Map&lt; Key, T, Compare &gt;::iterator</div><div class="ttdef"><b>Definition</b> map.hpp:137</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a16e2c1c423a5412dc42d9f81569a132f"><div class="ttname"><a href="classdscpp_1_1Map.html#a16e2c1c423a5412dc42d9f81569a132f">dscpp::Map::getValue</a></div><div class="ttdeci">static Value &amp; getValue(const typename stlmap_t::iterator it)</div><div class="ttdoc">Get the Map&lt; Key, T &gt;::Value of a stlmap_t::iterator it</div><div class="ttdef"><b>Definition</b> map.hpp:186</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a1acb086c10e0e180401947cae3164e9c"><div class="ttname"><a href="classdscpp_1_1Map.html#a1acb086c10e0e180401947cae3164e9c">dscpp::Map::begin</a></div><div class="ttdeci">iterator begin()</div><div class="ttdoc">Get Map&lt; Key, T, Compare &gt;::front() as Map&lt; Key, T, Compare &gt;::iterator</div><div class="ttdef"><b>Definition</b> map.hpp:130</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a3ce2e698138e3b3ac2a90082a1238101"><div class="ttname"><a href="classdscpp_1_1Map.html#a3ce2e698138e3b3ac2a90082a1238101">dscpp::Map::stlmap_t</a></div><div class="ttdeci">std::map&lt; Key, T, Compare &gt; stlmap_t</div><div class="ttdoc">The type of the underlying standard template library map as typedef.</div><div class="ttdef"><b>Definition</b> map.hpp:39</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a6ccebbab7db4894dc83f7adb8cec58a5"><div class="ttname"><a href="classdscpp_1_1Map.html#a6ccebbab7db4894dc83f7adb8cec58a5">dscpp::Map::apply</a></div><div class="ttdeci">bool apply(const Value &amp;value)</div><div class="ttdoc">Apply a value to its' key inside of the Map&lt; Key, T &gt;</div><div class="ttdef"><b>Definition</b> map.hpp:174</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a72bb970e217c63efe73f7e12efa365b1"><div class="ttname"><a href="classdscpp_1_1Map.html#a72bb970e217c63efe73f7e12efa365b1">dscpp::Map::append_range</a></div><div class="ttdeci">size_t append_range(std::ranges::subrange&lt; iterator &gt; &amp;rng)</div><div class="ttdoc">Append a range of iterators, e.g. from another Map&lt; Key, T, Compare &gt; to this map.</div><div class="ttdef"><b>Definition</b> map.hpp:194</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a763ff55fd7c03d858d0267b92ad7cae9"><div class="ttname"><a href="classdscpp_1_1Map.html#a763ff55fd7c03d858d0267b92ad7cae9">dscpp::Map::const_iterator</a></div><div class="ttdeci">stlmap_t::const_iterator const_iterator</div><div class="ttdoc">The default const_iterator of Map&lt; Key, T, Compare &gt; from stlmap_t</div><div class="ttdef"><b>Definition</b> map.hpp:124</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a7f607b3cab0961f00fada34e5aa3081e"><div class="ttname"><a href="classdscpp_1_1Map.html#a7f607b3cab0961f00fada34e5aa3081e">dscpp::Map::contains</a></div><div class="ttdeci">bool contains(const Key key)</div><div class="ttdoc">Test, if a Key key is contained inside of the dscpp::Map</div><div class="ttdef"><b>Definition</b> map.hpp:92</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a8448271aff5ec7662d80ac498fbdfc07"><div class="ttname"><a href="classdscpp_1_1Map.html#a8448271aff5ec7662d80ac498fbdfc07">dscpp::Map::get</a></div><div class="ttdeci">const Value *&amp; get(const char *key) const</div><div class="ttdoc">Get the Map&lt; Key, T &gt;::Value referred to a key, if the key exists.</div><div class="ttdef"><b>Definition</b> map.hpp:102</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a92c650794b6e06209dcd217a85342572"><div class="ttname"><a href="classdscpp_1_1Map.html#a92c650794b6e06209dcd217a85342572">dscpp::Map::cbegin</a></div><div class="ttdeci">const_iterator cbegin() const</div><div class="ttdoc">Get Map&lt; Key, T, Compare &gt;::front() as Map&lt; Key, T, Compare &gt;::const_iterator</div><div class="ttdef"><b>Definition</b> map.hpp:144</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_a97c8f15e769858de428adb4458a3872a"><div class="ttname"><a href="classdscpp_1_1Map.html#a97c8f15e769858de428adb4458a3872a">dscpp::Map::cend</a></div><div class="ttdeci">const_iterator cend() const</div><div class="ttdoc">Get Map&lt; Key, T, Compare &gt;::front() as Map&lt; Key, T, Compare &gt;::iterator</div><div class="ttdef"><b>Definition</b> map.hpp:151</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_aa59c335834f5429b4fddc2eeba3ddf1e"><div class="ttname"><a href="classdscpp_1_1Map.html#aa59c335834f5429b4fddc2eeba3ddf1e">dscpp::Map::operator()</a></div><div class="ttdeci">Value &amp; operator()(const Key key, T default_value=T()) const</div><div class="ttdoc">Get a reference to a new Map&lt; Key, T, Compare &gt;::Value for more actions.</div><div class="ttdef"><b>Definition</b> map.hpp:162</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_ab09e2f2c53d26bd1b721b90837c50c6f"><div class="ttname"><a href="classdscpp_1_1Map.html#ab09e2f2c53d26bd1b721b90837c50c6f">dscpp::Map::operator[]</a></div><div class="ttdeci">T &amp; operator[](const Key key)</div><div class="ttdoc">Access the elements inside the map by reference.</div><div class="ttdef"><b>Definition</b> map.hpp:112</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_acbb1d43e7f9f7a6dd20fad207a9a72fd"><div class="ttname"><a href="classdscpp_1_1Map.html#acbb1d43e7f9f7a6dd20fad207a9a72fd">dscpp::Map::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Get the current size of the Map&lt; Key, T &gt;</div><div class="ttdef"><b>Definition</b> map.hpp:201</div></div>
+<div class="ttc" id="aclassdscpp_1_1Map_html_af7a47f35c32616946ea79f6d0d8d6179"><div class="ttname"><a href="classdscpp_1_1Map.html#af7a47f35c32616946ea79f6d0d8d6179">dscpp::Map::Map</a></div><div class="ttdeci">Map()</div><div class="ttdoc">Default Constructor.</div><div class="ttdef"><b>Definition</b> map.hpp:84</div></div>
+<div class="ttc" id="anamespacedscpp_html"><div class="ttname"><a href="namespacedscpp.html">dscpp</a></div><div class="ttdoc">LibdsC++: An intuitive and highly usable API backend for data science and data design with C/C++</div><div class="ttdef"><b>Definition</b> cdictionary.hpp:21</div></div>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdoc">STL namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -299,7 +377,7 @@ $(document).ready(function(){initNavTree('map_8hpp_source.html',''); initResizab
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="map_8hpp.html">map.hpp</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:34:59 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

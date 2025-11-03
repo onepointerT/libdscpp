@@ -23,8 +23,6 @@
  ---------------------------------------------------------------------------*/
 
 #ifdef __cplusplus
-namespace dsc {
-
 extern "C" {
 #endif
 
@@ -104,7 +102,7 @@ typedef struct _void_struct_ {
      * backend API to a `_void_struct_*` pointer of the same type.
      * @note Can be altered from default to custom function pointer
      */
-    struct _void_struct_* (*castDatatype)( voidptr data );
+    struct _void_struct_* (*castDatatype)( voidptr data, const char* datatype_name );
     /**
      * @brief Cast an data type that is unpredictable by a data science
      * backend API to a `voidptr` pointer from a `_void_struct_*`
@@ -121,7 +119,7 @@ typedef struct _void_struct_ {
  *      destinguished-to-be-known.
  * @returns A valid newly initialized `void_struct *`.
  */
-struct _void_struct_* void_struct_init( const char* dt_name, const enum ptr_type_void_struct ptr_type );
+struct _void_struct_* void_struct_init( const char* dt_name, const enum _void_struct_ptr_type_ ptr_type );
 /**
  * @brief Init the function pointers of the `void_struct vs` from an seem-use `datacast dc` pointer
  * @param vs A valid and initialized pointer to a `_void_struct_`.
@@ -135,7 +133,7 @@ struct _void_struct_* void_struct_init( const char* dt_name, const enum ptr_type
  * @param vs_other A valid, non-NULL `void_struct` pointer
  * @returns A newly-allocated duplicate of `vs_other`.
  */
-struct _void_struct_* void_struct_duplicate( const struct _void_struct_* vs_other );
+struct _void_struct_* void_struct_duplicate( struct _void_struct_* vs_other );
 
 
 
@@ -309,8 +307,6 @@ extern voidptr toVoidPointer( struct _void_struct_* vs );
 
 #ifdef __cplusplus
 }
-
-} // namespace dsc
 #endif
 
 #endif

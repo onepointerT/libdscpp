@@ -51,6 +51,22 @@ const char* strsubstr( const char* _Str1, const size_t pos_start, const size_t p
     return substr;
 }
 
+
+const char* strconcat( const char* _Str1, const char* _Str2 ) {
+    const size_t str1len = strlen(_Str1);
+    const size_t str2len = strlen(_Str2);
+
+    char* str = (char*) malloc(sizeof(char)*(str1len+str2len));
+    unsigned int ic = 0;
+    for ( unsigned int i = 0; i < str1len + str2len - 1; i++, ic++ ) {
+        if ( ic == str1len ) ic = 0;
+        if ( i < str1len ) str[i] = _Str1[ic];
+        else str[i] = _Str2[ic];
+    }
+
+    return str;
+}
+
 #ifdef __cplusplus
 }
 #endif

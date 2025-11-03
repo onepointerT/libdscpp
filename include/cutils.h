@@ -64,7 +64,13 @@ size_t strfindpossimple( const char* _Str1, const char* StrFind );
  * @returns The substring, that thus means `_Str1[pos_start:pos_end]` newly allocated-and-copied.
  */
 const char* strsubstr( const char* _Str1, const size_t pos_start, const size_t pos_end );
-
+/**
+ * @brief Concatenate two strings
+ * @param _Str1 The first string
+ * @param _Str2 The second string
+ * @returns The second string behind the first string as one string
+ */
+const char* strconcat( const char* _Str1, const char* _Str2 );
 
 #ifdef __cplusplus
 }

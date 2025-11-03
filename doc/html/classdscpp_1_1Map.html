@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -106,80 +106,523 @@ $(document).ready(function(){initNavTree('classdscpp_1_1Map.html',''); initResiz
   <div class="headertitle"><div class="title">dscpp::Map&lt; Key, T, Compare &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This is a default <code>std::map&lt; Key, T, Compare &gt;</code> with some additional functions.  
+ <a href="classdscpp_1_1Map.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="map_8hpp_source.html">map.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for dscpp::Map&lt; Key, T, Compare &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classdscpp_1_1Map.png" usemap="#dscpp::Map_3C_20Key_2C_20T_2C_20Compare_20_3E_map" alt=""/>
   <map id="dscpp::Map_3C_20Key_2C_20T_2C_20Compare_20_3E_map" name="dscpp::Map_3C_20Key_2C_20T_2C_20Compare_20_3E_map">
-<area href="classdscpp_1_1Dictionary_1_1Section.html" alt="dscpp::Dictionary::Section" shape="rect" coords="0,112,218,136"/>
-<area href="classdscpp_1_1MMap.html" alt="dscpp::MMap&lt; Key, T, Compare &gt;" shape="rect" coords="228,112,446,136"/>
-<area href="classdscpp_1_1DMap.html" alt="dscpp::DMap&lt; Key, T &gt;" shape="rect" coords="228,168,446,192"/>
+<area href="classdscpp_1_1MMap.html" alt="dscpp::MMap&lt; std::string, DictionaryKey * &gt;" shape="rect" coords="0,112,266,136"/>
+<area href="classdscpp_1_1Dictionary_1_1Section.html" title="This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ..." alt="dscpp::Dictionary::Section" shape="rect" coords="276,112,542,136"/>
+<area href="classdscpp_1_1MMap.html" title="This class makes maps containing maps more easy to use by providing an MMap&lt; Key, T,..." alt="dscpp::MMap&lt; Key, T, Compare &gt;" shape="rect" coords="552,112,818,136"/>
+<area href="classdscpp_1_1Dictionary.html" title="This class implements a dictionary with sections." alt="dscpp::Dictionary" shape="rect" coords="0,168,266,192"/>
+<area href="classdscpp_1_1DMap.html" title="This class makes dictionary maps containing maps more easy to use by providing an MMap&lt; Key,..." alt="dscpp::DMap&lt; Key, T &gt;" shape="rect" coords="552,168,818,192"/>
+<area href="classdsc_1_1DictionaryC.html" title="The compatibility-layer dscpp::Dictionary for C dictionary structs." alt="dsc::DictionaryC" shape="rect" coords="0,224,266,248"/>
+<area href="classdscpp_1_1DataStruct.html" title="A simple generic data structure of libdsC++ specializing a dscpp::DataClass with some functionality." alt="dscpp::DataStruct&lt; InheritingClass &gt;" shape="rect" coords="0,280,266,304"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This nested class comprises a value tuple consisting of a <code>Key</code> and an object <code>T</code> per element.  <a href="classdscpp_1_1Map_1_1Value.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a3ce2e698138e3b3ac2a90082a1238101" id="r_a3ce2e698138e3b3ac2a90082a1238101"><td class="memItemLeft" align="right" valign="top"><a id="a3ce2e698138e3b3ac2a90082a1238101" name="a3ce2e698138e3b3ac2a90082a1238101"></a>
 typedef std::map&lt; Key, T, Compare &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>stlmap_t</b></td></tr>
+<tr class="memdesc:a3ce2e698138e3b3ac2a90082a1238101"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the underlying standard template library map as typedef. <br /></td></tr>
 <tr class="separator:a3ce2e698138e3b3ac2a90082a1238101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a041e5ac936344e4654149a8f072910cb" id="r_a041e5ac936344e4654149a8f072910cb"><td class="memItemLeft" align="right" valign="top"><a id="a041e5ac936344e4654149a8f072910cb" name="a041e5ac936344e4654149a8f072910cb"></a>
 typedef stlmap_t::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>iterator</b></td></tr>
+<tr class="memdesc:a041e5ac936344e4654149a8f072910cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default <code>iterator</code> of <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;</code> from <code>stlmap_t</code> <br /></td></tr>
 <tr class="separator:a041e5ac936344e4654149a8f072910cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a763ff55fd7c03d858d0267b92ad7cae9" id="r_a763ff55fd7c03d858d0267b92ad7cae9"><td class="memItemLeft" align="right" valign="top"><a id="a763ff55fd7c03d858d0267b92ad7cae9" name="a763ff55fd7c03d858d0267b92ad7cae9"></a>
 typedef stlmap_t::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b></td></tr>
+<tr class="memdesc:a763ff55fd7c03d858d0267b92ad7cae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default <code>const_iterator</code> of <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;</code> from <code>stlmap_t</code> <br /></td></tr>
 <tr class="separator:a763ff55fd7c03d858d0267b92ad7cae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7f607b3cab0961f00fada34e5aa3081e" id="r_a7f607b3cab0961f00fada34e5aa3081e"><td class="memItemLeft" align="right" valign="top"><a id="a7f607b3cab0961f00fada34e5aa3081e" name="a7f607b3cab0961f00fada34e5aa3081e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains</b> (const Key key)</td></tr>
+<tr class="memitem:af7a47f35c32616946ea79f6d0d8d6179" id="r_af7a47f35c32616946ea79f6d0d8d6179"><td class="memItemLeft" align="right" valign="top"><a id="af7a47f35c32616946ea79f6d0d8d6179" name="af7a47f35c32616946ea79f6d0d8d6179"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Map</b> ()</td></tr>
+<tr class="memdesc:af7a47f35c32616946ea79f6d0d8d6179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
+<tr class="separator:af7a47f35c32616946ea79f6d0d8d6179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f607b3cab0961f00fada34e5aa3081e" id="r_a7f607b3cab0961f00fada34e5aa3081e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#a7f607b3cab0961f00fada34e5aa3081e">contains</a> (const Key key)</td></tr>
+<tr class="memdesc:a7f607b3cab0961f00fada34e5aa3081e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test, if a <code>Key key</code> is contained inside of the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">dscpp::Map</a></code>  <br /></td></tr>
 <tr class="separator:a7f607b3cab0961f00fada34e5aa3081e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8448271aff5ec7662d80ac498fbdfc07" id="r_a8448271aff5ec7662d80ac498fbdfc07"><td class="memItemLeft" align="right" valign="top"><a id="a8448271aff5ec7662d80ac498fbdfc07" name="a8448271aff5ec7662d80ac498fbdfc07"></a>
-const <a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> *&amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (const char *key) const</td></tr>
+<tr class="memitem:a8448271aff5ec7662d80ac498fbdfc07" id="r_a8448271aff5ec7662d80ac498fbdfc07"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> *&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#a8448271aff5ec7662d80ac498fbdfc07">get</a> (const char *key) const</td></tr>
+<tr class="memdesc:a8448271aff5ec7662d80ac498fbdfc07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T &gt;::<a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code> referred to a key, if the key exists.  <br /></td></tr>
 <tr class="separator:a8448271aff5ec7662d80ac498fbdfc07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab09e2f2c53d26bd1b721b90837c50c6f" id="r_ab09e2f2c53d26bd1b721b90837c50c6f"><td class="memItemLeft" align="right" valign="top"><a id="ab09e2f2c53d26bd1b721b90837c50c6f" name="ab09e2f2c53d26bd1b721b90837c50c6f"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const Key key)</td></tr>
+<tr class="memitem:ab09e2f2c53d26bd1b721b90837c50c6f" id="r_ab09e2f2c53d26bd1b721b90837c50c6f"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#ab09e2f2c53d26bd1b721b90837c50c6f">operator[]</a> (const Key key)</td></tr>
+<tr class="memdesc:ab09e2f2c53d26bd1b721b90837c50c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the elements inside the map by reference.  <br /></td></tr>
 <tr class="separator:ab09e2f2c53d26bd1b721b90837c50c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a514ccb2a23dcde75e7fddfe09159c70d" id="r_a514ccb2a23dcde75e7fddfe09159c70d"><td class="memItemLeft" align="right" valign="top"><a id="a514ccb2a23dcde75e7fddfe09159c70d" name="a514ccb2a23dcde75e7fddfe09159c70d"></a>
-const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const Key key) const</td></tr>
-<tr class="separator:a514ccb2a23dcde75e7fddfe09159c70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1acb086c10e0e180401947cae3164e9c" id="r_a1acb086c10e0e180401947cae3164e9c"><td class="memItemLeft" align="right" valign="top"><a id="a1acb086c10e0e180401947cae3164e9c" name="a1acb086c10e0e180401947cae3164e9c"></a>
-iterator&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="memitem:a1acb086c10e0e180401947cae3164e9c" id="r_a1acb086c10e0e180401947cae3164e9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#a1acb086c10e0e180401947cae3164e9c">begin</a> ()</td></tr>
+<tr class="memdesc:a1acb086c10e0e180401947cae3164e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::front()</code> as <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::iterator</code>  <br /></td></tr>
 <tr class="separator:a1acb086c10e0e180401947cae3164e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04a9353f1bc3422e401829eefecf0cbb" id="r_a04a9353f1bc3422e401829eefecf0cbb"><td class="memItemLeft" align="right" valign="top"><a id="a04a9353f1bc3422e401829eefecf0cbb" name="a04a9353f1bc3422e401829eefecf0cbb"></a>
-iterator&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
+<tr class="memitem:a04a9353f1bc3422e401829eefecf0cbb" id="r_a04a9353f1bc3422e401829eefecf0cbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#a04a9353f1bc3422e401829eefecf0cbb">end</a> ()</td></tr>
+<tr class="memdesc:a04a9353f1bc3422e401829eefecf0cbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::front()</code> as <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::iterator</code>  <br /></td></tr>
 <tr class="separator:a04a9353f1bc3422e401829eefecf0cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92c650794b6e06209dcd217a85342572" id="r_a92c650794b6e06209dcd217a85342572"><td class="memItemLeft" align="right" valign="top"><a id="a92c650794b6e06209dcd217a85342572" name="a92c650794b6e06209dcd217a85342572"></a>
-const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>cbegin</b> () const</td></tr>
+<tr class="memitem:a92c650794b6e06209dcd217a85342572" id="r_a92c650794b6e06209dcd217a85342572"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1Map.html#a763ff55fd7c03d858d0267b92ad7cae9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#a92c650794b6e06209dcd217a85342572">cbegin</a> () const</td></tr>
+<tr class="memdesc:a92c650794b6e06209dcd217a85342572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::front()</code> as <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::const_iterator</code>  <br /></td></tr>
 <tr class="separator:a92c650794b6e06209dcd217a85342572"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97c8f15e769858de428adb4458a3872a" id="r_a97c8f15e769858de428adb4458a3872a"><td class="memItemLeft" align="right" valign="top"><a id="a97c8f15e769858de428adb4458a3872a" name="a97c8f15e769858de428adb4458a3872a"></a>
-const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>cend</b> () const</td></tr>
+<tr class="memitem:a97c8f15e769858de428adb4458a3872a" id="r_a97c8f15e769858de428adb4458a3872a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1Map.html#a763ff55fd7c03d858d0267b92ad7cae9">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#a97c8f15e769858de428adb4458a3872a">cend</a> () const</td></tr>
+<tr class="memdesc:a97c8f15e769858de428adb4458a3872a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::front()</code> as <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::iterator</code>  <br /></td></tr>
 <tr class="separator:a97c8f15e769858de428adb4458a3872a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa59c335834f5429b4fddc2eeba3ddf1e" id="r_aa59c335834f5429b4fddc2eeba3ddf1e"><td class="memItemLeft" align="right" valign="top"><a id="aa59c335834f5429b4fddc2eeba3ddf1e" name="aa59c335834f5429b4fddc2eeba3ddf1e"></a>
-<a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const Key key, T default_value=T()) const</td></tr>
+<tr class="memitem:aa59c335834f5429b4fddc2eeba3ddf1e" id="r_aa59c335834f5429b4fddc2eeba3ddf1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#aa59c335834f5429b4fddc2eeba3ddf1e">operator()</a> (const Key key, T default_value=T()) const</td></tr>
+<tr class="memdesc:aa59c335834f5429b4fddc2eeba3ddf1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to a new <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::<a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code> for more actions.  <br /></td></tr>
 <tr class="separator:aa59c335834f5429b4fddc2eeba3ddf1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ccebbab7db4894dc83f7adb8cec58a5" id="r_a6ccebbab7db4894dc83f7adb8cec58a5"><td class="memItemLeft" align="right" valign="top"><a id="a6ccebbab7db4894dc83f7adb8cec58a5" name="a6ccebbab7db4894dc83f7adb8cec58a5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>apply</b> (const <a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> &amp;value)</td></tr>
+<tr class="memitem:a6ccebbab7db4894dc83f7adb8cec58a5" id="r_a6ccebbab7db4894dc83f7adb8cec58a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#a6ccebbab7db4894dc83f7adb8cec58a5">apply</a> (const <a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> &amp;value)</td></tr>
+<tr class="memdesc:a6ccebbab7db4894dc83f7adb8cec58a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a value to its' key inside of the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T &gt;</code>  <br /></td></tr>
 <tr class="separator:a6ccebbab7db4894dc83f7adb8cec58a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72bb970e217c63efe73f7e12efa365b1" id="r_a72bb970e217c63efe73f7e12efa365b1"><td class="memItemLeft" align="right" valign="top"><a id="a72bb970e217c63efe73f7e12efa365b1" name="a72bb970e217c63efe73f7e12efa365b1"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>append_range</b> (std::ranges::subrange&lt; iterator &gt; &amp;rng)</td></tr>
+<tr class="memitem:a72bb970e217c63efe73f7e12efa365b1" id="r_a72bb970e217c63efe73f7e12efa365b1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#a72bb970e217c63efe73f7e12efa365b1">append_range</a> (std::ranges::subrange&lt; <a class="el" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">iterator</a> &gt; &amp;rng)</td></tr>
+<tr class="memdesc:a72bb970e217c63efe73f7e12efa365b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a range of iterators, e.g. from another <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;</code> to this map.  <br /></td></tr>
 <tr class="separator:a72bb970e217c63efe73f7e12efa365b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbb1d43e7f9f7a6dd20fad207a9a72fd" id="r_acbb1d43e7f9f7a6dd20fad207a9a72fd"><td class="memItemLeft" align="right" valign="top"><a id="acbb1d43e7f9f7a6dd20fad207a9a72fd" name="acbb1d43e7f9f7a6dd20fad207a9a72fd"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const</td></tr>
+<tr class="memitem:acbb1d43e7f9f7a6dd20fad207a9a72fd" id="r_acbb1d43e7f9f7a6dd20fad207a9a72fd"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#acbb1d43e7f9f7a6dd20fad207a9a72fd">size</a> () const</td></tr>
+<tr class="memdesc:acbb1d43e7f9f7a6dd20fad207a9a72fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current size of the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T &gt;</code>  <br /></td></tr>
 <tr class="separator:acbb1d43e7f9f7a6dd20fad207a9a72fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a16e2c1c423a5412dc42d9f81569a132f" id="r_a16e2c1c423a5412dc42d9f81569a132f"><td class="memItemLeft" align="right" valign="top"><a id="a16e2c1c423a5412dc42d9f81569a132f" name="a16e2c1c423a5412dc42d9f81569a132f"></a>
-static <a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getValue</b> (const typename stlmap_t::iterator it)</td></tr>
+<tr class="memitem:a16e2c1c423a5412dc42d9f81569a132f" id="r_a16e2c1c423a5412dc42d9f81569a132f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1Map.html#a16e2c1c423a5412dc42d9f81569a132f">getValue</a> (const typename stlmap_t::iterator it)</td></tr>
+<tr class="memdesc:a16e2c1c423a5412dc42d9f81569a132f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T &gt;::<a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code> of a <code>stlmap_t::iterator it</code>  <br /></td></tr>
 <tr class="separator:a16e2c1c423a5412dc42d9f81569a132f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Key, typename T, class Compare = std::less&lt;Key&gt;&gt;<br />
+class dscpp::Map&lt; Key, T, Compare &gt;</div><p>This is a default <code>std::map&lt; Key, T, Compare &gt;</code> with some additional functions. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Key</td><td>The key value's type, e.g. <code>std::string</code>; no const </td></tr>
+    <tr><td class="paramname">T</td><td>The type to save as elements for the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">dscpp::Map</a></code> </td></tr>
+    <tr><td class="paramname">Compare</td><td>How to compare the elements on such things like sorting, merging and similar. Defaults to <code>std::less&lt; Key &gt;</code> and is optionally omittable </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a72bb970e217c63efe73f7e12efa365b1" name="a72bb970e217c63efe73f7e12efa365b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72bb970e217c63efe73f7e12efa365b1">&#9670;&#160;</a></span>append_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::append_range </td>
+          <td>(</td>
+          <td class="paramtype">std::ranges::subrange&lt; <a class="el" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">iterator</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rng</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Append a range of iterators, e.g. from another <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;</code> to this map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rng</td><td>The range to append and insert at the end of this <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of elements inserted into the map </dd></dl>
+
+</div>
+</div>
+<a id="a6ccebbab7db4894dc83f7adb8cec58a5" name="a6ccebbab7db4894dc83f7adb8cec58a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ccebbab7db4894dc83f7adb8cec58a5">&#9670;&#160;</a></span>apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::apply </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply a value to its' key inside of the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T &gt;</code> </p>
+<dl class="section note"><dt>Note</dt><dd>You may get a <code><a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a>&amp;</code> from the function <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::operator()(Key, T)</code> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to apply to it's position inside the map </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True on success. </dd></dl>
+
+</div>
+</div>
+<a id="a1acb086c10e0e180401947cae3164e9c" name="a1acb086c10e0e180401947cae3164e9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1acb086c10e0e180401947cae3164e9c">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">iterator</a> <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::front()</code> as <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::iterator</code> </p>
+<dl class="section return"><dt>Returns</dt><dd>An <code>iterator</code> to the first element of the map </dd></dl>
+
+</div>
+</div>
+<a id="a92c650794b6e06209dcd217a85342572" name="a92c650794b6e06209dcd217a85342572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92c650794b6e06209dcd217a85342572">&#9670;&#160;</a></span>cbegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1Map.html#a763ff55fd7c03d858d0267b92ad7cae9">const_iterator</a> <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::cbegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::front()</code> as <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::const_iterator</code> </p>
+<dl class="section return"><dt>Returns</dt><dd>A <code>const_iterator</code> to the first element of the map </dd></dl>
+
+</div>
+</div>
+<a id="a97c8f15e769858de428adb4458a3872a" name="a97c8f15e769858de428adb4458a3872a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97c8f15e769858de428adb4458a3872a">&#9670;&#160;</a></span>cend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1Map.html#a763ff55fd7c03d858d0267b92ad7cae9">const_iterator</a> <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::cend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::front()</code> as <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::iterator</code> </p>
+<dl class="section return"><dt>Returns</dt><dd>A <code>const_iterator</code> to behind-the-last element of the map </dd></dl>
+
+</div>
+</div>
+<a id="a7f607b3cab0961f00fada34e5aa3081e" name="a7f607b3cab0961f00fada34e5aa3081e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f607b3cab0961f00fada34e5aa3081e">&#9670;&#160;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">const Key&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Test, if a <code>Key key</code> is contained inside of the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">dscpp::Map</a></code> </p>
+<dl class="section return"><dt>Returns</dt><dd>True, if the key was found inside of the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">dscpp::Map</a>&lt; Key, T &gt;</code> </dd></dl>
+
+</div>
+</div>
+<a id="a04a9353f1bc3422e401829eefecf0cbb" name="a04a9353f1bc3422e401829eefecf0cbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a9353f1bc3422e401829eefecf0cbb">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1Map.html#a041e5ac936344e4654149a8f072910cb">iterator</a> <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::front()</code> as <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::iterator</code> </p>
+<dl class="section return"><dt>Returns</dt><dd>An <code>iterator</code> to behind-the-last element of the map </dd></dl>
+
+</div>
+</div>
+<a id="a8448271aff5ec7662d80ac498fbdfc07" name="a8448271aff5ec7662d80ac498fbdfc07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8448271aff5ec7662d80ac498fbdfc07">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> *&amp; <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::get </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T &gt;::<a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code> referred to a key, if the key exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key to search for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer-to-reference of a <code>const <a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt;Key, T&gt;::<a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code>, if <code>key</code> was found, a <code>std::nullptr_t</code>, if <code>key</code> was not found </dd></dl>
+
+</div>
+</div>
+<a id="a16e2c1c423a5412dc42d9f81569a132f" name="a16e2c1c423a5412dc42d9f81569a132f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e2c1c423a5412dc42d9f81569a132f">&#9670;&#160;</a></span>getValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> &amp; <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::getValue </td>
+          <td>(</td>
+          <td class="paramtype">const typename stlmap_t::iterator&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T &gt;::<a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code> of a <code>stlmap_t::iterator it</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>The iterator to transform to a <code><a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code> object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a newly created <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::<a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code> object </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>You may apply a <code><a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a>&amp;</code> with the function <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::<a class="el" href="classdscpp_1_1Map.html#a6ccebbab7db4894dc83f7adb8cec58a5" title="Apply a value to its&#39; key inside of the Map&lt; Key, T &gt;">apply()</a></code> </dd></dl>
+
+</div>
+</div>
+<a id="aa59c335834f5429b4fddc2eeba3ddf1e" name="aa59c335834f5429b4fddc2eeba3ddf1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa59c335834f5429b4fddc2eeba3ddf1e">&#9670;&#160;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> &amp; <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const Key&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>default_value</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a reference to a new <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::<a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code> for more actions. </p>
+<dl class="section note"><dt>Note</dt><dd>You may apply a <code><a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a>&amp;</code> with the function <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T, Compare &gt;::<a class="el" href="classdscpp_1_1Map.html#a6ccebbab7db4894dc83f7adb8cec58a5" title="Apply a value to its&#39; key inside of the Map&lt; Key, T &gt;">apply()</a></code> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key where the value is stored </td></tr>
+    <tr><td class="paramname">default_value</td><td>The default value, that is thus used for creating a new <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T &gt;::<a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code>, if <code>key</code> was not found </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T &gt;::<a class="el" href="classdscpp_1_1Map_1_1Value.html" title="This nested class comprises a value tuple consisting of a Key and an object T per element.">Value</a></code> </dd></dl>
+
+</div>
+</div>
+<a id="ab09e2f2c53d26bd1b721b90837c50c6f" name="ab09e2f2c53d26bd1b721b90837c50c6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab09e2f2c53d26bd1b721b90837c50c6f">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const Key&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access the elements inside the map by reference. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key to dereference it's value of </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to an value object <code>T</code> </dd></dl>
+
+</div>
+</div>
+<a id="acbb1d43e7f9f7a6dd20fad207a9a72fd" name="acbb1d43e7f9f7a6dd20fad207a9a72fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbb1d43e7f9f7a6dd20fad207a9a72fd">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , class Compare  = std::less&lt;Key&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classdscpp_1_1Map.html">dscpp::Map</a>&lt; Key, T, Compare &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current size of the <code><a class="el" href="classdscpp_1_1Map.html" title="This is a default std::map&lt; Key, T, Compare &gt; with some additional functions.">Map</a>&lt; Key, T &gt;</code> </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of elements inside of this map </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/mnt/g/bankdigest/ciphers/lib/libcmdlinecpp/lib/liblogcpp/lib/libinicpp/lib/libdscpp/include/<a class="el" href="map_8hpp_source.html">map.hpp</a></li>
 </ul>
@@ -188,8 +631,8 @@ static <a class="el" href="classdscpp_1_1Map_1_1Value.html">Value</a> &amp;&#160
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>dscpp</b></li><li class="navelem"><a class="el" href="classdscpp_1_1Map.html">Map</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:35:00 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="namespacedscpp.html">dscpp</a></li><li class="navelem"><a class="el" href="classdscpp_1_1Map.html">Map</a></li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

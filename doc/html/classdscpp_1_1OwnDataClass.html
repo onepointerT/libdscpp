@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -103,17 +103,140 @@ $(document).ready(function(){initNavTree('classdscpp_1_1OwnDataClass.html',''); 
   <div class="headertitle"><div class="title">dscpp::OwnDataClass Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>The virtual base class, that is to be derived from <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a></code> for functionality for a specific data type <code>DT</code>.  
+ <a href="classdscpp_1_1OwnDataClass.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="dataclass_8hpp_source.html">dataclass.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a6d7550e0e0dd2d45908297a7fe6a3800" id="r_a6d7550e0e0dd2d45908297a7fe6a3800"><td class="memItemLeft" align="right" valign="top"><a id="a6d7550e0e0dd2d45908297a7fe6a3800" name="a6d7550e0e0dd2d45908297a7fe6a3800"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>getDT</b> ()=0</td></tr>
-<tr class="separator:a6d7550e0e0dd2d45908297a7fe6a3800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebb416a82ef0b3913377763512abb3cc" id="r_aebb416a82ef0b3913377763512abb3cc"><td class="memTemplParams" colspan="2"><a id="aebb416a82ef0b3913377763512abb3cc" name="aebb416a82ef0b3913377763512abb3cc"></a>
-template&lt;class DT &gt; </td></tr>
-<tr class="memitem:aebb416a82ef0b3913377763512abb3cc"><td class="memTemplItemLeft" align="right" valign="top">DT &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>getDataType</b> ()</td></tr>
-<tr class="separator:aebb416a82ef0b3913377763512abb3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38025c3576bcb7098a14c1d0c1c43d2c" id="r_a38025c3576bcb7098a14c1d0c1c43d2c"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1OwnDataClass.html#a38025c3576bcb7098a14c1d0c1c43d2c">getDT</a> () const =0</td></tr>
+<tr class="memdesc:a38025c3576bcb7098a14c1d0c1c43d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get your data type as <code>void*</code> from latestly <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a></code>  <br /></td></tr>
+<tr class="separator:a38025c3576bcb7098a14c1d0c1c43d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29612eec68ed222f02dd7e23bde9217f" id="r_a29612eec68ed222f02dd7e23bde9217f"><td class="memTemplParams" colspan="2">template&lt;class DT &gt; </td></tr>
+<tr class="memitem:a29612eec68ed222f02dd7e23bde9217f"><td class="memTemplItemLeft" align="right" valign="top">DT &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdscpp_1_1OwnDataClass.html#a29612eec68ed222f02dd7e23bde9217f">getDataType</a> () const</td></tr>
+<tr class="memdesc:a29612eec68ed222f02dd7e23bde9217f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data type <code>DT</code> in a common inheriting class like <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a>&lt; YourDataDesignFunctionalT, DT &gt;</code> for more work and in calculations in your functions of the class inheriting <code><a class="el" href="classdscpp_1_1OwnDataClass.html" title="The virtual base class, that is to be derived from DataClass for functionality for a specific data ty...">OwnDataClass</a></code>  <br /></td></tr>
+<tr class="separator:a29612eec68ed222f02dd7e23bde9217f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e0c44429d18848e7729cb10c4d608e" id="r_ad6e0c44429d18848e7729cb10c4d608e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1OwnDataClass.html#ad6e0c44429d18848e7729cb10c4d608e">setupVariables</a> (InheritingClass &amp;ic, <a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; &amp;dc)=0</td></tr>
+<tr class="memdesc:ad6e0c44429d18848e7729cb10c4d608e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup all variables inside of the class <code>InheritingClass</code>  <br /></td></tr>
+<tr class="separator:ad6e0c44429d18848e7729cb10c4d608e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The virtual base class, that is to be derived from <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a></code> for functionality for a specific data type <code>DT</code>. </p>
+<dl class="section note"><dt>Note</dt><dd>Classes deriving this class are designed to make a <code><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">DataType</a>&lt;DT&gt;</code> feature-enabled and fully cabable to be used in the library that is used to work with your data design types. </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a29612eec68ed222f02dd7e23bde9217f" name="a29612eec68ed222f02dd7e23bde9217f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29612eec68ed222f02dd7e23bde9217f">&#9670;&#160;</a></span>getDataType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DT &amp; dscpp::OwnDataClass::getDataType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the data type <code>DT</code> in a common inheriting class like <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a>&lt; YourDataDesignFunctionalT, DT &gt;</code> for more work and in calculations in your functions of the class inheriting <code><a class="el" href="classdscpp_1_1OwnDataClass.html" title="The virtual base class, that is to be derived from DataClass for functionality for a specific data ty...">OwnDataClass</a></code> </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DT</td><td>The data type, inherited from <code>ClassFactory::DataType</code>, that is made functional with your class deriving from <code><a class="el" href="classdscpp_1_1OwnDataClass.html" title="The virtual base class, that is to be derived from DataClass for functionality for a specific data ty...">OwnDataClass</a></code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to <code>DT</code>, that is already casted to <code>DT</code> </dd></dl>
+
+</div>
+</div>
+<a id="a38025c3576bcb7098a14c1d0c1c43d2c" name="a38025c3576bcb7098a14c1d0c1c43d2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38025c3576bcb7098a14c1d0c1c43d2c">&#9670;&#160;</a></span>getDT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void * dscpp::OwnDataClass::getDT </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get your data type as <code>void*</code> from latestly <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a></code> </p>
+<dl class="section note"><dt>Note</dt><dd>This function is pure virtual </dd></dl>
+
+</div>
+</div>
+<a id="ad6e0c44429d18848e7729cb10c4d608e" name="ad6e0c44429d18848e7729cb10c4d608e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e0c44429d18848e7729cb10c4d608e">&#9670;&#160;</a></span>setupVariables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool dscpp::OwnDataClass::setupVariables </td>
+          <td>(</td>
+          <td class="paramtype">InheritingClass &amp;&#160;</td>
+          <td class="paramname"><em>ic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup all variables inside of the class <code>InheritingClass</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ic</td><td>A reference to the <code>InheritingClass</code>, that is thus feature-enabling this data type </td></tr>
+    <tr><td class="paramname">dc</td><td>A reference to a <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a></code> of the same type, thus <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a>&lt;InheritingClass, <a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">DataType</a>&gt;</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True on success </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function is pure virtual </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/mnt/g/bankdigest/ciphers/lib/libcmdlinecpp/lib/liblogcpp/lib/libinicpp/lib/libdscpp/include/<a class="el" href="dataclass_8hpp_source.html">dataclass.hpp</a></li>
 </ul>
@@ -122,8 +245,8 @@ template&lt;class DT &gt; </td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>dscpp</b></li><li class="navelem"><a class="el" href="classdscpp_1_1OwnDataClass.html">OwnDataClass</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:35:00 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="namespacedscpp.html">dscpp</a></li><li class="navelem"><a class="el" href="classdscpp_1_1OwnDataClass.html">OwnDataClass</a></li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -105,41 +105,259 @@ $(document).ready(function(){initNavTree('classdscpp_1_1ClassFactory.html',''); 
   <div class="headertitle"><div class="title">dscpp::ClassFactory Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>The C++ type factory for conversion and creation of datatype classes.  
+ <a href="classdscpp_1_1ClassFactory.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="classfactory_8hpp_source.html">classfactory.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdscpp_1_1ClassFactory_1_1__dataclass__.html">_dataclass_</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdscpp_1_1ClassFactory_1_1__DataClass__.html">_DataClass_</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The C++ generic type of data classes for e.g. use in inheritance of other libraries or parts of the dsC++API.  <a href="structdscpp_1_1ClassFactory_1_1__DataClass__.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:add949c7ea674f2179eaba2ae6d1181a8" id="r_add949c7ea674f2179eaba2ae6d1181a8"><td class="memItemLeft" align="right" valign="top"><a id="add949c7ea674f2179eaba2ae6d1181a8" name="add949c7ea674f2179eaba2ae6d1181a8"></a>
-typedef <a class="el" href="structdscpp_1_1ClassFactory_1_1__dataclass__.html">dscpp::ClassFactory::_dataclass_</a>&#160;</td><td class="memItemRight" valign="bottom"><b>dataclass</b></td></tr>
-<tr class="separator:add949c7ea674f2179eaba2ae6d1181a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27af84aa122f1f1a17e5aa75296d13b5" id="r_a27af84aa122f1f1a17e5aa75296d13b5"><td class="memTemplParams" colspan="2"><a id="a27af84aa122f1f1a17e5aa75296d13b5" name="a27af84aa122f1f1a17e5aa75296d13b5"></a>
-template&lt;class DT &gt; </td></tr>
-<tr class="memitem:a27af84aa122f1f1a17e5aa75296d13b5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>_datatype_</b> = <a class="el" href="classdscpp_1_1DataType.html">dscpp::DataType</a>&lt; DT &gt;</td></tr>
-<tr class="separator:a27af84aa122f1f1a17e5aa75296d13b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bf0fb65897e6b8bb387a22f6f664b5d" id="r_a9bf0fb65897e6b8bb387a22f6f664b5d"><td class="memTemplParams" colspan="2"><a id="a9bf0fb65897e6b8bb387a22f6f664b5d" name="a9bf0fb65897e6b8bb387a22f6f664b5d"></a>
-template&lt;class DT &gt; </td></tr>
-<tr class="memitem:a9bf0fb65897e6b8bb387a22f6f664b5d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_dtype</b> = std::is_base_of&lt; <a class="el" href="classdscpp_1_1DataType.html">_datatype_</a>&lt; DT &gt;, DT &gt;</td></tr>
-<tr class="separator:a9bf0fb65897e6b8bb387a22f6f664b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5658d8bb1234c82831b238a54b22d323" id="r_a5658d8bb1234c82831b238a54b22d323"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">typedef</a> <a class="el" href="structdscpp_1_1ClassFactory_1_1__DataClass__.html">dscpp::ClassFactory::_DataClass_</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1ClassFactory.html#a5658d8bb1234c82831b238a54b22d323">DataClass</a></td></tr>
+<tr class="memdesc:a5658d8bb1234c82831b238a54b22d323"><td class="mdescLeft">&#160;</td><td class="mdescRight">The C++ generic type of data classes for e.g. use in inheritance of other libraries or parts of the dsC++API.  <br /></td></tr>
+<tr class="separator:a5658d8bb1234c82831b238a54b22d323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f2ba33845856932f1de77a58188226c" id="r_a2f2ba33845856932f1de77a58188226c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">class</a> DT &gt; </td></tr>
+<tr class="memitem:a2f2ba33845856932f1de77a58188226c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdscpp_1_1ClassFactory.html#a2f2ba33845856932f1de77a58188226c">Datatype</a> = <a class="el" href="classdscpp_1_1DataType.html">dscpp::DataType</a>&lt; DT &gt;</td></tr>
+<tr class="memdesc:a2f2ba33845856932f1de77a58188226c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <code><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">dscpp::DataType</a></code> for <code><a class="el" href="classdscpp_1_1ClassFactory.html" title="The C++ type factory for conversion and creation of datatype classes.">ClassFactory</a></code>  <br /></td></tr>
+<tr class="separator:a2f2ba33845856932f1de77a58188226c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac124cb9c6c3a60520b1f820e94680939" id="r_ac124cb9c6c3a60520b1f820e94680939"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">class</a> DT &gt; </td></tr>
+<tr class="memitem:ac124cb9c6c3a60520b1f820e94680939"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">using</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdscpp_1_1ClassFactory.html#ac124cb9c6c3a60520b1f820e94680939">is_dtype</a> = std::is_base_of&lt; <a class="el" href="classdscpp_1_1DataTypeBase.html">DataTypeBase</a>&lt; DT &gt;, DT &gt;</td></tr>
+<tr class="memdesc:ac124cb9c6c3a60520b1f820e94680939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control, if you have implemented a valid <code>libdsC++</code> datatype.  <br /></td></tr>
+<tr class="separator:ac124cb9c6c3a60520b1f820e94680939"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a34b69f4e37b786ce5810b54b3863e9a3" id="r_a34b69f4e37b786ce5810b54b3863e9a3"><td class="memTemplParams" colspan="2"><a id="a34b69f4e37b786ce5810b54b3863e9a3" name="a34b69f4e37b786ce5810b54b3863e9a3"></a>
-template&lt;typename DT &gt; </td></tr>
-<tr class="memitem:a34b69f4e37b786ce5810b54b3863e9a3"><td class="memTemplItemLeft" align="right" valign="top">static void *&#160;</td><td class="memTemplItemRight" valign="bottom"><b>toDataVoidPtr</b> (const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a> &amp;section)</td></tr>
-<tr class="separator:a34b69f4e37b786ce5810b54b3863e9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a835acafba15d030c486cec3c36c68cc0" id="r_a835acafba15d030c486cec3c36c68cc0"><td class="memTemplParams" colspan="2"><a id="a835acafba15d030c486cec3c36c68cc0" name="a835acafba15d030c486cec3c36c68cc0"></a>
-template&lt;typename DT &gt; </td></tr>
-<tr class="memitem:a835acafba15d030c486cec3c36c68cc0"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="structdscpp_1_1ClassFactory_1_1__dataclass__.html">ClassFactory::dataclass</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><b>getData</b> (const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a> &amp;section, void *(*toDataPtr)(const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a> &amp;)=&amp;ClassFactory::toDataVoidPtr&lt; DT &gt;)</td></tr>
-<tr class="separator:a835acafba15d030c486cec3c36c68cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a515a4e63c691b8fbd549d918d277e22e" id="r_a515a4e63c691b8fbd549d918d277e22e"><td class="memTemplParams" colspan="2"><a id="a515a4e63c691b8fbd549d918d277e22e" name="a515a4e63c691b8fbd549d918d277e22e"></a>
-template&lt;typename DTC &gt; </td></tr>
-<tr class="memitem:a515a4e63c691b8fbd549d918d277e22e"><td class="memTemplItemLeft" align="right" valign="top">static DTC *&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>castData</b> (const <a class="el" href="structdscpp_1_1ClassFactory_1_1__dataclass__.html">dataclass</a> &amp;dc)</td></tr>
-<tr class="separator:a515a4e63c691b8fbd549d918d277e22e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d786a47187efd6795b60df79fd7a24f" id="r_a0d786a47187efd6795b60df79fd7a24f"><td class="memTemplParams" colspan="2">template&lt;typename DT &gt; </td></tr>
+<tr class="memitem:a0d786a47187efd6795b60df79fd7a24f"><td class="memTemplItemLeft" align="right" valign="top">static void *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">toDataVoidPtr</a> (const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">dscpp::Dictionary::Section</a> &amp;section)</td></tr>
+<tr class="memdesc:a0d786a47187efd6795b60df79fd7a24f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brief create a API-common datatype <code>DT</code> from its constructor <code>DT(const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html" title="This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ...">Dictionary::Section</a>&amp; )</code> and get it as <code>voidptr</code>  <br /></td></tr>
+<tr class="separator:a0d786a47187efd6795b60df79fd7a24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee95d712152334a67d2283d5d0c5d3a7" id="r_aee95d712152334a67d2283d5d0c5d3a7"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">typename</a> DT &gt; </td></tr>
+<tr class="memitem:aee95d712152334a67d2283d5d0c5d3a7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">static</a> <a class="el" href="classdscpp_1_1ClassFactory.html#a5658d8bb1234c82831b238a54b22d323">dscpp::ClassFactory::DataClass</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdscpp_1_1ClassFactory.html#aee95d712152334a67d2283d5d0c5d3a7">getData</a> (<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">const</a> <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">dscpp::Dictionary::Section</a> &amp;section, <a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">void</a> *(*<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">toDataPtr</a>)(<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">const</a> <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">dscpp::Dictionary::Section</a> &amp;)=&amp;<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">dscpp::ClassFactory::toDataVoidPtr</a>&lt; DT &gt;)</td></tr>
+<tr class="memdesc:aee95d712152334a67d2283d5d0c5d3a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data of a <code><a class="el" href="classdscpp_1_1Dictionary_1_1Section.html" title="This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ...">Dictionary::Section</a></code> as a generic <code>libdsC</code> data class at it's C++ API.  <br /></td></tr>
+<tr class="separator:aee95d712152334a67d2283d5d0c5d3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa304c7b91a02d36a5a9027da4d026bb2" id="r_aa304c7b91a02d36a5a9027da4d026bb2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">typename</a> <a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">DTC</a> &gt; </td></tr>
+<tr class="memitem:aa304c7b91a02d36a5a9027da4d026bb2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">static</a> <a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">DTC</a> *&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdscpp_1_1ClassFactory.html#aa304c7b91a02d36a5a9027da4d026bb2">castData</a> (<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">const</a> <a class="el" href="classdscpp_1_1ClassFactory.html#a5658d8bb1234c82831b238a54b22d323">dscpp::ClassFactory::DataClass</a> &amp;dc)</td></tr>
+<tr class="memdesc:aa304c7b91a02d36a5a9027da4d026bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast data from a <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a></code> reference to a type <code>DTC</code>  <br /></td></tr>
+<tr class="separator:aa304c7b91a02d36a5a9027da4d026bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The C++ type factory for conversion and creation of datatype classes. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a5658d8bb1234c82831b238a54b22d323" name="a5658d8bb1234c82831b238a54b22d323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5658d8bb1234c82831b238a54b22d323">&#9670;&#160;</a></span>DataClass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">typedef</a>  <a class="el" href="structdscpp_1_1ClassFactory_1_1__DataClass__.html">dscpp::ClassFactory::_DataClass_</a> <a class="el" href="classdscpp_1_1ClassFactory.html#a5658d8bb1234c82831b238a54b22d323">dscpp::ClassFactory::DataClass</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The C++ generic type of data classes for e.g. use in inheritance of other libraries or parts of the dsC++API. </p>
+<dl class="section note"><dt>Note</dt><dd>Adds an attribute of the type <code>std::type_info type_data</code> that thus can be used for e.g. type casting a <code><a class="el" href="classdscpp_1_1ClassFactory.html#a5658d8bb1234c82831b238a54b22d323" title="The C++ generic type of data classes for e.g. use in inheritance of other libraries or parts of the d...">ClassFactory::DataClass</a> dc</code> basing and inheriting type like this</dd></dl>
+<p><code>return static_cast&lt;decltype(std::declval(std::type_index(dc.type_data).<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f" title="Brief create a API-common datatype DT from its constructor DT(const Dictionary::Section&amp; ) and get it...">name()</a>)) *&gt;(dc.data);</code> </p><dl class="section note"><dt>Note</dt><dd>You may use <code><a class="el" href="classdscpp_1_1ClassFactory.html#aa304c7b91a02d36a5a9027da4d026bb2" title="Cast data from a DataClass reference to a type DTC">ClassFactory::castData()</a></code> for conversion of the <code>ClassFactory::DataClass::data</code> attribute </dd></dl>
+
+</div>
+</div>
+<a id="a2f2ba33845856932f1de77a58188226c" name="a2f2ba33845856932f1de77a58188226c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f2ba33845856932f1de77a58188226c">&#9670;&#160;</a></span>Datatype</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">class</a> DT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">using</a> <a class="el" href="classdscpp_1_1ClassFactory.html#a2f2ba33845856932f1de77a58188226c">dscpp::ClassFactory::Datatype</a> =  <a class="el" href="classdscpp_1_1DataType.html">dscpp::DataType</a>&lt;DT&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The <code><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">dscpp::DataType</a></code> for <code><a class="el" href="classdscpp_1_1ClassFactory.html" title="The C++ type factory for conversion and creation of datatype classes.">ClassFactory</a></code> </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DT</td><td>The concrete datatype that is inherited by <code><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">dscpp::DataType</a>&lt;DT&gt;</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac124cb9c6c3a60520b1f820e94680939" name="ac124cb9c6c3a60520b1f820e94680939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac124cb9c6c3a60520b1f820e94680939">&#9670;&#160;</a></span>is_dtype</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">class</a> DT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">using</a> <a class="el" href="classdscpp_1_1ClassFactory.html#ac124cb9c6c3a60520b1f820e94680939">dscpp::ClassFactory::is_dtype</a> =  std::is_base_of&lt; <a class="el" href="classdscpp_1_1DataTypeBase.html">DataTypeBase</a>&lt;DT&gt;, DT &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Control, if you have implemented a valid <code>libdsC++</code> datatype. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DT</td><td>The concrete datatype that is used by <code><a class="el" href="classdscpp_1_1DataTypeBase.html" title="The base class of your data types for data design.">dscpp::DataTypeBase</a>&lt;DT&gt;</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>You can use <code>requires</code> of <code>&lt;concepts&gt;</code> for controlling of type safety like this <pre class="fragment"> template&lt; class DT &gt;
+     requires ClassFactory::is_dtype&lt; DT &gt;::value
+ class DataType
+     :   public DT
+ {}
+</pre> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa304c7b91a02d36a5a9027da4d026bb2" name="aa304c7b91a02d36a5a9027da4d026bb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa304c7b91a02d36a5a9027da4d026bb2">&#9670;&#160;</a></span>castData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">typename</a> <a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">DTC</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">static</a> <a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">DTC</a> *&amp; dscpp::ClassFactory::castData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">const</a> <a class="el" href="classdscpp_1_1ClassFactory.html#a5658d8bb1234c82831b238a54b22d323">dscpp::ClassFactory::DataClass</a> &amp;&#160;</td>
+          <td class="paramname"><em>dc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cast data from a <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a></code> reference to a type <code>DTC</code> </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DTC</td><td>The type to cast <code>dc</code> to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function will use <code>dc.type_data</code> for finding out <code>DTC</code> with <code>decltype(std::declval(std::type_index(dc.type_data).<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f" title="Brief create a API-common datatype DT from its constructor DT(const Dictionary::Section&amp; ) and get it...">name()</a>))</code> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer-to-reference of the type <code>DTC</code> of the generic <code>datatype</code> at <code>dc.data</code> </dd></dl>
+
+</div>
+</div>
+<a id="aee95d712152334a67d2283d5d0c5d3a7" name="aee95d712152334a67d2283d5d0c5d3a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee95d712152334a67d2283d5d0c5d3a7">&#9670;&#160;</a></span>getData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">typename</a> DT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">static</a> <a class="el" href="classdscpp_1_1ClassFactory.html#a5658d8bb1234c82831b238a54b22d323">dscpp::ClassFactory::DataClass</a> * dscpp::ClassFactory::getData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">const</a> <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">dscpp::Dictionary::Section</a> &amp;&#160;</td>
+          <td class="paramname"><em>section</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">void</a> *(*)(<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">const</a> <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">dscpp::Dictionary::Section</a> &amp;)&#160;</td>
+          <td class="paramname"><em>toDataPtr</em> = <code>&amp;<a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">dscpp::ClassFactory::toDataVoidPtr</a>&lt;DT&gt;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the data of a <code><a class="el" href="classdscpp_1_1Dictionary_1_1Section.html" title="This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ...">Dictionary::Section</a></code> as a generic <code>libdsC</code> data class at it's C++ API. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DT</td><td>The datatype of the attribute at <code>ClassFactory::DataClass::data::vars</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">section</td><td>The section to create the <code>datatype</code> from </td></tr>
+    <tr><td class="paramname">toDataPtr</td><td>The function that thus transforms the <code><a class="el" href="classdscpp_1_1Dictionary_1_1Section.html" title="This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ...">dscpp::Dictionary::Section</a></code> to the type <code>DT</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><code>void* ClassFactory::DataClass::data::vars = (DT*) toDataPtr(section)</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a></code> </dd></dl>
+
+</div>
+</div>
+<a id="a0d786a47187efd6795b60df79fd7a24f" name="a0d786a47187efd6795b60df79fd7a24f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d786a47187efd6795b60df79fd7a24f">&#9670;&#160;</a></span>toDataVoidPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * dscpp::ClassFactory::toDataVoidPtr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">dscpp::Dictionary::Section</a> &amp;&#160;</td>
+          <td class="paramname"><em>section</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Brief create a API-common datatype <code>DT</code> from its constructor <code>DT(const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html" title="This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ...">Dictionary::Section</a>&amp; )</code> and get it as <code>voidptr</code> </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DT</td><td>The data type to create </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">section</td><td>The section to create the data type <code>DT</code> from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new instance of <code>DT*</code>. You may cast the <code>void*</code> with <code>DT* dt = (DT*) <a class="el" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f" title="Brief create a API-common datatype DT from its constructor DT(const Dictionary::Section&amp; ) and get it...">ClassFactory::toDataVoidPtr</a>&lt;DT&gt;(section);</code> </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/mnt/g/bankdigest/ciphers/lib/libcmdlinecpp/lib/liblogcpp/lib/libinicpp/lib/libdscpp/include/<a class="el" href="classfactory_8hpp_source.html">classfactory.hpp</a></li>
 </ul>
@@ -148,8 +366,8 @@ template&lt;typename DTC &gt; </td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>dscpp</b></li><li class="navelem"><a class="el" href="classdscpp_1_1ClassFactory.html">ClassFactory</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:35:00 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="namespacedscpp.html">dscpp</a></li><li class="navelem"><a class="el" href="classdscpp_1_1ClassFactory.html">ClassFactory</a></li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -100,6 +100,7 @@ $(document).ready(function(){initNavTree('void__ptr_8hpp.html',''); initResizabl
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">void_ptr.hpp File Reference</div></div>
 </div><!--header-->
@@ -108,23 +109,31 @@ $(document).ready(function(){initNavTree('void__ptr_8hpp.html',''); initResizabl
 <p>A file that defines the void pointer and typecasting of <code>void*</code> for C++.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="dictionary_8h_source.html">dictionary.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cdictionary_8hpp_source.html">cdictionary.hpp</a>&quot;</code><br />
 </div>
 <p><a href="void__ptr_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1VoidStruct.html">dscpp::VoidStruct</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like in <code>libdsC</code>, this represents a more generic data class for less predictable use cases.  <a href="classdscpp_1_1VoidStruct.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacedscpp" id="r_namespacedscpp"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedscpp.html">dscpp</a></td></tr>
+<tr class="memdesc:namespacedscpp"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>LibdsC++</code>: An intuitive and highly usable API backend for data science and data design with C/C++ <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adc292d5907a79f17479c76c53cdef1b9" id="r_adc292d5907a79f17479c76c53cdef1b9"><td class="memTemplParams" colspan="2"><a id="adc292d5907a79f17479c76c53cdef1b9" name="adc292d5907a79f17479c76c53cdef1b9"></a>
-template&lt;typename VS &gt; </td></tr>
-<tr class="memitem:adc292d5907a79f17479c76c53cdef1b9"><td class="memTemplItemLeft" align="right" valign="top">VS &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dscpp::castFromVoid</b> (void *vars_struct)</td></tr>
+<tr class="memitem:adc292d5907a79f17479c76c53cdef1b9" id="r_adc292d5907a79f17479c76c53cdef1b9"><td class="memTemplParams" colspan="2">template&lt;typename VS &gt; </td></tr>
+<tr class="memitem:adc292d5907a79f17479c76c53cdef1b9"><td class="memTemplItemLeft" align="right" valign="top">VS &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedscpp.html#adc292d5907a79f17479c76c53cdef1b9">dscpp::castFromVoid</a> (void *vars_struct)</td></tr>
+<tr class="memdesc:adc292d5907a79f17479c76c53cdef1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free function that defines, how to cast or transform data from a <code>voidptr</code> to a specific type <code>VS</code>  <br /></td></tr>
 <tr class="separator:adc292d5907a79f17479c76c53cdef1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4962cb636f32bcaa761f045237c0cda7" id="r_a4962cb636f32bcaa761f045237c0cda7"><td class="memItemLeft" align="right" valign="top"><a id="a4962cb636f32bcaa761f045237c0cda7" name="a4962cb636f32bcaa761f045237c0cda7"></a>
-dsc::_dictionary_ *&#160;</td><td class="memItemRight" valign="bottom"><b>dscpp::castToDictionary</b> (void *vars_struct)</td></tr>
-<tr class="separator:a4962cb636f32bcaa761f045237c0cda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3fd8891ae8d4af0c398dcdecfcb4efc" id="r_af3fd8891ae8d4af0c398dcdecfcb4efc"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct__dictionary__.html">_dictionary_</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedscpp.html#af3fd8891ae8d4af0c398dcdecfcb4efc">dscpp::castToDictionary</a> (void *vars_struct)</td></tr>
+<tr class="memdesc:af3fd8891ae8d4af0c398dcdecfcb4efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free function that defines, how to transform a <code>void*</code> to a <code>libdsC</code> dictionary.  <br /></td></tr>
+<tr class="separator:af3fd8891ae8d4af0c398dcdecfcb4efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A file that defines the void pointer and typecasting of <code>void*</code> for C++. </p>
@@ -135,7 +144,7 @@ dsc::_dictionary_ *&#160;</td><td class="memItemRight" valign="bottom"><b>dscpp:
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="void__ptr_8hpp.html">void_ptr.hpp</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:35:00 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

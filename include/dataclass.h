@@ -23,8 +23,6 @@
  ---------------------------------------------------------------------------*/
 
 #ifdef __cplusplus
-namespace dsc {
-
 extern "C" {
 #endif
 
@@ -54,8 +52,6 @@ typedef struct _dataclass_ {
 
 #ifdef __cplusplus
 }
-
-} // namespace dsc
 #endif
 
 #endif

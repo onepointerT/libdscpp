@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['void_5fstruct_0',['void_struct',['../void__struct_8h.html#aff6188d431fef55aca99b60d9e6bb928',1,'void_struct.h']]],
-  ['voidptr_1',['voidptr',['../void__struct_8h.html#ad278f484ea40bc7e1226c75a6a37a760',1,'void_struct.h']]]
+  ['map_5fit_5ft_0',['map_it_t',['../classdscpp_1_1Dictionary_1_1DictionaryIterator.html#a28a001cb136dc9052ff2e197dff38495',1,'dscpp::Dictionary::DictionaryIterator']]],
+  ['map_5fiterator_5ft_1',['map_iterator_t',['../classdscpp_1_1MMap.html#a844d798a0a544a9c265a0e5521b1d96a',1,'dscpp::MMap']]],
+  ['map_5ft_2',['map_t',['../classdscpp_1_1MMap.html#afb1563ac02c44226addbe69dc0002866',1,'dscpp::MMap']]]
 ];

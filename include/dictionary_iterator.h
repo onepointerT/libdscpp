@@ -3,7 +3,7 @@
 /**
    @file    dictionary_iterator.h
    @author  N. Devillard
-   @brief   An iterator for the `struct _dictionary_`
+   @brief   Implements the iterator for `struct _dictionary_`.
 */
 /*--------------------------------------------------------------------------*/
 /*
@@ -19,8 +19,6 @@
  ---------------------------------------------------------------------------*/
 
 #ifdef __cplusplus
-namespace dsc {
-
 extern "C" {
 #endif
 
@@ -36,58 +34,74 @@ struct _dictionary_;
                                 New types
  ---------------------------------------------------------------------------*/
 
+/**
+ * @brief The iterator for `struct _dictionary_`. Compliance use functions below.
+ */
 typedef struct _dictionary_iterator_ {
+  /** @brief The current `dictionary_element` pointer */
   struct _dictionary_element_* elem;
+  /** @brief The iterator's current position */
   unsigned int pos;
+  /** @brief The dictionary, the iterator iterates over. */
   struct _dictionary_* dict;
 } dictionary_iterator;
 
-struct _dictionary_iterator_* _dictionary_iterator_new();
+/**
+ * @brief Create a new unpositioned iterator for a dictionary `dict`
+ * @param dict The `dictionary` to create the iterator for.
+ * @returns A newly-allocated `dictionary_iterator*`, with unset element and unknown position
+ * @note You may call `dictionary_iterator_load_npos()` or `dictionary_iterator_load()`
+ *      for initially creating iterators
+ */
+struct _dictionary_iterator_* _dictionary_iterator_new( struct _dictionary_* dict );
 
 /*-------------------------------------------------------------------------*/
 /**
-  @brief    Parse an ini file and return an allocated dictionary object
-  @param    ininame Name of the ini file to read.
-  @return   Pointer to newly allocated dictionary
+  @brief    Set the iterator to its' next element.
+  @param    di The iterator to get it's next element of
+  @returns  Pointer to the updated iterator
  */
-/*--------------------------------------------------------------------------*/
-dictionary_iterator* dictionary_iterator_plus(dictionary_iterator* di);
-dictionary_iterator* dictionary_iterator_minus(dictionary_iterator* di);
+dictionary_iterator* dictionary_iterator_next(dictionary_iterator* di);
+/**
+  @brief    Set the iterator to its' previous element.
+  @param    di The iterator to get it's previous element of
+  @returns  Pointer to the updated iterator
+ */
+dictionary_iterator* dictionary_iterator_previous(dictionary_iterator* di);
 
 /*-------------------------------------------------------------------------*/
 /**
-  @brief    Parse an ini file and return an allocated dictionary object
-  @param    ininame Name of the ini file to read.
-  @return   Pointer to newly allocated dictionary
+  @brief    Apply the values of `di->elem` to the dictionary `di->dict`.
+  @param    di The iterator to apply
+  @returns  True on success
  */
-/*--------------------------------------------------------------------------*/
 bool dictionary_iterator_apply(dictionary_iterator* di);
 
 
 /*-------------------------------------------------------------------------*/
 /**
-  @brief    Parse an ini file and return an allocated dictionary object
-  @param    ininame Name of the ini file to read.
-  @return   Pointer to newly allocated dictionary
+  @brief    Load a key of a dictionary `dict` to a new instance of `dictionary_iterator*`
+  @param    key The key to lookup
+  @param    dict The dictionary to lookup in
+  @returns  A newly allocated iterator with `strcmp( di->elem->key, key ) == 0` on success, `NULL` otherwise.
  */
-/*--------------------------------------------------------------------------*/
-dictionary_iterator* dictionary_iterator_load(const char* key);
+dictionary_iterator* dictionary_iterator_load(const char* key, struct _dictionary_* dict);
 
 /*-------------------------------------------------------------------------*/
 /**
-  @brief    Parse an ini file and return an allocated dictionary object
-  @param    ininame Name of the ini file to read.
-  @return   Pointer to newly allocated dictionary
+  @brief    Load a positiona of a dictionary `dict` to a new instance of `dictionary_iterator*`
+  @param    npos The position to lookup
+  @param    dict The dictionary to lookup in
+  @returns  A newly allocated iterator with `di->npos == npos` on success, `NULL` otherwise.
  */
-/*--------------------------------------------------------------------------*/
-dictionary_iterator* dictionary_iterator_load_npos(const size_t* npos);
+dictionary_iterator* dictionary_iterator_load_npos(const size_t npos, struct _dictionary_* dict);
 
 /*-------------------------------------------------------------------------*/
 /**
-  @brief    Free all memory associated to an ini dictionary
-  @param    d Dictionary to free
+  @brief    Free all memory associated to an `dictionary_iterator`
+  @param    di Dictionary iterator to free
 
-  Free all memory associated to an ini dictionary.
+  Free all memory associated to an `dictionary_iterator*`.
   It is mandatory to call this function before the dictionary object
   gets out of the current context.
  */
@@ -96,8 +110,6 @@ void dictionary_iterator_free(dictionary_iterator * di);
 
 #ifdef __cplusplus
 }
-
-} // namespace dsc
 #endif
 
 #endif

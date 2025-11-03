@@ -20,8 +20,6 @@
 
 
 #ifdef __cplusplus
-namespace dsc {
-
 extern "C" {
 #endif
 
@@ -64,8 +62,6 @@ dictionary_element* dictionary_elem_getpos(const dictionary * d, const unsigned 
 
 #ifdef __cplusplus
 }
-
-} // namespace dsc
 #endif
 
 #endif

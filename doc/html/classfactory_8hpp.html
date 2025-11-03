@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -100,6 +100,7 @@ $(document).ready(function(){initNavTree('classfactory_8hpp.html',''); initResiz
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">classfactory.hpp File Reference</div></div>
@@ -125,28 +126,35 @@ $(document).ready(function(){initNavTree('classfactory_8hpp.html',''); initResiz
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1ClassFactory.html">dscpp::ClassFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The C++ type factory for conversion and creation of datatype classes.  <a href="classdscpp_1_1ClassFactory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdscpp_1_1ClassFactory_1_1__dataclass__.html">dscpp::ClassFactory::_dataclass_</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdscpp_1_1ClassFactory_1_1__DataClass__.html">dscpp::ClassFactory::_DataClass_</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The C++ generic type of data classes for e.g. use in inheritance of other libraries or parts of the dsC++API.  <a href="structdscpp_1_1ClassFactory_1_1__DataClass__.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacedscpp" id="r_namespacedscpp"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedscpp.html">dscpp</a></td></tr>
+<tr class="memdesc:namespacedscpp"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>LibdsC++</code>: An intuitive and highly usable API backend for data science and data design with C/C++ <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a28eb58c566eddf40770d5fabb76e0afa" id="r_a28eb58c566eddf40770d5fabb76e0afa"><td class="memTemplParams" colspan="2"><a id="a28eb58c566eddf40770d5fabb76e0afa" name="a28eb58c566eddf40770d5fabb76e0afa"></a>
-template&lt;typename DT &gt; </td></tr>
-<tr class="memitem:a28eb58c566eddf40770d5fabb76e0afa"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dscpp::Datatype</b> = <a class="el" href="classdscpp_1_1DataType.html">ClassFactory::_datatype_</a>&lt; DT &gt;</td></tr>
-<tr class="separator:a28eb58c566eddf40770d5fabb76e0afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefaef60e900531e756d8d77d33952df0" id="r_aefaef60e900531e756d8d77d33952df0"><td class="memTemplParams" colspan="2"><a id="aefaef60e900531e756d8d77d33952df0" name="aefaef60e900531e756d8d77d33952df0"></a>
-template&lt;typename DT &gt; </td></tr>
-<tr class="memitem:aefaef60e900531e756d8d77d33952df0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dscpp::is_datatype</b> = ClassFactory::is_dtype&lt; DT &gt;</td></tr>
+<tr class="memitem:a66d8f8d801ac1a4bd0766bb4121a188f" id="r_a66d8f8d801ac1a4bd0766bb4121a188f"><td class="memTemplParams" colspan="2">template&lt;typename DT &gt; </td></tr>
+<tr class="memitem:a66d8f8d801ac1a4bd0766bb4121a188f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedscpp.html#a66d8f8d801ac1a4bd0766bb4121a188f">dscpp::Datatype</a> = <a class="el" href="classdscpp_1_1ClassFactory.html#a2f2ba33845856932f1de77a58188226c">ClassFactory::Datatype</a>&lt; DT &gt;</td></tr>
+<tr class="memdesc:a66d8f8d801ac1a4bd0766bb4121a188f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <code><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">dscpp::DataType</a></code> for <code>libdsC++</code>  <br /></td></tr>
+<tr class="separator:a66d8f8d801ac1a4bd0766bb4121a188f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefaef60e900531e756d8d77d33952df0" id="r_aefaef60e900531e756d8d77d33952df0"><td class="memTemplParams" colspan="2">template&lt;typename DT &gt; </td></tr>
+<tr class="memitem:aefaef60e900531e756d8d77d33952df0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedscpp.html#aefaef60e900531e756d8d77d33952df0">dscpp::is_datatype</a> = <a class="el" href="classdscpp_1_1ClassFactory.html#ac124cb9c6c3a60520b1f820e94680939">ClassFactory::is_dtype</a>&lt; DT &gt;</td></tr>
+<tr class="memdesc:aefaef60e900531e756d8d77d33952df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control, if you have implemented a valid <code>libdsC++</code> datatype.  <br /></td></tr>
 <tr class="separator:aefaef60e900531e756d8d77d33952df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5bd23d81655c547bba68054c3ac7505d" id="r_a5bd23d81655c547bba68054c3ac7505d"><td class="memTemplParams" colspan="2"><a id="a5bd23d81655c547bba68054c3ac7505d" name="a5bd23d81655c547bba68054c3ac7505d"></a>
-template&lt;class DT &gt; <br />
-requires is_datatype&lt;DT&gt;</td></tr>
-<tr class="memitem:a5bd23d81655c547bba68054c3ac7505d"><td class="memTemplItemLeft" align="right" valign="top">static ::value <a class="el" href="classdscpp_1_1DataType.html">DataType</a>&lt; DT &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dscpp::toDataStruct</b> (const <a class="el" href="classdscpp_1_1DataType.html">Datatype</a>&lt; DT &gt; &amp;dc, void *data)</td></tr>
-<tr class="separator:a5bd23d81655c547bba68054c3ac7505d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4ffaffcaa3e500bcb7054afc3c54cd4" id="r_aa4ffaffcaa3e500bcb7054afc3c54cd4"><td class="memTemplParams" colspan="2">template&lt;class DT , class FunctionalType &gt; </td></tr>
+<tr class="memitem:aa4ffaffcaa3e500bcb7054afc3c54cd4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1DataClass.html">dscpp::DataClass</a>&lt; FunctionalType, DT &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedscpp.html#aa4ffaffcaa3e500bcb7054afc3c54cd4">dscpp::toDataCls</a> (const <a class="el" href="namespacedscpp.html#a66d8f8d801ac1a4bd0766bb4121a188f">Datatype</a>&lt; DT &gt; &amp;dc, void *data)</td></tr>
+<tr class="memdesc:aa4ffaffcaa3e500bcb7054afc3c54cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform a <code><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">dscpp::DataType</a>&lt;DT&gt;</code> into a functional <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a>&lt; .., DT &gt;</code>  <br /></td></tr>
+<tr class="separator:aa4ffaffcaa3e500bcb7054afc3c54cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A file that defines dataclasses with the <code>libdsC</code> and <code>libdsC++</code> facitlity libraries for C++. </p>
@@ -157,7 +165,7 @@ requires is_datatype&lt;DT&gt;</td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="classfactory_8hpp.html">classfactory.hpp</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:34:59 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

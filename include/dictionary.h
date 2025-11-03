@@ -22,13 +22,13 @@
                                 Includes
  ---------------------------------------------------------------------------*/
 
-#include <stdio.h>
 
 #ifdef __cplusplus
-namespace dsc {
-
 extern "C" {
 #endif
+
+
+#include <stdio.h>
 
 /*---------------------------------------------------------------------------
                                 New types
@@ -176,8 +176,6 @@ void dictionary_dump(const dictionary * d, FILE * out);
 
 #ifdef __cplusplus
 }
-
-} // namespace dsc
 #endif
 
 #endif

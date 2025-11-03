@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -101,83 +101,301 @@ $(document).ready(function(){initNavTree('classdscpp_1_1DataClass.html',''); ini
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a>  </div>
-  <div class="headertitle"><div class="title">dscpp::DataClass&lt; InheritingClass, DataType &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">dscpp::DataClass&lt; InheritingClass, DataType &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>The feature-enabling data class for data types of <code>libdsC</code>/<code>libdsC++</code>.  
+ <a href="classdscpp_1_1DataClass.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="dataclass_8hpp_source.html">dataclass.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for dscpp::DataClass&lt; InheritingClass, DataType &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classdscpp_1_1DataClass.png" usemap="#dscpp::DataClass_3C_20InheritingClass_2C_20DataType_20_3E_map" alt=""/>
   <map id="dscpp::DataClass_3C_20InheritingClass_2C_20DataType_20_3E_map" name="dscpp::DataClass_3C_20InheritingClass_2C_20DataType_20_3E_map">
-<area href="structdscpp_1_1ClassFactory_1_1__dataclass__.html" alt="dscpp::ClassFactory::_dataclass_" shape="rect" coords="0,56,279,80"/>
-<area href="classdscpp_1_1DataType.html" alt="dscpp::DataType&lt; DT &gt;" shape="rect" coords="289,56,568,80"/>
+<area href="structdscpp_1_1ClassFactory_1_1__DataClass__.html" title="The C++ generic type of data classes for e.g. use in inheritance of other libraries or parts of the d..." alt="dscpp::ClassFactory::_DataClass_" shape="rect" coords="0,56,279,80"/>
+<area href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++" alt="dscpp::DataType&lt; DT &gt;" shape="rect" coords="289,56,568,80"/>
+<area href="struct__dataclass__.html" title="The generic type of data classes for e.g. use in inheritance of other libraries or parts of the dsAPI..." alt="_dataclass_" shape="rect" coords="0,0,279,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a70bd55b0a522df64f8c49ce3060a5357" id="r_a70bd55b0a522df64f8c49ce3060a5357"><td class="memItemLeft" align="right" valign="top"><a id="a70bd55b0a522df64f8c49ce3060a5357" name="a70bd55b0a522df64f8c49ce3060a5357"></a>
-virtual InheritingClass &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>toDataStructure</b> (const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a> &amp;section)</td></tr>
+<tr class="memitem:a70bd55b0a522df64f8c49ce3060a5357" id="r_a70bd55b0a522df64f8c49ce3060a5357"><td class="memItemLeft" align="right" valign="top">virtual InheritingClass &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataClass.html#a70bd55b0a522df64f8c49ce3060a5357">toDataStructure</a> (const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a> &amp;section)</td></tr>
+<tr class="memdesc:a70bd55b0a522df64f8c49ce3060a5357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a feature/functional <code>InheritingClass</code> from a <code><a class="el" href="classdscpp_1_1Dictionary_1_1Section.html" title="This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ...">Dictionary::Section</a></code> reference.  <br /></td></tr>
 <tr class="separator:a70bd55b0a522df64f8c49ce3060a5357"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54227db28e937488b05ff54c873c1574" id="r_a54227db28e937488b05ff54c873c1574"><td class="memItemLeft" align="right" valign="top"><a id="a54227db28e937488b05ff54c873c1574" name="a54227db28e937488b05ff54c873c1574"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DataClass</b> (const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a> &amp;section)</td></tr>
+<tr class="memitem:a54227db28e937488b05ff54c873c1574" id="r_a54227db28e937488b05ff54c873c1574"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataClass.html#a54227db28e937488b05ff54c873c1574">DataClass</a> (const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a> &amp;section)</td></tr>
+<tr class="memdesc:a54227db28e937488b05ff54c873c1574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
 <tr class="separator:a54227db28e937488b05ff54c873c1574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classdscpp_1_1DataType"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classdscpp_1_1DataType')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classdscpp_1_1DataType.html">dscpp::DataType&lt; DT &gt;</a></td></tr>
-<tr class="memitem:a3fda1580ac3d189ea870eb6ee5395d9d inherit pub_methods_classdscpp_1_1DataType" id="r_a3fda1580ac3d189ea870eb6ee5395d9d"><td class="memItemLeft" align="right" valign="top">
-DT &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> ()</td></tr>
+<tr class="memitem:a3fda1580ac3d189ea870eb6ee5395d9d inherit pub_methods_classdscpp_1_1DataType" id="r_a3fda1580ac3d189ea870eb6ee5395d9d"><td class="memItemLeft" align="right" valign="top">DT &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataType.html#a3fda1580ac3d189ea870eb6ee5395d9d">operator()</a> ()</td></tr>
+<tr class="memdesc:a3fda1580ac3d189ea870eb6ee5395d9d inherit pub_methods_classdscpp_1_1DataType"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to your data type.  <br /></td></tr>
 <tr class="separator:a3fda1580ac3d189ea870eb6ee5395d9d inherit pub_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6682363fe65b252d45d2546bc887cefb inherit pub_methods_classdscpp_1_1DataType" id="r_a6682363fe65b252d45d2546bc887cefb"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="classdscpp_1_1DataType.html">DataType</a>&lt; DT &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (const DT &amp;other)</td></tr>
+<tr class="memitem:a6682363fe65b252d45d2546bc887cefb inherit pub_methods_classdscpp_1_1DataType" id="r_a6682363fe65b252d45d2546bc887cefb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1DataType.html">DataType</a>&lt; DT &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataType.html#a6682363fe65b252d45d2546bc887cefb">operator&lt;&lt;</a> (const DT &amp;other)</td></tr>
+<tr class="memdesc:a6682363fe65b252d45d2546bc887cefb inherit pub_methods_classdscpp_1_1DataType"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the data from another of the classes with the same data type <code>DT</code> of your API.  <br /></td></tr>
 <tr class="separator:a6682363fe65b252d45d2546bc887cefb inherit pub_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83bf38d6b153958072a292e1a16bb95b inherit pub_methods_classdscpp_1_1DataType" id="r_a83bf38d6b153958072a292e1a16bb95b"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="classdscpp_1_1DataType.html">DataType</a>&lt; DT &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (const struct dsc::_datatype_ *other)</td></tr>
-<tr class="separator:a83bf38d6b153958072a292e1a16bb95b inherit pub_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1212c84ad53a9751b3cca5a39bcffe27 inherit pub_methods_classdscpp_1_1DataType" id="r_a1212c84ad53a9751b3cca5a39bcffe27"><td class="memTemplParams" colspan="2">
-template&lt;class DTO &gt; </td></tr>
-<tr class="memitem:a1212c84ad53a9751b3cca5a39bcffe27 inherit pub_methods_classdscpp_1_1DataType"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>copyFrom</b> (const DTO *data)</td></tr>
+<tr class="memitem:a06d58ea34346d42f96d2c710518dc009 inherit pub_methods_classdscpp_1_1DataType" id="r_a06d58ea34346d42f96d2c710518dc009"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdscpp_1_1DataType.html">DataType</a>&lt; DT &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataType.html#a06d58ea34346d42f96d2c710518dc009">operator&lt;&lt;</a> (const struct <a class="el" href="struct__datatype__.html">_datatype_</a> *other)</td></tr>
+<tr class="memdesc:a06d58ea34346d42f96d2c710518dc009 inherit pub_methods_classdscpp_1_1DataType"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the data from another of the standard <code>datatype</code>s of <code>libdsC++</code>  <br /></td></tr>
+<tr class="separator:a06d58ea34346d42f96d2c710518dc009 inherit pub_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1212c84ad53a9751b3cca5a39bcffe27 inherit pub_methods_classdscpp_1_1DataType" id="r_a1212c84ad53a9751b3cca5a39bcffe27"><td class="memTemplParams" colspan="2">template&lt;class DTO &gt; </td></tr>
+<tr class="memitem:a1212c84ad53a9751b3cca5a39bcffe27 inherit pub_methods_classdscpp_1_1DataType"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataType.html#a1212c84ad53a9751b3cca5a39bcffe27">copyFrom</a> (const DTO *data)</td></tr>
+<tr class="memdesc:a1212c84ad53a9751b3cca5a39bcffe27 inherit pub_methods_classdscpp_1_1DataType"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy data from another of your data types.  <br /></td></tr>
 <tr class="separator:a1212c84ad53a9751b3cca5a39bcffe27 inherit pub_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebf5490315d363e3a5f38d4a805749ce inherit pub_methods_classdscpp_1_1DataType" id="r_aebf5490315d363e3a5f38d4a805749ce"><td class="memItemLeft" align="right" valign="top">
-template&lt;&gt; </td></tr>
-<tr class="memitem:aebf5490315d363e3a5f38d4a805749ce inherit pub_methods_classdscpp_1_1DataType"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>copyFrom</b> (const struct dsc::_datatype_ *other)</td></tr>
-<tr class="separator:aebf5490315d363e3a5f38d4a805749ce inherit pub_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bd7bf8cd8b2b5cf0e7a51206c7a3763 inherit pub_methods_classdscpp_1_1DataType" id="r_a3bd7bf8cd8b2b5cf0e7a51206c7a3763"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>fromVoidPtr</b> (void *dcdata)</td></tr>
+<tr class="memitem:af40f137dae2fbfc3fb6f906109052426 inherit pub_methods_classdscpp_1_1DataType" id="r_af40f137dae2fbfc3fb6f906109052426"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
+<tr class="memitem:af40f137dae2fbfc3fb6f906109052426 inherit pub_methods_classdscpp_1_1DataType"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataType.html#af40f137dae2fbfc3fb6f906109052426">copyFrom</a> (const struct <a class="el" href="struct__datatype__.html">_datatype_</a> *other)</td></tr>
+<tr class="separator:af40f137dae2fbfc3fb6f906109052426 inherit pub_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd7bf8cd8b2b5cf0e7a51206c7a3763 inherit pub_methods_classdscpp_1_1DataType" id="r_a3bd7bf8cd8b2b5cf0e7a51206c7a3763"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataType.html#a3bd7bf8cd8b2b5cf0e7a51206c7a3763">fromVoidPtr</a> (void *dcdata)</td></tr>
+<tr class="memdesc:a3bd7bf8cd8b2b5cf0e7a51206c7a3763 inherit pub_methods_classdscpp_1_1DataType"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup this data type from a <code>voidptr</code>  <br /></td></tr>
 <tr class="separator:a3bd7bf8cd8b2b5cf0e7a51206c7a3763 inherit pub_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab55292683da28cd28c39b7f685cc93c6 inherit pub_methods_classdscpp_1_1DataType" id="r_ab55292683da28cd28c39b7f685cc93c6"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>fromDataClass</b> (const dsc::dataclass &amp;dc)</td></tr>
-<tr class="separator:ab55292683da28cd28c39b7f685cc93c6 inherit pub_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941419fa5b134cedd379a855490b1f58 inherit pub_methods_classdscpp_1_1DataType" id="r_a941419fa5b134cedd379a855490b1f58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataType.html#a941419fa5b134cedd379a855490b1f58">fromDataClass</a> (const <a class="el" href="struct__dataclass__.html">dataclass</a> &amp;dc)</td></tr>
+<tr class="memdesc:a941419fa5b134cedd379a855490b1f58 inherit pub_methods_classdscpp_1_1DataType"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup this data type from a <code>struct <a class="el" href="struct__dataclass__.html" title="The generic type of data classes for e.g. use in inheritance of other libraries or parts of the dsAPI...">_dataclass_</a></code>  <br /></td></tr>
+<tr class="separator:a941419fa5b134cedd379a855490b1f58 inherit pub_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a3ad03d89f5585aa6c349625beaeb7dee" id="r_a3ad03d89f5585aa6c349625beaeb7dee"><td class="memItemLeft" align="right" valign="top"><a id="a3ad03d89f5585aa6c349625beaeb7dee" name="a3ad03d89f5585aa6c349625beaeb7dee"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>setupVariables</b> (InheritingClass &amp;ic, <a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; &amp;dc)=0</td></tr>
-<tr class="separator:a3ad03d89f5585aa6c349625beaeb7dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17b6f82f85bdda7128227e9b2a41a465" id="r_a17b6f82f85bdda7128227e9b2a41a465"><td class="memItemLeft" align="right" valign="top"><a id="a17b6f82f85bdda7128227e9b2a41a465" name="a17b6f82f85bdda7128227e9b2a41a465"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>setupVariables</b> (<a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; &amp;dc)</td></tr>
+<tr class="memitem:afdea92e6f028e0ecab8de4a4ba19d9fd" id="r_afdea92e6f028e0ecab8de4a4ba19d9fd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataClass.html#afdea92e6f028e0ecab8de4a4ba19d9fd">setupVariables</a> (InheritingClass &amp;ic, <a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; &amp;dc)</td></tr>
+<tr class="memdesc:afdea92e6f028e0ecab8de4a4ba19d9fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup all variables inside of the class <code>InheritingClass</code>  <br /></td></tr>
+<tr class="separator:afdea92e6f028e0ecab8de4a4ba19d9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b6f82f85bdda7128227e9b2a41a465" id="r_a17b6f82f85bdda7128227e9b2a41a465"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataClass.html#a17b6f82f85bdda7128227e9b2a41a465">setupVariables</a> (<a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; &amp;dc)</td></tr>
+<tr class="memdesc:a17b6f82f85bdda7128227e9b2a41a465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup all variables inside of the class <code>InheritingClass</code>  <br /></td></tr>
 <tr class="separator:a17b6f82f85bdda7128227e9b2a41a465"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1f6dfded44c5f587b7f85fac07c5b34" id="r_aa1f6dfded44c5f587b7f85fac07c5b34"><td class="memItemLeft" align="right" valign="top"><a id="aa1f6dfded44c5f587b7f85fac07c5b34" name="aa1f6dfded44c5f587b7f85fac07c5b34"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>getDT</b> () final</td></tr>
-<tr class="separator:aa1f6dfded44c5f587b7f85fac07c5b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7560d4ae30656578a2d3352b9af75867" id="r_a7560d4ae30656578a2d3352b9af75867"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataClass.html#a7560d4ae30656578a2d3352b9af75867">getDT</a> () const final</td></tr>
+<tr class="memdesc:a7560d4ae30656578a2d3352b9af75867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get your data type as <code>void*</code> from here.  <br /></td></tr>
+<tr class="separator:a7560d4ae30656578a2d3352b9af75867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classdscpp_1_1DataType"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classdscpp_1_1DataType')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classdscpp_1_1DataType.html">dscpp::DataType&lt; DT &gt;</a></td></tr>
-<tr class="memitem:a08d015ddf805905e0064c248ff9c6f0f inherit pro_methods_classdscpp_1_1DataType" id="r_a08d015ddf805905e0064c248ff9c6f0f"><td class="memItemLeft" align="right" valign="top">
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> (void *dcdata)=0</td></tr>
+<tr class="memitem:a08d015ddf805905e0064c248ff9c6f0f inherit pro_methods_classdscpp_1_1DataType" id="r_a08d015ddf805905e0064c248ff9c6f0f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataType.html#a08d015ddf805905e0064c248ff9c6f0f">setup</a> (void *dcdata)=0</td></tr>
+<tr class="memdesc:a08d015ddf805905e0064c248ff9c6f0f inherit pro_methods_classdscpp_1_1DataType"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup this data type.  <br /></td></tr>
 <tr class="separator:a08d015ddf805905e0064c248ff9c6f0f inherit pro_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afff1b0dd60a297a9d59042ef796f12eb inherit pro_methods_classdscpp_1_1DataType" id="r_afff1b0dd60a297a9d59042ef796f12eb"><td class="memItemLeft" align="right" valign="top">
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> (const <a class="el" href="dictionary_8h.html#a38dc8ef0215587613fb96525478b0a85">dictionary</a> *dict)=0</td></tr>
+<tr class="memitem:afff1b0dd60a297a9d59042ef796f12eb inherit pro_methods_classdscpp_1_1DataType" id="r_afff1b0dd60a297a9d59042ef796f12eb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataType.html#afff1b0dd60a297a9d59042ef796f12eb">setup</a> (const <a class="el" href="dictionary_8h.html#a38dc8ef0215587613fb96525478b0a85">dictionary</a> *dict)=0</td></tr>
+<tr class="memdesc:afff1b0dd60a297a9d59042ef796f12eb inherit pro_methods_classdscpp_1_1DataType"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup this data type.  <br /></td></tr>
 <tr class="separator:afff1b0dd60a297a9d59042ef796f12eb inherit pro_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9a4926eadc063010fdc533ca259e86 inherit pro_methods_classdscpp_1_1DataType" id="r_afd9a4926eadc063010fdc533ca259e86"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>DataType</b> ()</td></tr>
+<tr class="memdesc:afd9a4926eadc063010fdc533ca259e86 inherit pro_methods_classdscpp_1_1DataType"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
+<tr class="separator:afd9a4926eadc063010fdc533ca259e86 inherit pro_methods_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_structdscpp_1_1ClassFactory_1_1__dataclass__"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_structdscpp_1_1ClassFactory_1_1__dataclass__')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="structdscpp_1_1ClassFactory_1_1__dataclass__.html">dscpp::ClassFactory::_dataclass_</a></td></tr>
-<tr class="memitem:aa49174d099e436edbcfcd11fdb32a35d inherit pub_attribs_structdscpp_1_1ClassFactory_1_1__dataclass__" id="r_aa49174d099e436edbcfcd11fdb32a35d"><td class="memItemLeft" align="right" valign="top">
+<tr class="inherit_header pub_attribs_structdscpp_1_1ClassFactory_1_1__DataClass__"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_structdscpp_1_1ClassFactory_1_1__DataClass__')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="structdscpp_1_1ClassFactory_1_1__DataClass__.html">dscpp::ClassFactory::_DataClass_</a></td></tr>
+<tr class="memitem:a4d2d71f261580308fdbd9dc96b00bca5 inherit pub_attribs_structdscpp_1_1ClassFactory_1_1__DataClass__" id="r_a4d2d71f261580308fdbd9dc96b00bca5"><td class="memItemLeft" align="right" valign="top">
 std::type_info&#160;</td><td class="memItemRight" valign="bottom"><b>type_data</b></td></tr>
-<tr class="separator:aa49174d099e436edbcfcd11fdb32a35d inherit pub_attribs_structdscpp_1_1ClassFactory_1_1__dataclass__"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a4d2d71f261580308fdbd9dc96b00bca5 inherit pub_attribs_structdscpp_1_1ClassFactory_1_1__DataClass__"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_struct__dataclass__"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_struct__dataclass__')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="struct__dataclass__.html">_dataclass_</a></td></tr>
+<tr class="memitem:a64267f0f2a27701a61bdb7f8f5510ee1 inherit pub_attribs_struct__dataclass__" id="r_a64267f0f2a27701a61bdb7f8f5510ee1"><td class="memItemLeft" align="right" valign="top">
+const size_t&#160;</td><td class="memItemRight" valign="bottom"><b>elements</b></td></tr>
+<tr class="separator:a64267f0f2a27701a61bdb7f8f5510ee1 inherit pub_attribs_struct__dataclass__"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ffd1dba2dd9c4f063274f7de25cc50 inherit pub_attribs_struct__dataclass__" id="r_a38ffd1dba2dd9c4f063274f7de25cc50"><td class="memItemLeft" align="right" valign="top">
+struct <a class="el" href="struct__datatype__.html">_datatype_</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="separator:a38ffd1dba2dd9c4f063274f7de25cc50 inherit pub_attribs_struct__dataclass__"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classdscpp_1_1DataType"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classdscpp_1_1DataType')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classdscpp_1_1DataType.html">dscpp::DataType&lt; DT &gt;</a></td></tr>
-<tr class="memitem:ab0d53c7f829bdfa690de3ccd6a10324c inherit pro_attribs_classdscpp_1_1DataType" id="r_ab0d53c7f829bdfa690de3ccd6a10324c"><td class="memItemLeft" align="right" valign="top">
-struct dsc::_datatype_ *&#160;</td><td class="memItemRight" valign="bottom"><b>dtc</b></td></tr>
-<tr class="separator:ab0d53c7f829bdfa690de3ccd6a10324c inherit pro_attribs_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9558d9643023ec19424935835ac52d95 inherit pro_attribs_classdscpp_1_1DataType" id="r_a9558d9643023ec19424935835ac52d95"><td class="memItemLeft" align="right" valign="top">
+struct <a class="el" href="struct__datatype__.html">_datatype_</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>dtc</b></td></tr>
+<tr class="memdesc:a9558d9643023ec19424935835ac52d95 inherit pro_attribs_classdscpp_1_1DataType"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to a <code>struct <a class="el" href="struct__datatype__.html" title="The general datatype struct of libdsC. It can save whatever struct/class of your choice at it&#39;s membe...">_datatype_</a></code> from <code>libdsC</code> <br /></td></tr>
+<tr class="separator:a9558d9643023ec19424935835ac52d95 inherit pro_attribs_classdscpp_1_1DataType"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class InheritingClass, class <a class="el" href="classdscpp_1_1DataType.html">DataType</a>&gt;<br />
+requires <a class="el" href="namespacedscpp.html#aefaef60e900531e756d8d77d33952df0">dscpp::is_datatype</a>&lt; <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt;<br />
+class dscpp::DataClass&lt; InheritingClass, DataType &gt;</div><p>The feature-enabling data class for data types of <code>libdsC</code>/<code>libdsC++</code>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">InheritingClass</td><td>The class adding all functionality to <code><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">DataType</a></code>. <code><a class="el" href="classdscpp_1_1OwnDataClass.html" title="The virtual base class, that is to be derived from DataClass for functionality for a specific data ty...">OwnDataClass</a></code> is a base class of <code>InheritingClass</code> </td></tr>
+    <tr><td class="paramname"><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">DataType</a></td><td>The self-designed data type, that has <code>ClassFactory::DataType</code> as its base class and is derived from <code><a class="el" href="namespacedscpp.html#a66d8f8d801ac1a4bd0766bb4121a188f" title="The dscpp::DataType for libdsC++">dscpp::Datatype</a>&lt;<a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">DataType</a>&gt;</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a54227db28e937488b05ff54c873c1574" name="a54227db28e937488b05ff54c873c1574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54227db28e937488b05ff54c873c1574">&#9670;&#160;</a></span>DataClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class InheritingClass , class <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdscpp_1_1DataClass.html">dscpp::DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt;::DataClass </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a> &amp;&#160;</td>
+          <td class="paramname"><em>section</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">section</td><td>A reference to a <code><a class="el" href="classdscpp_1_1Dictionary_1_1Section.html" title="This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ...">Dictionary::Section</a></code> object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7560d4ae30656578a2d3352b9af75867" name="a7560d4ae30656578a2d3352b9af75867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7560d4ae30656578a2d3352b9af75867">&#9670;&#160;</a></span>getDT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class InheritingClass , class <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void * <a class="el" href="classdscpp_1_1DataClass.html">dscpp::DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt;::getDT </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get your data type as <code>void*</code> from here. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to <code><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">DataType</a></code> as <code>void*</code> </dd></dl>
+
+</div>
+</div>
+<a id="a17b6f82f85bdda7128227e9b2a41a465" name="a17b6f82f85bdda7128227e9b2a41a465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17b6f82f85bdda7128227e9b2a41a465">&#9670;&#160;</a></span>setupVariables() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class InheritingClass , class <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classdscpp_1_1DataClass.html">dscpp::DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt;::setupVariables </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup all variables inside of the class <code>InheritingClass</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dc</td><td>A reference to a <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a></code> of the same type, thus <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a>&lt;InheritingClass, <a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">DataType</a>&gt;</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True on success </dd></dl>
+
+</div>
+</div>
+<a id="afdea92e6f028e0ecab8de4a4ba19d9fd" name="afdea92e6f028e0ecab8de4a4ba19d9fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdea92e6f028e0ecab8de4a4ba19d9fd">&#9670;&#160;</a></span>setupVariables() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class InheritingClass , class <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classdscpp_1_1DataClass.html">dscpp::DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt;::setupVariables </td>
+          <td>(</td>
+          <td class="paramtype">InheritingClass &amp;&#160;</td>
+          <td class="paramname"><em>ic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup all variables inside of the class <code>InheritingClass</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ic</td><td>A reference to the <code>InheritingClass</code>, that is thus feature-enabling this data type </td></tr>
+    <tr><td class="paramname">dc</td><td>A reference to a <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a></code> of the same type, thus <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a>&lt;InheritingClass, <a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">DataType</a>&gt;</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True on success </dd></dl>
+
+</div>
+</div>
+<a id="a70bd55b0a522df64f8c49ce3060a5357" name="a70bd55b0a522df64f8c49ce3060a5357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70bd55b0a522df64f8c49ce3060a5357">&#9670;&#160;</a></span>toDataStructure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class InheritingClass , class <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual InheritingClass &amp; <a class="el" href="classdscpp_1_1DataClass.html">dscpp::DataClass</a>&lt; InheritingClass, <a class="el" href="classdscpp_1_1DataType.html">DataType</a> &gt;::toDataStructure </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a> &amp;&#160;</td>
+          <td class="paramname"><em>section</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a feature/functional <code>InheritingClass</code> from a <code><a class="el" href="classdscpp_1_1Dictionary_1_1Section.html" title="This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ...">Dictionary::Section</a></code> reference. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">section</td><td>A reference to a <code><a class="el" href="classdscpp_1_1Dictionary_1_1Section.html" title="This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ...">Dictionary::Section</a></code> object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a newly created <code>InheritingClass</code> object with all variables set up </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/mnt/g/bankdigest/ciphers/lib/libcmdlinecpp/lib/liblogcpp/lib/libinicpp/lib/libdscpp/include/<a class="el" href="classfactory_8hpp_source.html">classfactory.hpp</a></li>
 <li>/mnt/g/bankdigest/ciphers/lib/libcmdlinecpp/lib/liblogcpp/lib/libinicpp/lib/libdscpp/include/<a class="el" href="dataclass_8hpp_source.html">dataclass.hpp</a></li>
@@ -187,8 +405,8 @@ struct dsc::_datatype_ *&#160;</td><td class="memItemRight" valign="bottom"><b>d
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>dscpp</b></li><li class="navelem"><a class="el" href="classdscpp_1_1DataClass.html">DataClass</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:35:00 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="namespacedscpp.html">dscpp</a></li><li class="navelem"><a class="el" href="classdscpp_1_1DataClass.html">DataClass</a></li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

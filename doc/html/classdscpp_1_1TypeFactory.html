@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -103,14 +103,66 @@ $(document).ready(function(){initNavTree('classdscpp_1_1TypeFactory.html',''); i
   <div class="headertitle"><div class="title">dscpp::TypeFactory Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class implements functions that are useful for use with <code><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">dscpp::DataType</a></code>  
+ <a href="classdscpp_1_1TypeFactory.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="typefactory_8hpp_source.html">typefactory.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a336db1c26d69aa50d1cb2aa1f739e65f" id="r_a336db1c26d69aa50d1cb2aa1f739e65f"><td class="memTemplParams" colspan="2"><a id="a336db1c26d69aa50d1cb2aa1f739e65f" name="a336db1c26d69aa50d1cb2aa1f739e65f"></a>
-template&lt;typename InheritingFunctionalCls , typename DT &gt; </td></tr>
-<tr class="memitem:a336db1c26d69aa50d1cb2aa1f739e65f"><td class="memTemplItemLeft" align="right" valign="top">static DT &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>getDT</b> (const <a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingFunctionalCls, DT &gt; datacls)</td></tr>
-<tr class="separator:a336db1c26d69aa50d1cb2aa1f739e65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6224f52b8d558160bcafe0e9470a826e" id="r_a6224f52b8d558160bcafe0e9470a826e"><td class="memTemplParams" colspan="2">template&lt;typename InheritingFunctionalCls , typename DT &gt; </td></tr>
+<tr class="memitem:a6224f52b8d558160bcafe0e9470a826e"><td class="memTemplItemLeft" align="right" valign="top">static DT &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdscpp_1_1TypeFactory.html#a6224f52b8d558160bcafe0e9470a826e">getDT</a> (const typename <a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingFunctionalCls, DT &gt; datacls)</td></tr>
+<tr class="memdesc:a6224f52b8d558160bcafe0e9470a826e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data type of a <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a>&lt;InheritingFunctionalCls, DT&gt;</code>  <br /></td></tr>
+<tr class="separator:a6224f52b8d558160bcafe0e9470a826e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class implements functions that are useful for use with <code><a class="el" href="classdscpp_1_1DataType.html" title="This class represents the default data type of libdsC++">dscpp::DataType</a></code> </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6224f52b8d558160bcafe0e9470a826e" name="a6224f52b8d558160bcafe0e9470a826e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6224f52b8d558160bcafe0e9470a826e">&#9670;&#160;</a></span>getDT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InheritingFunctionalCls , typename DT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static DT &amp; dscpp::TypeFactory::getDT </td>
+          <td>(</td>
+          <td class="paramtype">const typename <a class="el" href="classdscpp_1_1DataClass.html">DataClass</a>&lt; InheritingFunctionalCls, DT &gt;&#160;</td>
+          <td class="paramname"><em>datacls</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the data type of a <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">DataClass</a>&lt;InheritingFunctionalCls, DT&gt;</code> </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">InheritingFunctionalCls</td><td>The functional class that adds features on top of <code>DT</code> </td></tr>
+    <tr><td class="paramname">DT</td><td>The self-designed data type of your API </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">datacls</td><td>The data class itself </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the contained <code>DT attribute</code> </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/mnt/g/bankdigest/ciphers/lib/libcmdlinecpp/lib/liblogcpp/lib/libinicpp/lib/libdscpp/include/<a class="el" href="typefactory_8hpp_source.html">typefactory.hpp</a></li>
 </ul>
@@ -119,8 +171,8 @@ template&lt;typename InheritingFunctionalCls , typename DT &gt; </td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>dscpp</b></li><li class="navelem"><a class="el" href="classdscpp_1_1TypeFactory.html">TypeFactory</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:35:00 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="namespacedscpp.html">dscpp</a></li><li class="navelem"><a class="el" href="classdscpp_1_1TypeFactory.html">TypeFactory</a></li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

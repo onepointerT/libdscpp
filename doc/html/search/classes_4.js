@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_0',['Key',['../classdscpp_1_1Dictionary_1_1Key.html',1,'dscpp::Dictionary']]]
+  ['owndataclass_0',['OwnDataClass',['../classdscpp_1_1OwnDataClass.html',1,'dscpp']]]
 ];

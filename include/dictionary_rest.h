@@ -21,8 +21,6 @@
 
 
 #ifdef __cplusplus
-namespace dsc {
-
 extern "C" {
 #endif
 
@@ -48,8 +46,6 @@ extern "C" {
 
 #ifdef __cplusplus
 }
-
-} // namespace dsc
 #endif
 
 #endif

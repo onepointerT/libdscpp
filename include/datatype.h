@@ -22,8 +22,6 @@
  ---------------------------------------------------------------------------*/
 
 #ifdef __cplusplus
-namespace dsc {
-
 extern "C" {
 #endif
 
@@ -96,11 +94,11 @@ typedef struct _datatype_ {
     /**
      * @brief Copy one datatype `other` to another `self`.
      */
-    bool (*copyFrom)( struct _datatype_ self, const struct _datatype_* other );
+    bool (*copyFrom)( struct _datatype_* self, const struct _datatype_* other );
     /**
      * @brief Make an update/creation of a datatype `self` from a `dataclass`.
      */
-    bool (*fromDataclass)( struct _datatype_ self, const struct _dataclass_* some_other );
+    bool (*fromDataclass)( struct _datatype_* self, const struct _dataclass_* some_other );
 
     struct _datatype_* (*fromDict)( const struct _dictionary_* dict );
     struct _dictionary_* (*toDict)( const struct _datatype_* dt );
@@ -187,8 +185,6 @@ extern bool datatype_fromDataclass( struct _datatype_* self, const struct _datac
 
 #ifdef __cplusplus
 }
-
-} // namespace dsc
 #endif
 
 #endif

@@ -28,6 +28,6 @@ var void__struct_8h =
     [ "fromVoidPointer", "void__struct_8h.html#a3fd980edf711f58d2a4f793ed175f253", null ],
     [ "toDict", "void__struct_8h.html#ade6ad1486cb59a7509ba5907ccb06290", null ],
     [ "toVoidPointer", "void__struct_8h.html#add4ab5341cc3a33a766c7f5c956988df", null ],
-    [ "void_struct_duplicate", "void__struct_8h.html#a3b2c798c9235f1b27bb1a2bc2e31f4c8", null ],
-    [ "void_struct_init", "void__struct_8h.html#ab39a4d1687d3a82f6df86a94fe15b27d", null ]
+    [ "void_struct_duplicate", "void__struct_8h.html#a5a4c2f23a9526e4983aba5fef6d6aa8a", null ],
+    [ "void_struct_init", "void__struct_8h.html#a673c067e20f496e5207b450da5b53041", null ]
 ];

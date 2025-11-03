@@ -1,21 +1,6 @@
 var searchData=
 [
-  ['castcompat_2eh_0',['castcompat.h',['../castcompat_8h.html',1,'']]],
-  ['castcompat_5fh_1',['CASTCOMPAT_H',['../void__struct_8h.html#aecafa0783538ae5a61995dfeb37d2ed0ad9bd02683de7b997c3ef4de49213d113',1,'void_struct.h']]],
-  ['castdatatype_2',['castdatatype',['../void__struct_8h.html#a2b35f077c57e6e305c742745c3b052a6',1,'castDatatype():&#160;void_struct.h'],['../struct__void__struct__.html#a3d946861acedaf35efda2df564aac9a9',1,'_void_struct_::castDatatype']]],
-  ['castfrom_3',['castfrom',['../castcompat_8h.html#ae10d742f209c6f0dcc36319fbb710cb6',1,'castFrom():&#160;castcompat.h'],['../struct__void__struct__.html#aa719e585a7331eca2a1012525d1aa3e8',1,'_void_struct_::castFrom']]],
-  ['castfromvoidstruct_4',['castFromVoidStruct',['../void__struct_8h.html#afd4701fef7026977d3361c1c179f2625',1,'void_struct.h']]],
-  ['castfromvs_5',['castFromVS',['../datacast_8h.html#adb31cefdc9dd07f3d7640c3d56cbf13c',1,'datacast.h']]],
-  ['castto_6',['castTo',['../castcompat_8h.html#a4d2fe72553bb4841371b15febcccfb6e',1,'castcompat.h']]],
-  ['casttovoidstruct_7',['castToVoidStruct',['../void__struct_8h.html#a09c327bdf00eb8480aa210d556d3ef93',1,'void_struct.h']]],
-  ['casttovs_8',['castToVS',['../datacast_8h.html#a2e50bb40d102409cee0782c49f55ea21',1,'datacast.h']]],
-  ['casttypefromvs_9',['castTypeFromVS',['../castcompat_8h.html#a010d587a65d41e26f981bec85ef60d53',1,'castcompat.h']]],
-  ['castvoidstruct_10',['castVoidStruct',['../void__struct_8h.html#a1566b29fc1df9616d92114a37af88a54',1,'void_struct.h']]],
-  ['castvoidstructptr_11',['castVoidStructPtr',['../void__struct_8h.html#a3684fddb772b819174020c90e7bb1d63',1,'void_struct.h']]],
-  ['castvsfromtype_12',['castVSFromType',['../castcompat_8h.html#a40c4023308869e51ea053de881e7c706',1,'castcompat.h']]],
-  ['cdictionary_2ehpp_13',['cdictionary.hpp',['../cdictionary_8hpp.html',1,'']]],
-  ['classfactory_14',['ClassFactory',['../classdscpp_1_1ClassFactory.html',1,'dscpp']]],
-  ['classfactory_2ehpp_15',['classfactory.hpp',['../classfactory_8hpp.html',1,'']]],
-  ['copyfrom_16',['copyFrom',['../struct__datatype__.html#ad6230dca958437afa52e17801528fe6a',1,'_datatype_']]],
-  ['cutils_2eh_17',['cutils.h',['../cutils_8h.html',1,'']]]
+  ['acceptdata_0',['acceptData',['../classdscpp_1_1DataTypeBase.html#a0858e040e5fbe6709d168a64b04db325',1,'dscpp::DataTypeBase']]],
+  ['append_5frange_1',['append_range',['../classdscpp_1_1Map.html#a72bb970e217c63efe73f7e12efa365b1',1,'dscpp::Map']]],
+  ['apply_2',['apply',['../classdscpp_1_1Dictionary.html#ad8175a8229bf39eab757403f4d508806',1,'dscpp::Dictionary::apply()'],['../classdscpp_1_1Dictionary_1_1DictionaryIterator.html#a66a3e499eac12765afcd4a4ffa5b2a3b',1,'dscpp::Dictionary::DictionaryIterator::apply()'],['../classdscpp_1_1Dictionary.html#a5df46e09a2da280fb78a6a61dcbd8a77',1,'dscpp::Dictionary::apply()'],['../classdscpp_1_1Map.html#a6ccebbab7db4894dc83f7adb8cec58a5',1,'dscpp::Map::apply()']]]
 ];

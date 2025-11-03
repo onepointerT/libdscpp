@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fromdict_0',['fromDict',['../void__struct_8h.html#a1b9ed1fc95247833dde24d89cb6ee3d1',1,'void_struct.h']]],
-  ['fromvoidpointer_1',['fromVoidPointer',['../void__struct_8h.html#a3fd980edf711f58d2a4f793ed175f253',1,'void_struct.h']]]
+  ['begin_0',['begin',['../classdscpp_1_1Dictionary.html#a1bc1a29f8aac07fdd8113e382f6a7acb',1,'dscpp::Dictionary::begin()'],['../classdscpp_1_1Map.html#a1acb086c10e0e180401947cae3164e9c',1,'dscpp::Map::begin()'],['../classdscpp_1_1MMap.html#af932f2b303efda87626f873044a72678',1,'dscpp::MMap::begin()']]]
 ];

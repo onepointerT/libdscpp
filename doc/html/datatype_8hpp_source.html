@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -129,91 +129,135 @@ $(document).ready(function(){initNavTree('datatype_8hpp_source.html',''); initRe
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace </span>dscpp {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedscpp.html">dscpp</a> {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> DT, const <span class="keywordtype">char</span>* dt_name &gt;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">extern</span> <span class="keyword">inline</span> DT&amp; toSpecificDatatype( <span class="keyword">const</span> <span class="keyword">struct</span> dsc::_datatype_* dt );</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> DT, <span class="keyword">class</span> DTO &gt;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">extern</span> <span class="keyword">inline</span> DT&amp; fromSpecificDatatype( <span class="keyword">const</span> DTO&amp; dt_other );</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> InheritingType &gt;</div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataTypeBase.html">   40</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1DataTypeBase.html">DataTypeBase</a> {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="classdscpp_1_1DataTypeBase.html">DataTypeBase</a>( <span class="keyword">const</span> <span class="keywordtype">void</span>* dt_other );</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> acceptData( <span class="keyword">const</span> InheritingType&amp; iht ) = 0;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> copyDataFrom( <span class="keyword">const</span> <span class="keyword">struct</span> dsc::_datatype_* dt ) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> this-&gt;acceptData( dscpp::toSpecificDatatype&lt; InheritingType, dt-&gt;dt_name &gt;( dt ) );</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">template</span>&lt; <span class="keyword">class</span> DTO &gt;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">bool</span> copyDataTransform( <span class="keyword">const</span> DTO&amp; dt_other ) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span> this-&gt;acceptData( dscpp::fromSpecificDatatype&lt;InheritingType, DTO&gt;( dt_other ) );</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> DT, const <span class="keywordtype">char</span>* dt_name &gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespacedscpp.html#a4199082c66b0d034d2bd9ac33ec0f509">   39</a></span><span class="keyword">extern</span> <span class="keyword">inline</span> DT&amp; <a class="code hl_function" href="namespacedscpp.html#a4199082c66b0d034d2bd9ac33ec0f509">toSpecificDatatype</a>( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__datatype__.html">_datatype_</a>* dt );</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> DT, <span class="keyword">class</span> DTO &gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespacedscpp.html#a064b1dbb5d80847a8cfff908efbb2392">   49</a></span><span class="keyword">extern</span> <span class="keyword">inline</span> DT&amp; <a class="code hl_function" href="namespacedscpp.html#a064b1dbb5d80847a8cfff908efbb2392">fromSpecificDatatype</a>( <span class="keyword">const</span> DTO&amp; dt_other );</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> InheritingType &gt;</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataTypeBase.html">   57</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1DataTypeBase.html">DataTypeBase</a> {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span>* dtbase_data;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataTypeBase.html#a49f7af0acb10da80498629b7bf66d33f">   67</a></span>    <a class="code hl_function" href="classdscpp_1_1DataTypeBase.html#a49f7af0acb10da80498629b7bf66d33f">DataTypeBase</a>( <span class="keyword">const</span> <span class="keywordtype">void</span>* dt_other )</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        :   dtbase_data( dt_other )</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {}</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">namespace </span>detail {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> DT &gt;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">using </span>is_subclass_of_datatype_base = std::is_base_of&lt; DataTypeBase&lt;DT&gt;, DT &gt;;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>} <span class="comment">// namespace detail</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> DT &gt;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">requires</span> detail::is_subclass_of_datatype_base&lt; DT &gt;::value</div>
-<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html">   65</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1DataType.html">DataType</a></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    :   <span class="keyword">public</span> DT</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">struct </span>dsc::_datatype_* dtc;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> setup( <span class="keywordtype">void</span>* dcdata ) = 0;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> setup( <span class="keyword">const</span> <a class="code hl_struct" href="struct__dictionary__.html">dictionary</a>* dict ) = 0;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_class" href="classdscpp_1_1DataType.html">DataType</a>();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    DT&amp; operator()() {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_class" href="classdscpp_1_1DataType.html">DataType&lt;DT&gt;</a>&amp; operator&lt;&lt;( <span class="keyword">const</span> DT&amp; other );</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_class" href="classdscpp_1_1DataType.html">DataType&lt;DT&gt;</a>&amp; operator&lt;&lt;( <span class="keyword">const</span> <span class="keyword">struct</span> dsc::_datatype_* other ) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="comment">/*try {*/</span> this-&gt;copyDataFrom( other ); <span class="comment">/*}*/</span> <span class="comment">// catch whatever to do when no cpyDT.</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">template</span>&lt; <span class="keyword">class</span> DTO &gt;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">bool</span> copyFrom( <span class="keyword">const</span> DTO* data ) {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">if</span> ( data == 0 ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> this-&gt;copyDataTransform( *data );</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">bool</span> copyFrom( <span class="keyword">const</span> <span class="keyword">struct</span> dsc::_datatype_* other ) {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">return</span> this-&gt;copyDataFrom( other );</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">bool</span> fromVoidPtr( <span class="keywordtype">void</span>* dcdata ) { this-&gt;setup(dcdata); }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">bool</span> fromDataClass( <span class="keyword">const</span> dsc::dataclass&amp; dc ) { this-&gt;fromVoidPtr(dc.data); }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataTypeBase.html#a0858e040e5fbe6709d168a64b04db325">   78</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataTypeBase.html#a0858e040e5fbe6709d168a64b04db325">acceptData</a>( <span class="keyword">const</span> InheritingType&amp; iht ) = 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataTypeBase.html#a371d2ff9185436196c62b647d4b59a88">   85</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataTypeBase.html#a371d2ff9185436196c62b647d4b59a88">copyDataFrom</a>( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__datatype__.html">_datatype_</a>* dt ) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classdscpp_1_1DataTypeBase.html#a0858e040e5fbe6709d168a64b04db325">acceptData</a>( dscpp::toSpecificDatatype&lt; InheritingType, dt-&gt;dt_name &gt;( dt ) );</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
 </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">template</span>&lt; <span class="keyword">class</span> DTO &gt;</div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataTypeBase.html#a164a75727be58eb05d32d6f7fee71aee">   96</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataTypeBase.html#a164a75727be58eb05d32d6f7fee71aee">copyDataTransform</a>( <span class="keyword">const</span> DTO&amp; dt_other ) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="classdscpp_1_1DataTypeBase.html#a0858e040e5fbe6709d168a64b04db325">acceptData</a>( dscpp::fromSpecificDatatype&lt;InheritingType, DTO&gt;( dt_other ) );</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>};</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>} <span class="comment">// namespace dscpp</span></div>
-<div class="ttc" id="aclassdscpp_1_1DataTypeBase_html"><div class="ttname"><a href="classdscpp_1_1DataTypeBase.html">dscpp::DataTypeBase</a></div><div class="ttdef"><b>Definition</b> datatype.hpp:40</div></div>
-<div class="ttc" id="aclassdscpp_1_1DataType_html"><div class="ttname"><a href="classdscpp_1_1DataType.html">dscpp::DataType</a></div><div class="ttdef"><b>Definition</b> datatype.hpp:67</div></div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="namespacedscpp_1_1detail.html">  103</a></span><span class="keyword">namespace </span>detail {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> DT &gt;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="namespacedscpp_1_1detail.html#aa35e54371bea3b33ca4a1301659e64e1">  109</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacedscpp_1_1detail.html#aa35e54371bea3b33ca4a1301659e64e1">is_subclass_of_datatype_base</a> = std::is_base_of&lt; DataTypeBase&lt;DT&gt;, DT &gt;;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>} <span class="comment">// namespace detail</span></div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> DT &gt;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">requires</span> <a class="code hl_typedef" href="namespacedscpp_1_1detail.html#aa35e54371bea3b33ca4a1301659e64e1">detail::is_subclass_of_datatype_base&lt; DT &gt;::value</a></div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="};">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html">  120</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1DataType.html">DataType</a></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    :   <span class="keyword">public</span> DT</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html#a9558d9643023ec19424935835ac52d95">  125</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct__datatype__.html">_datatype_</a>* <a class="code hl_variable" href="classdscpp_1_1DataType.html#a9558d9643023ec19424935835ac52d95">dtc</a>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html#a08d015ddf805905e0064c248ff9c6f0f">  133</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataType.html#a08d015ddf805905e0064c248ff9c6f0f">setup</a>( <span class="keywordtype">void</span>* dcdata ) = 0;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html#afff1b0dd60a297a9d59042ef796f12eb">  140</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataType.html#afff1b0dd60a297a9d59042ef796f12eb">setup</a>( <span class="keyword">const</span> <a class="code hl_struct" href="struct__dictionary__.html">dictionary</a>* dict ) = 0;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html#afd9a4926eadc063010fdc533ca259e86">  143</a></span>    <a class="code hl_function" href="classdscpp_1_1DataType.html#afd9a4926eadc063010fdc533ca259e86">DataType</a>()</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        :   DT()</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    {}</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html#a3fda1580ac3d189ea870eb6ee5395d9d">  152</a></span>    DT&amp; <a class="code hl_function" href="classdscpp_1_1DataType.html#a3fda1580ac3d189ea870eb6ee5395d9d">operator()</a>() {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
+</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <a class="code hl_class" href="classdscpp_1_1DataType.html">DataType&lt;DT&gt;</a>&amp; <a class="code hl_function" href="classdscpp_1_1DataType.html#a6682363fe65b252d45d2546bc887cefb">operator&lt;&lt;</a>( <span class="keyword">const</span> DT&amp; other ) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="comment">/*try {*/</span> this-&gt;copyDataTransform&lt;DT&gt;( other ); <span class="comment">/*}*/</span> <span class="comment">// catch whatever to do when no cpyDT.</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    DataType&lt;DT&gt;&amp; <a class="code hl_function" href="classdscpp_1_1DataType.html#a6682363fe65b252d45d2546bc887cefb">operator&lt;&lt;</a>( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__datatype__.html">_datatype_</a>* other ) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="comment">/*try {*/</span> this-&gt;copyDataFrom( other ); <span class="comment">/*}*/</span> <span class="comment">// catch whatever to do when no cpyDT.</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keyword">template</span>&lt; <span class="keyword">class</span> DTO &gt;</div>
+<div class="foldopen" id="foldopen00183" data-start="{" data-end="}">
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html#a1212c84ad53a9751b3cca5a39bcffe27">  183</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataType.html#a1212c84ad53a9751b3cca5a39bcffe27">copyFrom</a>( <span class="keyword">const</span> DTO* data ) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">if</span> ( data == 0 ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">return</span> this-&gt;copyDataTransform( *data );</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
+</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keyword">template</span>&lt;&gt;</div>
+<div class="foldopen" id="foldopen00189" data-start="{" data-end="}">
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html#af40f137dae2fbfc3fb6f906109052426">  189</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataType.html#af40f137dae2fbfc3fb6f906109052426">copyFrom</a>( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__datatype__.html">_datatype_</a>* other ) {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keywordflow">return</span> this-&gt;copyDataFrom( other );</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    }</div>
+</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html#a3bd7bf8cd8b2b5cf0e7a51206c7a3763">  198</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataType.html#a3bd7bf8cd8b2b5cf0e7a51206c7a3763">fromVoidPtr</a>( <span class="keywordtype">void</span>* dcdata ) { this-&gt;<a class="code hl_function" href="classdscpp_1_1DataType.html#a08d015ddf805905e0064c248ff9c6f0f">setup</a>(dcdata); }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataType.html#a941419fa5b134cedd379a855490b1f58">  204</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataType.html#a941419fa5b134cedd379a855490b1f58">fromDataClass</a>( <span class="keyword">const</span> <a class="code hl_struct" href="struct__dataclass__.html">dataclass</a>&amp; dc ) { this-&gt;<a class="code hl_function" href="classdscpp_1_1DataType.html#a3bd7bf8cd8b2b5cf0e7a51206c7a3763">fromVoidPtr</a>(dc.data); }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>};</div>
+</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>} <span class="comment">// namespace dscpp</span></div>
+<div class="ttc" id="aclassdscpp_1_1DataTypeBase_html"><div class="ttname"><a href="classdscpp_1_1DataTypeBase.html">dscpp::DataTypeBase</a></div><div class="ttdoc">The base class of your data types for data design.</div><div class="ttdef"><b>Definition</b> datatype.hpp:57</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataTypeBase_html_a0858e040e5fbe6709d168a64b04db325"><div class="ttname"><a href="classdscpp_1_1DataTypeBase.html#a0858e040e5fbe6709d168a64b04db325">dscpp::DataTypeBase::acceptData</a></div><div class="ttdeci">virtual bool acceptData(const InheritingType &amp;iht)=0</div><div class="ttdoc">Accept new data for this data type.</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataTypeBase_html_a164a75727be58eb05d32d6f7fee71aee"><div class="ttname"><a href="classdscpp_1_1DataTypeBase.html#a164a75727be58eb05d32d6f7fee71aee">dscpp::DataTypeBase::copyDataTransform</a></div><div class="ttdeci">bool copyDataTransform(const DTO &amp;dt_other)</div><div class="ttdoc">Copy data from a another datatype reference from one of your APIs.</div><div class="ttdef"><b>Definition</b> datatype.hpp:96</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataTypeBase_html_a371d2ff9185436196c62b647d4b59a88"><div class="ttname"><a href="classdscpp_1_1DataTypeBase.html#a371d2ff9185436196c62b647d4b59a88">dscpp::DataTypeBase::copyDataFrom</a></div><div class="ttdeci">virtual bool copyDataFrom(const struct _datatype_ *dt)</div><div class="ttdoc">Copy data from a general datatype pointer from libdsC</div><div class="ttdef"><b>Definition</b> datatype.hpp:85</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataTypeBase_html_a49f7af0acb10da80498629b7bf66d33f"><div class="ttname"><a href="classdscpp_1_1DataTypeBase.html#a49f7af0acb10da80498629b7bf66d33f">dscpp::DataTypeBase::DataTypeBase</a></div><div class="ttdeci">DataTypeBase(const void *dt_other)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> datatype.hpp:67</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html"><div class="ttname"><a href="classdscpp_1_1DataType.html">dscpp::DataType</a></div><div class="ttdoc">This class represents the default data type of libdsC++</div><div class="ttdef"><b>Definition</b> datatype.hpp:122</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html_a08d015ddf805905e0064c248ff9c6f0f"><div class="ttname"><a href="classdscpp_1_1DataType.html#a08d015ddf805905e0064c248ff9c6f0f">dscpp::DataType::setup</a></div><div class="ttdeci">virtual bool setup(void *dcdata)=0</div><div class="ttdoc">Setup this data type.</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html_a1212c84ad53a9751b3cca5a39bcffe27"><div class="ttname"><a href="classdscpp_1_1DataType.html#a1212c84ad53a9751b3cca5a39bcffe27">dscpp::DataType::copyFrom</a></div><div class="ttdeci">bool copyFrom(const DTO *data)</div><div class="ttdoc">Copy data from another of your data types.</div><div class="ttdef"><b>Definition</b> datatype.hpp:183</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html_a3bd7bf8cd8b2b5cf0e7a51206c7a3763"><div class="ttname"><a href="classdscpp_1_1DataType.html#a3bd7bf8cd8b2b5cf0e7a51206c7a3763">dscpp::DataType::fromVoidPtr</a></div><div class="ttdeci">bool fromVoidPtr(void *dcdata)</div><div class="ttdoc">Setup this data type from a voidptr</div><div class="ttdef"><b>Definition</b> datatype.hpp:198</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html_a3fda1580ac3d189ea870eb6ee5395d9d"><div class="ttname"><a href="classdscpp_1_1DataType.html#a3fda1580ac3d189ea870eb6ee5395d9d">dscpp::DataType::operator()</a></div><div class="ttdeci">DT &amp; operator()()</div><div class="ttdoc">Get a reference to your data type.</div><div class="ttdef"><b>Definition</b> datatype.hpp:152</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html_a6682363fe65b252d45d2546bc887cefb"><div class="ttname"><a href="classdscpp_1_1DataType.html#a6682363fe65b252d45d2546bc887cefb">dscpp::DataType::operator&lt;&lt;</a></div><div class="ttdeci">DataType&lt; DT &gt; &amp; operator&lt;&lt;(const DT &amp;other)</div><div class="ttdoc">Update the data from another of the classes with the same data type DT of your API.</div><div class="ttdef"><b>Definition</b> datatype.hpp:162</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html_a941419fa5b134cedd379a855490b1f58"><div class="ttname"><a href="classdscpp_1_1DataType.html#a941419fa5b134cedd379a855490b1f58">dscpp::DataType::fromDataClass</a></div><div class="ttdeci">bool fromDataClass(const dataclass &amp;dc)</div><div class="ttdoc">Setup this data type from a struct _dataclass_</div><div class="ttdef"><b>Definition</b> datatype.hpp:204</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html_a9558d9643023ec19424935835ac52d95"><div class="ttname"><a href="classdscpp_1_1DataType.html#a9558d9643023ec19424935835ac52d95">dscpp::DataType::dtc</a></div><div class="ttdeci">struct _datatype_ * dtc</div><div class="ttdoc">A pointer to a struct _datatype_ from libdsC</div><div class="ttdef"><b>Definition</b> datatype.hpp:125</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html_af40f137dae2fbfc3fb6f906109052426"><div class="ttname"><a href="classdscpp_1_1DataType.html#af40f137dae2fbfc3fb6f906109052426">dscpp::DataType::copyFrom</a></div><div class="ttdeci">bool copyFrom(const struct _datatype_ *other)</div><div class="ttdef"><b>Definition</b> datatype.hpp:189</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html_afd9a4926eadc063010fdc533ca259e86"><div class="ttname"><a href="classdscpp_1_1DataType.html#afd9a4926eadc063010fdc533ca259e86">dscpp::DataType::DataType</a></div><div class="ttdeci">DataType()</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> datatype.hpp:143</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html_afff1b0dd60a297a9d59042ef796f12eb"><div class="ttname"><a href="classdscpp_1_1DataType.html#afff1b0dd60a297a9d59042ef796f12eb">dscpp::DataType::setup</a></div><div class="ttdeci">virtual bool setup(const dictionary *dict)=0</div><div class="ttdoc">Setup this data type.</div></div>
 <div class="ttc" id="adatatype_8h_html"><div class="ttname"><a href="datatype_8h.html">datatype.h</a></div><div class="ttdoc">Implements the general data type of libdsC</div></div>
 <div class="ttc" id="adictionary_8hpp_html"><div class="ttname"><a href="dictionary_8hpp.html">dictionary.hpp</a></div><div class="ttdoc">A file that defines dictionaries for C++.</div></div>
 <div class="ttc" id="amap_8hpp_html"><div class="ttname"><a href="map_8hpp.html">map.hpp</a></div><div class="ttdoc">A file that defines practical structures and short algorithms for std::map and dictionaries.</div></div>
+<div class="ttc" id="anamespacedscpp_1_1detail_html_aa35e54371bea3b33ca4a1301659e64e1"><div class="ttname"><a href="namespacedscpp_1_1detail.html#aa35e54371bea3b33ca4a1301659e64e1">dscpp::detail::is_subclass_of_datatype_base</a></div><div class="ttdeci">std::is_base_of&lt; DataTypeBase&lt; DT &gt;, DT &gt; is_subclass_of_datatype_base</div><div class="ttdoc">Test, if a class DT is inheriting the class DataTypeBase&lt;DT&gt;</div><div class="ttdef"><b>Definition</b> datatype.hpp:109</div></div>
+<div class="ttc" id="anamespacedscpp_html"><div class="ttname"><a href="namespacedscpp.html">dscpp</a></div><div class="ttdoc">LibdsC++: An intuitive and highly usable API backend for data science and data design with C/C++</div><div class="ttdef"><b>Definition</b> cdictionary.hpp:21</div></div>
+<div class="ttc" id="anamespacedscpp_html_a064b1dbb5d80847a8cfff908efbb2392"><div class="ttname"><a href="namespacedscpp.html#a064b1dbb5d80847a8cfff908efbb2392">dscpp::fromSpecificDatatype</a></div><div class="ttdeci">DT &amp; fromSpecificDatatype(const DTO &amp;dt_other)</div><div class="ttdoc">Convert a datatype DTO to a datatype DT</div></div>
+<div class="ttc" id="anamespacedscpp_html_a4199082c66b0d034d2bd9ac33ec0f509"><div class="ttname"><a href="namespacedscpp.html#a4199082c66b0d034d2bd9ac33ec0f509">dscpp::toSpecificDatatype</a></div><div class="ttdeci">DT &amp; toSpecificDatatype(const struct _datatype_ *dt)</div><div class="ttdoc">Convert a libdsC general datatype pointer dt to a datatype DT</div></div>
+<div class="ttc" id="astruct__dataclass___html"><div class="ttname"><a href="struct__dataclass__.html">_dataclass_</a></div><div class="ttdoc">The generic type of data classes for e.g. use in inheritance of other libraries or parts of the dsAPI...</div><div class="ttdef"><b>Definition</b> dataclass.h:39</div></div>
+<div class="ttc" id="astruct__datatype___html"><div class="ttname"><a href="struct__datatype__.html">_datatype_</a></div><div class="ttdoc">The general datatype struct of libdsC. It can save whatever struct/class of your choice at it's membe...</div><div class="ttdef"><b>Definition</b> datatype.h:48</div></div>
 <div class="ttc" id="astruct__dictionary___html"><div class="ttname"><a href="struct__dictionary__.html">_dictionary_</a></div><div class="ttdoc">Dictionary object.</div><div class="ttdef"><b>Definition</b> dictionary.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -221,7 +265,7 @@ $(document).ready(function(){initNavTree('datatype_8hpp_source.html',''); initRe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>datatype.hpp</b></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:34:59 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

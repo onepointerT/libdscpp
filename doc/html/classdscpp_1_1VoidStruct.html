@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -104,20 +104,96 @@ $(document).ready(function(){initNavTree('classdscpp_1_1VoidStruct.html',''); in
   <div class="headertitle"><div class="title">dscpp::VoidStruct Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Like in <code>libdsC</code>, this represents a more generic data class for less predictable use cases.  
+ <a href="classdscpp_1_1VoidStruct.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="void__ptr_8hpp_source.html">void_ptr.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4e84ebbe321c92b72ed79689d2485bcf" id="r_a4e84ebbe321c92b72ed79689d2485bcf"><td class="memTemplParams" colspan="2"><a id="a4e84ebbe321c92b72ed79689d2485bcf" name="a4e84ebbe321c92b72ed79689d2485bcf"></a>
-template&lt;typename VS &gt; </td></tr>
-<tr class="memitem:a4e84ebbe321c92b72ed79689d2485bcf"><td class="memTemplItemLeft" align="right" valign="top">VS &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>vars</b> ()</td></tr>
+<tr class="memitem:a4e84ebbe321c92b72ed79689d2485bcf" id="r_a4e84ebbe321c92b72ed79689d2485bcf"><td class="memTemplParams" colspan="2">template&lt;typename VS &gt; </td></tr>
+<tr class="memitem:a4e84ebbe321c92b72ed79689d2485bcf"><td class="memTemplItemLeft" align="right" valign="top">VS &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdscpp_1_1VoidStruct.html#a4e84ebbe321c92b72ed79689d2485bcf">vars</a> ()</td></tr>
+<tr class="memdesc:a4e84ebbe321c92b72ed79689d2485bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data as a specific type.  <br /></td></tr>
 <tr class="separator:a4e84ebbe321c92b72ed79689d2485bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1df3a04f659799b628320f4798ea433b" id="r_a1df3a04f659799b628320f4798ea433b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdsc_1_1DictionaryC.html">DictionaryC</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1VoidStruct.html#a1df3a04f659799b628320f4798ea433b">toDictionary</a> () const</td></tr>
+<tr class="memdesc:a1df3a04f659799b628320f4798ea433b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data as a <code>DictionaryC</code>  <br /></td></tr>
+<tr class="separator:a1df3a04f659799b628320f4798ea433b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:acad0b528d1ab629fe06097c6864e0ad0" id="r_acad0b528d1ab629fe06097c6864e0ad0"><td class="memItemLeft" align="right" valign="top"><a id="acad0b528d1ab629fe06097c6864e0ad0" name="acad0b528d1ab629fe06097c6864e0ad0"></a>
 void *&#160;</td><td class="memItemRight" valign="bottom"><b>vars</b></td></tr>
+<tr class="memdesc:acad0b528d1ab629fe06097c6864e0ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data pointer to a class/struct/type. <br /></td></tr>
 <tr class="separator:acad0b528d1ab629fe06097c6864e0ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Like in <code>libdsC</code>, this represents a more generic data class for less predictable use cases. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1df3a04f659799b628320f4798ea433b" name="a1df3a04f659799b628320f4798ea433b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1df3a04f659799b628320f4798ea433b">&#9670;&#160;</a></span>toDictionary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdsc_1_1DictionaryC.html">DictionaryC</a> &amp; dscpp::VoidStruct::toDictionary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the data as a <code>DictionaryC</code> </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to a <code>DictionaryC</code> by using <code><a class="el" href="namespacedscpp.html#af3fd8891ae8d4af0c398dcdecfcb4efc" title="Free function that defines, how to transform a void* to a libdsC dictionary.">dscpp::castToDictionary</a>(this-&gt;vars)</code> </dd></dl>
+
+</div>
+</div>
+<a id="a4e84ebbe321c92b72ed79689d2485bcf" name="a4e84ebbe321c92b72ed79689d2485bcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e84ebbe321c92b72ed79689d2485bcf">&#9670;&#160;</a></span>vars()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename VS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VS &amp; dscpp::VoidStruct::vars </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the data as a specific type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">VS</td><td>The type to get the data as </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to <code>VS</code> by using <code><a class="el" href="namespacedscpp.html#adc292d5907a79f17479c76c53cdef1b9" title="Free function that defines, how to cast or transform data from a voidptr to a specific type VS">dscpp::castFromVoid</a>&lt;VS&gt;( this-&gt;vars )</code> </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/mnt/g/bankdigest/ciphers/lib/libcmdlinecpp/lib/liblogcpp/lib/libinicpp/lib/libdscpp/include/<a class="el" href="void__ptr_8hpp_source.html">void_ptr.hpp</a></li>
 </ul>
@@ -126,8 +202,8 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><b>vars</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>dscpp</b></li><li class="navelem"><a class="el" href="classdscpp_1_1VoidStruct.html">VoidStruct</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:35:00 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="navelem"><a class="el" href="namespacedscpp.html">dscpp</a></li><li class="navelem"><a class="el" href="classdscpp_1_1VoidStruct.html">VoidStruct</a></li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

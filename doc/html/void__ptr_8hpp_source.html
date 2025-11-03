@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -118,38 +118,56 @@ $(document).ready(function(){initNavTree('void__ptr_8hpp_source.html',''); initR
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="dictionary_8h.html">dictionary.h</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>dscpp {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="cdictionary_8hpp.html">cdictionary.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> VS &gt;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>VS&amp; castFromVoid( <span class="keywordtype">void</span>* vars_struct );</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>dsc::_dictionary_* castToDictionary( <span class="keywordtype">void</span>* vars_struct );</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classdscpp_1_1VoidStruct.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1VoidStruct.html">VoidStruct</a> {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span>* vars;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> VS &gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    VS&amp; vars() {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">return</span> dscpp::castFromVoid( this-&gt;vars );</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedscpp.html">dscpp</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> VS &gt;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespacedscpp.html#adc292d5907a79f17479c76c53cdef1b9">   29</a></span><span class="keyword">extern</span> VS&amp; <a class="code hl_function" href="namespacedscpp.html#adc292d5907a79f17479c76c53cdef1b9">castFromVoid</a>( <span class="keywordtype">void</span>* vars_struct );</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespacedscpp.html#af3fd8891ae8d4af0c398dcdecfcb4efc">   36</a></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct__dictionary__.html">_dictionary_</a>* <a class="code hl_function" href="namespacedscpp.html#af3fd8891ae8d4af0c398dcdecfcb4efc">castToDictionary</a>( <span class="keywordtype">void</span>* vars_struct );</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classdscpp_1_1VoidStruct.html">   43</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1VoidStruct.html">VoidStruct</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classdscpp_1_1VoidStruct.html#acad0b528d1ab629fe06097c6864e0ad0">   46</a></span>    <span class="keywordtype">void</span>* <a class="code hl_variable" href="classdscpp_1_1VoidStruct.html#acad0b528d1ab629fe06097c6864e0ad0">vars</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> VS &gt;</div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classdscpp_1_1VoidStruct.html#a4e84ebbe321c92b72ed79689d2485bcf">   54</a></span>    VS&amp; <a class="code hl_function" href="classdscpp_1_1VoidStruct.html#a4e84ebbe321c92b72ed79689d2485bcf">vars</a>() {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> dscpp::castFromVoid&lt;VS&gt;( this-&gt;vars );</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>} <span class="comment">// namespace dscpp</span></div>
-<div class="ttc" id="aclassdscpp_1_1VoidStruct_html"><div class="ttname"><a href="classdscpp_1_1VoidStruct.html">dscpp::VoidStruct</a></div><div class="ttdef"><b>Definition</b> void_ptr.hpp:26</div></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classdscpp_1_1VoidStruct.html#a1df3a04f659799b628320f4798ea433b">   62</a></span>    <a class="code hl_class" href="classdsc_1_1DictionaryC.html">DictionaryC</a>&amp; <a class="code hl_function" href="classdscpp_1_1VoidStruct.html#a1df3a04f659799b628320f4798ea433b">toDictionary</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">return</span> *<span class="keyword">new</span> <a class="code hl_class" href="classdsc_1_1DictionaryC.html">DictionaryC</a>( <a class="code hl_function" href="namespacedscpp.html#af3fd8891ae8d4af0c398dcdecfcb4efc">dscpp::castToDictionary</a>(this-&gt;vars) );</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>} <span class="comment">// namespace dscpp</span></div>
+<div class="ttc" id="acdictionary_8hpp_html"><div class="ttname"><a href="cdictionary_8hpp.html">cdictionary.hpp</a></div><div class="ttdoc">A file that defines dictionaries from dictionary.h of libdsC for C++.</div></div>
+<div class="ttc" id="aclassdsc_1_1DictionaryC_html"><div class="ttname"><a href="classdsc_1_1DictionaryC.html">dsc::DictionaryC</a></div><div class="ttdoc">The compatibility-layer dscpp::Dictionary for C dictionary structs.</div><div class="ttdef"><b>Definition</b> cdictionary.hpp:35</div></div>
+<div class="ttc" id="aclassdscpp_1_1VoidStruct_html"><div class="ttname"><a href="classdscpp_1_1VoidStruct.html">dscpp::VoidStruct</a></div><div class="ttdoc">Like in libdsC, this represents a more generic data class for less predictable use cases.</div><div class="ttdef"><b>Definition</b> void_ptr.hpp:43</div></div>
+<div class="ttc" id="aclassdscpp_1_1VoidStruct_html_a1df3a04f659799b628320f4798ea433b"><div class="ttname"><a href="classdscpp_1_1VoidStruct.html#a1df3a04f659799b628320f4798ea433b">dscpp::VoidStruct::toDictionary</a></div><div class="ttdeci">DictionaryC &amp; toDictionary() const</div><div class="ttdoc">Get the data as a DictionaryC</div><div class="ttdef"><b>Definition</b> void_ptr.hpp:62</div></div>
+<div class="ttc" id="aclassdscpp_1_1VoidStruct_html_a4e84ebbe321c92b72ed79689d2485bcf"><div class="ttname"><a href="classdscpp_1_1VoidStruct.html#a4e84ebbe321c92b72ed79689d2485bcf">dscpp::VoidStruct::vars</a></div><div class="ttdeci">VS &amp; vars()</div><div class="ttdoc">Get the data as a specific type.</div><div class="ttdef"><b>Definition</b> void_ptr.hpp:54</div></div>
+<div class="ttc" id="aclassdscpp_1_1VoidStruct_html_acad0b528d1ab629fe06097c6864e0ad0"><div class="ttname"><a href="classdscpp_1_1VoidStruct.html#acad0b528d1ab629fe06097c6864e0ad0">dscpp::VoidStruct::vars</a></div><div class="ttdeci">void * vars</div><div class="ttdoc">The data pointer to a class/struct/type.</div><div class="ttdef"><b>Definition</b> void_ptr.hpp:46</div></div>
 <div class="ttc" id="adictionary_8h_html"><div class="ttname"><a href="dictionary_8h.html">dictionary.h</a></div><div class="ttdoc">Implements a dictionary for string variables.</div></div>
+<div class="ttc" id="anamespacedscpp_html"><div class="ttname"><a href="namespacedscpp.html">dscpp</a></div><div class="ttdoc">LibdsC++: An intuitive and highly usable API backend for data science and data design with C/C++</div><div class="ttdef"><b>Definition</b> cdictionary.hpp:21</div></div>
+<div class="ttc" id="anamespacedscpp_html_adc292d5907a79f17479c76c53cdef1b9"><div class="ttname"><a href="namespacedscpp.html#adc292d5907a79f17479c76c53cdef1b9">dscpp::castFromVoid</a></div><div class="ttdeci">VS &amp; castFromVoid(void *vars_struct)</div><div class="ttdoc">Free function that defines, how to cast or transform data from a voidptr to a specific type VS</div></div>
+<div class="ttc" id="anamespacedscpp_html_af3fd8891ae8d4af0c398dcdecfcb4efc"><div class="ttname"><a href="namespacedscpp.html#af3fd8891ae8d4af0c398dcdecfcb4efc">dscpp::castToDictionary</a></div><div class="ttdeci">struct _dictionary_ * castToDictionary(void *vars_struct)</div><div class="ttdoc">Free function that defines, how to transform a void* to a libdsC dictionary.</div></div>
+<div class="ttc" id="astruct__dictionary___html"><div class="ttname"><a href="struct__dictionary__.html">_dictionary_</a></div><div class="ttdoc">Dictionary object.</div><div class="ttdef"><b>Definition</b> dictionary.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="void__ptr_8hpp.html">void_ptr.hpp</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:34:59 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

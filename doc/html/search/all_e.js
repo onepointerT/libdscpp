@@ -1,4 +1,12 @@
 var searchData=
 [
-  ['update_0',['update',['../struct__datatype__.html#a6553fff41686a7cad1001b47891a8ac9',1,'_datatype_::update'],['../datatype_8h.html#a0b78868f01b3dd1a285f301bfa25d98f',1,'update():&#160;datatype.h']]]
+  ['operator_28_29_0',['operator()',['../classdscpp_1_1DataType.html#a3fda1580ac3d189ea870eb6ee5395d9d',1,'dscpp::DataType::operator()()'],['../classdscpp_1_1Dictionary_1_1Section.html#a3554567fdff70d570d7aab9c09bb2d0a',1,'dscpp::Dictionary::Section::operator()()'],['../classdscpp_1_1Map.html#aa59c335834f5429b4fddc2eeba3ddf1e',1,'dscpp::Map::operator()()']]],
+  ['operator_2b_2b_1',['operator++',['../classdscpp_1_1Dictionary_1_1DictionaryIterator.html#a59c6952a79168d7e931705e3d9813074',1,'dscpp::Dictionary::DictionaryIterator::operator++()'],['../classdscpp_1_1MMap_1_1MapIterator.html#a6d23f75c17faffe167b7a13f0afe04b9',1,'dscpp::MMap::MapIterator::operator++()']]],
+  ['operator_2d_2d_2',['operator--',['../classdscpp_1_1Dictionary_1_1DictionaryIterator.html#a3efae94eafa1d3cf2cd4bfabc967614c',1,'dscpp::Dictionary::DictionaryIterator::operator--()'],['../classdscpp_1_1MMap_1_1MapIterator.html#a90dfc95555203b41e475515d8c3ae5fd',1,'dscpp::MMap::MapIterator::operator--()']]],
+  ['operator_3c_3c_3',['operator&lt;&lt;',['../classdsc_1_1DictionaryC.html#a87500b9069d526a6290cef8643482adc',1,'dsc::DictionaryC::operator&lt;&lt;()'],['../classdscpp_1_1Dictionary_1_1Section.html#aa3687ee8f9c2fbc29b2ba467215e5c3d',1,'dscpp::Dictionary::Section::operator&lt;&lt;(std::pair&lt; std::string, std::string &gt; kv_pair)'],['../classdscpp_1_1Dictionary_1_1Section.html#a0b4348fa1a030a1cd57ef83ee21a22fb',1,'dscpp::Dictionary::Section::operator&lt;&lt;(DictionaryKey &amp;key)'],['../classdscpp_1_1DataType.html#a06d58ea34346d42f96d2c710518dc009',1,'dscpp::DataType::operator&lt;&lt;(const struct _datatype_ *other)'],['../classdscpp_1_1DataType.html#a6682363fe65b252d45d2546bc887cefb',1,'dscpp::DataType::operator&lt;&lt;(const DT &amp;other)'],['../classdsc_1_1DictionaryC.html#a4c44c2f8b84f3161b0da45205196d91c',1,'dsc::DictionaryC::operator&lt;&lt;()']]],
+  ['operator_5b_5d_4',['operator[]',['../classdscpp_1_1Map.html#ab09e2f2c53d26bd1b721b90837c50c6f',1,'dscpp::Map']]],
+  ['operator_5f_5',['operator_',['../classdscpp_1_1MMap_1_1MapIterator.html#aaaabbb433674ba23eafd30120eaf1258',1,'dscpp::MMap::MapIterator']]],
+  ['original_6',['ORIGINAL',['../void__struct_8h.html#aecafa0783538ae5a61995dfeb37d2ed0ac68af7f5fa830636c92ff457b408f59d',1,'void_struct.h']]],
+  ['other_7',['OTHER',['../void__struct_8h.html#aecafa0783538ae5a61995dfeb37d2ed0adbf1dee1b8cd7ea3c82661943c7b74f4',1,'void_struct.h']]],
+  ['owndataclass_8',['OwnDataClass',['../classdscpp_1_1OwnDataClass.html',1,'dscpp']]]
 ];

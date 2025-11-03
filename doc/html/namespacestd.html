@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -407,18 +407,22 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ad278227f1c7275a2f4b4da592d373703" id="r_ad278227f1c7275a2f4b4da592d373703"><td class="memTemplParams" colspan="2"><a id="ad278227f1c7275a2f4b4da592d373703" name="ad278227f1c7275a2f4b4da592d373703"></a>
-template&lt;typename Key , typename T , typename Compare  = std::less&lt;Key&gt;&gt; </td></tr>
-<tr class="memitem:ad278227f1c7275a2f4b4da592d373703"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dict_map</b> = typename <a class="el" href="classdscpp_1_1DMap.html">dscpp::DMap</a>&lt; Key, T &gt;</td></tr>
-<tr class="separator:ad278227f1c7275a2f4b4da592d373703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a1fd19856ebef66608b88a38c5c4126" id="r_a1a1fd19856ebef66608b88a38c5c4126"><td class="memTemplParams" colspan="2"><a id="a1a1fd19856ebef66608b88a38c5c4126" name="a1a1fd19856ebef66608b88a38c5c4126"></a>
+template&lt;typename Key , typename T &gt; </td></tr>
+<tr class="memitem:a1a1fd19856ebef66608b88a38c5c4126"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>dict_map</b> = typename <a class="el" href="classdscpp_1_1DMap.html">dscpp::DMap</a>&lt; Key, T &gt;</td></tr>
+<tr class="separator:a1a1fd19856ebef66608b88a38c5c4126"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ee225a22f6442ea617f77ac99824beb" id="r_a7ee225a22f6442ea617f77ac99824beb"><td class="memTemplParams" colspan="2"><a id="a7ee225a22f6442ea617f77ac99824beb" name="a7ee225a22f6442ea617f77ac99824beb"></a>
 template&lt;typename Key , typename T , typename Compare  = std::less&lt;Key&gt;&gt; </td></tr>
 <tr class="memitem:a7ee225a22f6442ea617f77ac99824beb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>mmap</b> = typename <a class="el" href="classdscpp_1_1MMap.html">dscpp::MMap</a>&lt; Key, T, Compare &gt;</td></tr>
 <tr class="separator:a7ee225a22f6442ea617f77ac99824beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa003cd32a44596b64d59b637a5cadca3" id="r_aa003cd32a44596b64d59b637a5cadca3"><td class="memTemplParams" colspan="2"><a id="aa003cd32a44596b64d59b637a5cadca3" name="aa003cd32a44596b64d59b637a5cadca3"></a>
+<tr class="memitem:a84a85e007e0365c766154d69e50d7eef" id="r_a84a85e007e0365c766154d69e50d7eef"><td class="memTemplParams" colspan="2"><a id="a84a85e007e0365c766154d69e50d7eef" name="a84a85e007e0365c766154d69e50d7eef"></a>
 template&lt;typename Key , typename T , typename Compare  = std::less&lt;Key&gt;&gt; </td></tr>
-<tr class="memitem:aa003cd32a44596b64d59b637a5cadca3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>submap_iterator</b> = typename <a class="el" href="classdscpp_1_1MMap.html">dscpp::MMap</a>&lt; Key, T, Compare &gt;::Iterator</td></tr>
-<tr class="separator:aa003cd32a44596b64d59b637a5cadca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a85e007e0365c766154d69e50d7eef"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>submap_iterator</b> = typename <a class="el" href="classdscpp_1_1MMap.html">dscpp::MMap</a>&lt; Key, T, Compare &gt;::submap_iterator_t</td></tr>
+<tr class="separator:a84a85e007e0365c766154d69e50d7eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f1519219e0871a737e1a6ab59c49c40" id="r_a5f1519219e0871a737e1a6ab59c49c40"><td class="memTemplParams" colspan="2"><a id="a5f1519219e0871a737e1a6ab59c49c40" name="a5f1519219e0871a737e1a6ab59c49c40"></a>
+template&lt;typename Key , typename T , typename Compare  = std::less&lt;Key&gt;&gt; </td></tr>
+<tr class="memitem:a5f1519219e0871a737e1a6ab59c49c40"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>mmap_iterator</b> = typename <a class="el" href="classdscpp_1_1MMap.html">dscpp::MMap</a>&lt; Key, T, Compare &gt;::MapIterator</td></tr>
+<tr class="separator:a5f1519219e0871a737e1a6ab59c49c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>STL namespace. </p>
@@ -428,7 +432,7 @@ template&lt;typename Key , typename T , typename Compare  = std::less&lt;Key&gt;
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacestd.html">std</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:35:00 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

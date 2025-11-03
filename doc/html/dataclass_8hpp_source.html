@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -128,73 +128,105 @@ $(document).ready(function(){initNavTree('dataclass_8hpp_source.html',''); initR
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span>dscpp {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedscpp.html">dscpp</a> {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classdscpp_1_1OwnDataClass.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1OwnDataClass.html">OwnDataClass</a> {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* getDT() = 0;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">template</span>&lt; <span class="keyword">class</span> DT &gt;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    DT&amp; getDataType() { (*(DT*) this-&gt;getDT()); }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
-</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> InheritingClass, <span class="keyword">class</span> DataType &gt;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">requires</span> std::is_base_of&lt; OwnDataClass, InheritingClass &gt;::value</div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataClass.html">   40</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass</a></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    :   <span class="keyword">public</span> <a class="code hl_struct" href="structdscpp_1_1ClassFactory_1_1__dataclass__.html">ClassFactory::dataclass</a></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    ,   <span class="keyword">public</span> <a class="code hl_class" href="classdscpp_1_1DataType.html">Datatype</a>&lt;DataType&gt;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    ,   <span class="keyword">public</span> InheritingClass</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> setupVariables( InheritingClass&amp; ic, <a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass&lt;InheritingClass, DataType&gt;</a>&amp; dc ) = 0;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> setupVariables( <a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass&lt;InheritingClass, DataType&gt;</a>&amp; dc ) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> InheritingClass::setupVariables(*<span class="keyword">this</span>, dc);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// Forward declaration</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">class </span>OwnDataClass;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// Forward declaration</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> InheritingClass, <span class="keyword">class</span> DataType &gt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">requires</span> std::is_base_of&lt; OwnDataClass, InheritingClass &gt;::value</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">class </span>DataClass;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classdscpp_1_1OwnDataClass.html">   43</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1OwnDataClass.html">OwnDataClass</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classdscpp_1_1OwnDataClass.html#a38025c3576bcb7098a14c1d0c1c43d2c">   49</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* <a class="code hl_function" href="classdscpp_1_1OwnDataClass.html#a38025c3576bcb7098a14c1d0c1c43d2c">getDT</a>() <span class="keyword">const</span> = 0;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* getDT() <span class="keyword">final</span> { <span class="keywordflow">return</span> (<a class="code hl_class" href="classdscpp_1_1DataType.html">DataType</a>*) <span class="keyword">this</span>; }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">virtual</span> InheritingClass&amp; toDataStructure( <span class="keyword">const</span> <a class="code hl_class" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a>&amp; section ) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        InheritingClass* ic = <span class="keyword">new</span> InheritingClass( section );</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        this-&gt;setupVariables( ic );</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span> *ic;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">template</span>&lt; <span class="keyword">class</span> DT &gt;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classdscpp_1_1OwnDataClass.html#a29612eec68ed222f02dd7e23bde9217f">   60</a></span>    DT&amp; <a class="code hl_function" href="classdscpp_1_1OwnDataClass.html#a29612eec68ed222f02dd7e23bde9217f">getDataType</a>()<span class="keyword"> const </span>{ *((DT*) this-&gt;<a class="code hl_function" href="classdscpp_1_1OwnDataClass.html#a38025c3576bcb7098a14c1d0c1c43d2c">getDT</a>()); }</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass</a>( <span class="keyword">const</span> <a class="code hl_class" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a>&amp; section )</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        :   <a class="code hl_struct" href="structdscpp_1_1ClassFactory_1_1__dataclass__.html">ClassFactory::dataclass</a>( ClassFactory::getData( section ) )</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        ,   <a class="code hl_class" href="classdscpp_1_1DataType.html">DataType</a>( toDataStruct&lt;DataType&gt;(<span class="keyword">this</span>) )</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        this-&gt;data = (<a class="code hl_class" href="classdscpp_1_1DataType.html">DataType</a>*) <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classdscpp_1_1OwnDataClass.html#ad6e0c44429d18848e7729cb10c4d608e">   70</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1OwnDataClass.html#ad6e0c44429d18848e7729cb10c4d608e">setupVariables</a>( InheritingClass&amp; ic, <a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass&lt;InheritingClass, DataType&gt;</a>&amp; dc ) = 0;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#define DSC_DEFINE_DATACLASS(functional_cls, datatype) template class dscpp::DataClass&lt; functional_cls, datatype &gt;;</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#define DSC_MAKE_DATACLASS(functional_cls, datatype, nameCLS) typedef typename dscpp::DataClass&lt; functional_cls, datatype &gt; nameCLS;</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>} <span class="comment">// namespace dscpp</span></div>
-<div class="ttc" id="aclassdscpp_1_1DataClass_html"><div class="ttname"><a href="classdscpp_1_1DataClass.html">dscpp::DataClass</a></div><div class="ttdef"><b>Definition</b> dataclass.hpp:44</div></div>
-<div class="ttc" id="aclassdscpp_1_1DataType_html"><div class="ttname"><a href="classdscpp_1_1DataType.html">dscpp::DataType</a></div><div class="ttdef"><b>Definition</b> datatype.hpp:67</div></div>
-<div class="ttc" id="aclassdscpp_1_1Dictionary_1_1Section_html"><div class="ttname"><a href="classdscpp_1_1Dictionary_1_1Section.html">dscpp::Dictionary::Section</a></div><div class="ttdef"><b>Definition</b> dictionary.hpp:42</div></div>
-<div class="ttc" id="aclassdscpp_1_1OwnDataClass_html"><div class="ttname"><a href="classdscpp_1_1OwnDataClass.html">dscpp::OwnDataClass</a></div><div class="ttdef"><b>Definition</b> dataclass.hpp:29</div></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> InheritingClass, <span class="keyword">class</span> DataType &gt;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">requires</span> std::is_base_of&lt; OwnDataClass, InheritingClass &gt;::value</div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="};">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataClass.html">   84</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass</a></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    :   <span class="keyword">public</span> <a class="code hl_struct" href="structdscpp_1_1ClassFactory_1_1__DataClass__.html">ClassFactory::DataClass</a></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    ,   <span class="keyword">public</span> <a class="code hl_class" href="classdscpp_1_1DataType.html">Datatype</a>&lt;DataType&gt;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    ,   <span class="keyword">public</span> InheritingClass</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>{</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataClass.html#afdea92e6f028e0ecab8de4a4ba19d9fd">   97</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataClass.html#afdea92e6f028e0ecab8de4a4ba19d9fd">setupVariables</a>( InheritingClass&amp; ic, <a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass&lt;InheritingClass, DataType&gt;</a>&amp; dc ) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">return</span> InheritingClass::setupVariables(ic, dc);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataClass.html#a17b6f82f85bdda7128227e9b2a41a465">  105</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classdscpp_1_1DataClass.html#a17b6f82f85bdda7128227e9b2a41a465">setupVariables</a>( <a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass&lt;InheritingClass, DataType&gt;</a>&amp; dc ) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> InheritingClass::setupVariables(*<span class="keyword">this</span>, dc);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataClass.html#a7560d4ae30656578a2d3352b9af75867">  113</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* <a class="code hl_function" href="classdscpp_1_1DataClass.html#a7560d4ae30656578a2d3352b9af75867">getDT</a>() const final { <span class="keywordflow">return</span> <a class="code hl_function" href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">dscpp::ClassFactory::castData&lt;DataType&gt;</a>(*<span class="keyword">this</span>); }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataClass.html#a70bd55b0a522df64f8c49ce3060a5357">  123</a></span>    <span class="keyword">virtual</span> InheritingClass&amp; <a class="code hl_function" href="classdscpp_1_1DataClass.html#a70bd55b0a522df64f8c49ce3060a5357">toDataStructure</a>( <span class="keyword">const</span> <a class="code hl_class" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a>&amp; section ) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        InheritingClass* ic = <span class="keyword">new</span> InheritingClass( section );</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        this-&gt;<a class="code hl_function" href="classdscpp_1_1DataClass.html#afdea92e6f028e0ecab8de4a4ba19d9fd">setupVariables</a>( ic, *<span class="keyword">this</span> );</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">return</span> *ic;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classdscpp_1_1DataClass.html#a54227db28e937488b05ff54c873c1574">  135</a></span>    <a class="code hl_function" href="classdscpp_1_1DataClass.html#a54227db28e937488b05ff54c873c1574">DataClass</a>( <span class="keyword">const</span> <a class="code hl_class" href="classdscpp_1_1Dictionary_1_1Section.html">Dictionary::Section</a>&amp; section )</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        :   <a class="code hl_class" href="classdscpp_1_1ClassFactory.html">ClassFactory</a>::<a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass</a>( <a class="code hl_class" href="classdscpp_1_1ClassFactory.html">ClassFactory</a>::getData( section ) )</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        ,   <a class="code hl_class" href="classdscpp_1_1DataType.html">Datatype</a>&lt;<a class="code hl_class" href="classdscpp_1_1DataType.html">DataType</a>&gt;( toDataStruct&lt;<a class="code hl_class" href="classdscpp_1_1DataType.html">DataType</a>&gt;(this) )</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        ,   InheritingClass( this-&gt;<a class="code hl_function" href="classdscpp_1_1DataClass.html#a70bd55b0a522df64f8c49ce3060a5357">toDataStructure</a>(section) )</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        this-&gt;data = (<a class="code hl_class" href="classdscpp_1_1DataType.html">DataType</a>*) <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
+</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>};</div>
+</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="dataclass_8hpp.html#a04e1697260d356c51cb7e90a14444397">  150</a></span><span class="preprocessor">#define DSC_DEFINE_DATACLASS(functional_cls, datatype) template class dscpp::DataClass&lt; functional_cls, datatype &gt;;</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="dataclass_8hpp.html#a958006be0cbb1d2505022f6f845b7c54">  157</a></span><span class="preprocessor">#define DSC_MAKE_DATACLASS(functional_cls, datatype, nameCLS) typedef typename dscpp::DataClass&lt; functional_cls, datatype &gt; nameCLS;</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>} <span class="comment">// namespace dscpp</span></div>
+<div class="ttc" id="aclassdscpp_1_1ClassFactory_html"><div class="ttname"><a href="classdscpp_1_1ClassFactory.html">dscpp::ClassFactory</a></div><div class="ttdoc">The C++ type factory for conversion and creation of datatype classes.</div><div class="ttdef"><b>Definition</b> classfactory.hpp:36</div></div>
+<div class="ttc" id="aclassdscpp_1_1ClassFactory_html_a0d786a47187efd6795b60df79fd7a24f"><div class="ttname"><a href="classdscpp_1_1ClassFactory.html#a0d786a47187efd6795b60df79fd7a24f">dscpp::ClassFactory::toDataVoidPtr</a></div><div class="ttdeci">static void * toDataVoidPtr(const dscpp::Dictionary::Section &amp;section)</div><div class="ttdoc">Brief create a API-common datatype DT from its constructor DT(const Dictionary::Section&amp; ) and get it...</div><div class="ttdef"><b>Definition</b> classfactory.hpp:64</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataClass_html"><div class="ttname"><a href="classdscpp_1_1DataClass.html">dscpp::DataClass</a></div><div class="ttdoc">The feature-enabling data class for data types of libdsC/libdsC++.</div><div class="ttdef"><b>Definition</b> dataclass.hpp:88</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataClass_html_a17b6f82f85bdda7128227e9b2a41a465"><div class="ttname"><a href="classdscpp_1_1DataClass.html#a17b6f82f85bdda7128227e9b2a41a465">dscpp::DataClass::setupVariables</a></div><div class="ttdeci">virtual bool setupVariables(DataClass&lt; InheritingClass, DataType &gt; &amp;dc)</div><div class="ttdoc">Setup all variables inside of the class InheritingClass</div><div class="ttdef"><b>Definition</b> dataclass.hpp:105</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataClass_html_a54227db28e937488b05ff54c873c1574"><div class="ttname"><a href="classdscpp_1_1DataClass.html#a54227db28e937488b05ff54c873c1574">dscpp::DataClass::DataClass</a></div><div class="ttdeci">DataClass(const Dictionary::Section &amp;section)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> dataclass.hpp:135</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataClass_html_a70bd55b0a522df64f8c49ce3060a5357"><div class="ttname"><a href="classdscpp_1_1DataClass.html#a70bd55b0a522df64f8c49ce3060a5357">dscpp::DataClass::toDataStructure</a></div><div class="ttdeci">virtual InheritingClass &amp; toDataStructure(const Dictionary::Section &amp;section)</div><div class="ttdoc">Create a feature/functional InheritingClass from a Dictionary::Section reference.</div><div class="ttdef"><b>Definition</b> dataclass.hpp:123</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataClass_html_a7560d4ae30656578a2d3352b9af75867"><div class="ttname"><a href="classdscpp_1_1DataClass.html#a7560d4ae30656578a2d3352b9af75867">dscpp::DataClass::getDT</a></div><div class="ttdeci">virtual void * getDT() const final</div><div class="ttdoc">Get your data type as void* from here.</div><div class="ttdef"><b>Definition</b> dataclass.hpp:113</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataClass_html_afdea92e6f028e0ecab8de4a4ba19d9fd"><div class="ttname"><a href="classdscpp_1_1DataClass.html#afdea92e6f028e0ecab8de4a4ba19d9fd">dscpp::DataClass::setupVariables</a></div><div class="ttdeci">virtual bool setupVariables(InheritingClass &amp;ic, DataClass&lt; InheritingClass, DataType &gt; &amp;dc)</div><div class="ttdoc">Setup all variables inside of the class InheritingClass</div><div class="ttdef"><b>Definition</b> dataclass.hpp:97</div></div>
+<div class="ttc" id="aclassdscpp_1_1DataType_html"><div class="ttname"><a href="classdscpp_1_1DataType.html">dscpp::DataType</a></div><div class="ttdoc">This class represents the default data type of libdsC++</div><div class="ttdef"><b>Definition</b> datatype.hpp:122</div></div>
+<div class="ttc" id="aclassdscpp_1_1Dictionary_1_1Section_html"><div class="ttname"><a href="classdscpp_1_1Dictionary_1_1Section.html">dscpp::Dictionary::Section</a></div><div class="ttdoc">This class implements the section of a dictionary and contains pointers to DictionaryKeys ordered to ...</div><div class="ttdef"><b>Definition</b> dictionary.hpp:67</div></div>
+<div class="ttc" id="aclassdscpp_1_1OwnDataClass_html"><div class="ttname"><a href="classdscpp_1_1OwnDataClass.html">dscpp::OwnDataClass</a></div><div class="ttdoc">The virtual base class, that is to be derived from DataClass for functionality for a specific data ty...</div><div class="ttdef"><b>Definition</b> dataclass.hpp:43</div></div>
+<div class="ttc" id="aclassdscpp_1_1OwnDataClass_html_a29612eec68ed222f02dd7e23bde9217f"><div class="ttname"><a href="classdscpp_1_1OwnDataClass.html#a29612eec68ed222f02dd7e23bde9217f">dscpp::OwnDataClass::getDataType</a></div><div class="ttdeci">DT &amp; getDataType() const</div><div class="ttdoc">Get the data type DT in a common inheriting class like DataClass&lt; YourDataDesignFunctionalT,...</div><div class="ttdef"><b>Definition</b> dataclass.hpp:60</div></div>
+<div class="ttc" id="aclassdscpp_1_1OwnDataClass_html_a38025c3576bcb7098a14c1d0c1c43d2c"><div class="ttname"><a href="classdscpp_1_1OwnDataClass.html#a38025c3576bcb7098a14c1d0c1c43d2c">dscpp::OwnDataClass::getDT</a></div><div class="ttdeci">virtual void * getDT() const =0</div><div class="ttdoc">Get your data type as void* from latestly DataClass</div></div>
+<div class="ttc" id="aclassdscpp_1_1OwnDataClass_html_ad6e0c44429d18848e7729cb10c4d608e"><div class="ttname"><a href="classdscpp_1_1OwnDataClass.html#ad6e0c44429d18848e7729cb10c4d608e">dscpp::OwnDataClass::setupVariables</a></div><div class="ttdeci">virtual bool setupVariables(InheritingClass &amp;ic, DataClass&lt; InheritingClass, DataType &gt; &amp;dc)=0</div><div class="ttdoc">Setup all variables inside of the class InheritingClass</div></div>
 <div class="ttc" id="aclassfactory_8hpp_html"><div class="ttname"><a href="classfactory_8hpp.html">classfactory.hpp</a></div><div class="ttdoc">A file that defines dataclasses with the libdsC and libdsC++ facitlity libraries for C++.</div></div>
 <div class="ttc" id="adictionary_8hpp_html"><div class="ttname"><a href="dictionary_8hpp.html">dictionary.hpp</a></div><div class="ttdoc">A file that defines dictionaries for C++.</div></div>
 <div class="ttc" id="amap_8hpp_html"><div class="ttname"><a href="map_8hpp.html">map.hpp</a></div><div class="ttdoc">A file that defines practical structures and short algorithms for std::map and dictionaries.</div></div>
-<div class="ttc" id="astructdscpp_1_1ClassFactory_1_1__dataclass___html"><div class="ttname"><a href="structdscpp_1_1ClassFactory_1_1__dataclass__.html">dscpp::ClassFactory::_dataclass_</a></div><div class="ttdef"><b>Definition</b> classfactory.hpp:37</div></div>
+<div class="ttc" id="anamespacedscpp_html"><div class="ttname"><a href="namespacedscpp.html">dscpp</a></div><div class="ttdoc">LibdsC++: An intuitive and highly usable API backend for data science and data design with C/C++</div><div class="ttdef"><b>Definition</b> cdictionary.hpp:21</div></div>
+<div class="ttc" id="astructdscpp_1_1ClassFactory_1_1__DataClass___html"><div class="ttname"><a href="structdscpp_1_1ClassFactory_1_1__DataClass__.html">dscpp::ClassFactory::_DataClass_</a></div><div class="ttdoc">The C++ generic type of data classes for e.g. use in inheritance of other libraries or parts of the d...</div><div class="ttdef"><b>Definition</b> classfactory.hpp:51</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dataclass_8hpp.html">dataclass.hpp</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:34:59 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:54 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

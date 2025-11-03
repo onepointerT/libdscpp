@@ -36,15 +36,14 @@ struct _datacast_* datacast_init( const char* dt_name
                         , const fromDictToDT fromDictDataType
                         , unsigned npos
 ) {
-    struct _datacast_* dc = (struct _datacast_*) malloc(sizeof(struct _datacast_));
+    struct _datacast_ dcval = {
+          .datatype_name = dt_name, .toVS = toVoidStruct, .fromVS = fromVoidStruct
+        , .toDictDT = toDictDataType, .fromDictDT = fromDictDataType, .npos = npos
+    };
     
-    dc->datatype_name = dt_name;
-    dc->toVS = toVoidStruct;
-    dc->fromVS = fromVoidStruct;
-    dc->toDictDT = toDictDataType;
-    dc->fromDictDT = fromDictDataType;
-    dc->npos = npos;
-
+    struct _datacast_* dc = (struct _datacast_*) malloc(sizeof(struct _datacast_));
+    memcpy( dc, &dcval, sizeof(struct _datacast_) );
+    
     return dc;
 }
 

@@ -7,5 +7,7 @@ var searchData=
   ['dsc_5fcastfrom_4',['DSC_CASTFROM',['../castcompat_8h.html#affe09c17f86284e3c84b9de58540bfd5',1,'castcompat.h']]],
   ['dsc_5fcastfrom_5fvoid_5fstruct_5',['DSC_CASTFROM_VOID_STRUCT',['../void__struct_8h.html#a914dd920836cfc086adb959334743eeb',1,'void_struct.h']]],
   ['dsc_5fcastto_6',['DSC_CASTTO',['../castcompat_8h.html#a68c4a6cd9729f2144ce10b77dcd3d790',1,'castcompat.h']]],
-  ['dsc_5fcastto_5fvoid_5fstruct_7',['DSC_CASTTO_VOID_STRUCT',['../void__struct_8h.html#a4b92c69a8998d9777f5e4eb2e7c46a95',1,'void_struct.h']]]
+  ['dsc_5fcastto_5fvoid_5fstruct_7',['DSC_CASTTO_VOID_STRUCT',['../void__struct_8h.html#a4b92c69a8998d9777f5e4eb2e7c46a95',1,'void_struct.h']]],
+  ['dsc_5fdefine_5fdataclass_8',['DSC_DEFINE_DATACLASS',['../dataclass_8hpp.html#a04e1697260d356c51cb7e90a14444397',1,'dataclass.hpp']]],
+  ['dsc_5fmake_5fdataclass_9',['DSC_MAKE_DATACLASS',['../dataclass_8hpp.html#a958006be0cbb1d2505022f6f845b7c54',1,'dataclass.hpp']]]
 ];

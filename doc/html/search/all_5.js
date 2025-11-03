@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['init_0',['init',['../struct__datatype__.html#a3466435b2000b5558d17fc30533c5928',1,'_datatype_']]],
-  ['initcopy_1',['initCopy',['../struct__datatype__.html#a1ce68511b12e3587b4e8ba5884834f9a',1,'_datatype_']]],
-  ['initdatatype_2',['initDatatype',['../struct__datatype__.html#aa541dff4f00328ec8d467d68b64eed83',1,'_datatype_']]],
-  ['iterator_3',['Iterator',['../classdscpp_1_1MMap_1_1Iterator.html',1,'dscpp::MMap']]]
+  ['elem_0',['elem',['../struct__dictionary__iterator__.html#a5d8b78e396972ceaac5afe6afaafcebc',1,'_dictionary_iterator_']]],
+  ['end_1',['end',['../classdscpp_1_1Dictionary.html#a6ae23ba84f5fd75932cd7fefbeb3923c',1,'dscpp::Dictionary::end()'],['../classdscpp_1_1Map.html#a04a9353f1bc3422e401829eefecf0cbb',1,'dscpp::Map::end()'],['../classdscpp_1_1MMap.html#aa410a49ee450c52287c09ea4bad8c598',1,'dscpp::MMap::end()']]]
 ];

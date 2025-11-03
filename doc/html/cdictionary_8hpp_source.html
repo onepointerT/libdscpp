@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -119,45 +119,61 @@ $(document).ready(function(){initNavTree('cdictionary_8hpp_source.html',''); ini
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="dictionary__element_8h.html">dictionary_element.h</a>&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>dscpp { <span class="keyword">class </span>Dictionary; }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="dictionary_8hpp.html">dictionary.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span>dsc {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespacedscpp.html">   21</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedscpp.html">dscpp</a> { <span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1Dictionary.html">Dictionary</a>; }</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classdsc_1_1DictionaryC.html">   24</a></span><span class="keyword">class </span><a class="code hl_class" href="classdsc_1_1DictionaryC.html">DictionaryC</a></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    :   <span class="keyword">public</span> <a class="code hl_class" href="classdscpp_1_1Dictionary.html">dscpp::Dictionary</a></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    ,   <span class="keyword">public</span> <a class="code hl_struct" href="struct__dictionary__.html">_dictionary_</a></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_class" href="classdsc_1_1DictionaryC.html">DictionaryC</a>( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__dictionary__.html">_dictionary_</a>* cdict );</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">bool</span> update( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__dictionary__.html">_dictionary_</a>* cdict );</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="datatype_8h.html#a0b78868f01b3dd1a285f301bfa25d98f">update</a>( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__dictionary__element__.html">_dictionary_element_</a>* cdict_elem );</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="classdsc_1_1DictionaryC.html">DictionaryC</a>&amp; operator&lt;&lt;( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__dictionary__.html">_dictionary_</a>* cdict );</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_class" href="classdsc_1_1DictionaryC.html">DictionaryC</a>&amp; operator&lt;&lt;( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__dictionary__element__.html">_dictionary_element_</a>* cdict_elem );</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespacedsc.html">   26</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedsc.html">dsc</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classdsc_1_1DictionaryC.html">   32</a></span><span class="keyword">class </span><a class="code hl_class" href="classdsc_1_1DictionaryC.html">DictionaryC</a></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    :   <span class="keyword">public</span> <a class="code hl_class" href="classdscpp_1_1Dictionary.html">dscpp::Dictionary</a></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    ,   <span class="keyword">public</span> <a class="code hl_struct" href="struct__dictionary__.html">_dictionary_</a></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classdsc_1_1DictionaryC.html#a4a425f2b4d6b8d77c25d4445cc43627a">   41</a></span>    <a class="code hl_function" href="classdsc_1_1DictionaryC.html#a4a425f2b4d6b8d77c25d4445cc43627a">DictionaryC</a>( <span class="keyword">struct</span> <a class="code hl_struct" href="struct__dictionary__.html">_dictionary_</a>* cdict );</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classdsc_1_1DictionaryC.html#a747e43715a56628b9e38f622c850bb24">   48</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classdsc_1_1DictionaryC.html#a747e43715a56628b9e38f622c850bb24">update</a>( <span class="keyword">struct</span> <a class="code hl_struct" href="struct__dictionary__.html">_dictionary_</a>* cdict );</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classdsc_1_1DictionaryC.html#a66094cf590d50abb4404c12bf31458e4">   54</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classdsc_1_1DictionaryC.html#a66094cf590d50abb4404c12bf31458e4">update</a>( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__dictionary__element__.html">_dictionary_element_</a>* cdict_elem );</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classdsc_1_1DictionaryC.html#a4c44c2f8b84f3161b0da45205196d91c">   61</a></span>    <a class="code hl_class" href="classdsc_1_1DictionaryC.html">DictionaryC</a>&amp; <a class="code hl_function" href="classdsc_1_1DictionaryC.html#a4c44c2f8b84f3161b0da45205196d91c">operator&lt;&lt;</a>( <span class="keyword">struct</span> <a class="code hl_struct" href="struct__dictionary__.html">_dictionary_</a>* cdict );</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classdsc_1_1DictionaryC.html#a87500b9069d526a6290cef8643482adc">   67</a></span>    <a class="code hl_class" href="classdsc_1_1DictionaryC.html">DictionaryC</a>&amp; <a class="code hl_function" href="classdsc_1_1DictionaryC.html#a87500b9069d526a6290cef8643482adc">operator&lt;&lt;</a>( <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="struct__dictionary__element__.html">_dictionary_element_</a>* cdict_elem );</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>} <span class="comment">// namespace dscpp</span></div>
-<div class="ttc" id="aclassdsc_1_1DictionaryC_html"><div class="ttname"><a href="classdsc_1_1DictionaryC.html">dsc::DictionaryC</a></div><div class="ttdef"><b>Definition</b> cdictionary.hpp:27</div></div>
-<div class="ttc" id="aclassdscpp_1_1Dictionary_html"><div class="ttname"><a href="classdscpp_1_1Dictionary.html">dscpp::Dictionary</a></div><div class="ttdef"><b>Definition</b> dictionary.hpp:26</div></div>
-<div class="ttc" id="adatatype_8h_html_a0b78868f01b3dd1a285f301bfa25d98f"><div class="ttname"><a href="datatype_8h.html#a0b78868f01b3dd1a285f301bfa25d98f">update</a></div><div class="ttdeci">bool update(struct _datatype_ *dt, const struct _dictionary_ *dict)</div><div class="ttdoc">Update the datatype dt from a dictionary dict</div></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>} <span class="comment">// namespace dsc</span></div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedscpp.html">dscpp</a> {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">using </span>CDictionary = <a class="code hl_class" href="classdsc_1_1DictionaryC.html">dsc::DictionaryC</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">using </span>DictionaryC = <a class="code hl_class" href="classdsc_1_1DictionaryC.html">dsc::DictionaryC</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>} <span class="comment">// namespace dscpp</span></div>
+<div class="ttc" id="aclassdsc_1_1DictionaryC_html"><div class="ttname"><a href="classdsc_1_1DictionaryC.html">dsc::DictionaryC</a></div><div class="ttdoc">The compatibility-layer dscpp::Dictionary for C dictionary structs.</div><div class="ttdef"><b>Definition</b> cdictionary.hpp:35</div></div>
+<div class="ttc" id="aclassdsc_1_1DictionaryC_html_a4a425f2b4d6b8d77c25d4445cc43627a"><div class="ttname"><a href="classdsc_1_1DictionaryC.html#a4a425f2b4d6b8d77c25d4445cc43627a">dsc::DictionaryC::DictionaryC</a></div><div class="ttdeci">DictionaryC(struct _dictionary_ *cdict)</div><div class="ttdoc">Constructor.</div></div>
+<div class="ttc" id="aclassdsc_1_1DictionaryC_html_a4c44c2f8b84f3161b0da45205196d91c"><div class="ttname"><a href="classdsc_1_1DictionaryC.html#a4c44c2f8b84f3161b0da45205196d91c">dsc::DictionaryC::operator&lt;&lt;</a></div><div class="ttdeci">DictionaryC &amp; operator&lt;&lt;(struct _dictionary_ *cdict)</div><div class="ttdoc">Update this instance with an C dictionary instance.</div></div>
+<div class="ttc" id="aclassdsc_1_1DictionaryC_html_a66094cf590d50abb4404c12bf31458e4"><div class="ttname"><a href="classdsc_1_1DictionaryC.html#a66094cf590d50abb4404c12bf31458e4">dsc::DictionaryC::update</a></div><div class="ttdeci">bool update(const struct _dictionary_element_ *cdict_elem)</div><div class="ttdoc">Update this instance from an C dictionary_element instance.</div></div>
+<div class="ttc" id="aclassdsc_1_1DictionaryC_html_a747e43715a56628b9e38f622c850bb24"><div class="ttname"><a href="classdsc_1_1DictionaryC.html#a747e43715a56628b9e38f622c850bb24">dsc::DictionaryC::update</a></div><div class="ttdeci">bool update(struct _dictionary_ *cdict)</div><div class="ttdoc">Update this instance with an C dictionary instance.</div></div>
+<div class="ttc" id="aclassdsc_1_1DictionaryC_html_a87500b9069d526a6290cef8643482adc"><div class="ttname"><a href="classdsc_1_1DictionaryC.html#a87500b9069d526a6290cef8643482adc">dsc::DictionaryC::operator&lt;&lt;</a></div><div class="ttdeci">DictionaryC &amp; operator&lt;&lt;(const struct _dictionary_element_ *cdict_elem)</div><div class="ttdoc">Update this instance from an C dictionary_element instance.</div></div>
+<div class="ttc" id="aclassdscpp_1_1Dictionary_html"><div class="ttname"><a href="classdscpp_1_1Dictionary.html">dscpp::Dictionary</a></div><div class="ttdoc">This class implements a dictionary with sections.</div><div class="ttdef"><b>Definition</b> dictionary.hpp:55</div></div>
 <div class="ttc" id="adictionary_8h_html"><div class="ttname"><a href="dictionary_8h.html">dictionary.h</a></div><div class="ttdoc">Implements a dictionary for string variables.</div></div>
+<div class="ttc" id="adictionary_8hpp_html"><div class="ttname"><a href="dictionary_8hpp.html">dictionary.hpp</a></div><div class="ttdoc">A file that defines dictionaries for C++.</div></div>
 <div class="ttc" id="adictionary__element_8h_html"><div class="ttname"><a href="dictionary__element_8h.html">dictionary_element.h</a></div><div class="ttdoc">The struct _dictionary_ element-wise.</div></div>
+<div class="ttc" id="anamespacedsc_html"><div class="ttname"><a href="namespacedsc.html">dsc</a></div><div class="ttdoc">LibdsC: An intuitive and highly usable API backend for data science and data design with C/C++</div><div class="ttdef"><b>Definition</b> cdictionary.hpp:26</div></div>
+<div class="ttc" id="anamespacedscpp_html"><div class="ttname"><a href="namespacedscpp.html">dscpp</a></div><div class="ttdoc">LibdsC++: An intuitive and highly usable API backend for data science and data design with C/C++</div><div class="ttdef"><b>Definition</b> cdictionary.hpp:21</div></div>
 <div class="ttc" id="astruct__dictionary___html"><div class="ttname"><a href="struct__dictionary__.html">_dictionary_</a></div><div class="ttdoc">Dictionary object.</div><div class="ttdef"><b>Definition</b> dictionary.h:48</div></div>
-<div class="ttc" id="astruct__dictionary__element___html"><div class="ttname"><a href="struct__dictionary__element__.html">_dictionary_element_</a></div><div class="ttdef"><b>Definition</b> dictionary_element.h:33</div></div>
+<div class="ttc" id="astruct__dictionary__element___html"><div class="ttname"><a href="struct__dictionary__element__.html">_dictionary_element_</a></div><div class="ttdef"><b>Definition</b> dictionary_element.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="cdictionary_8hpp.html">cdictionary.hpp</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:34:59 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:54 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -121,13 +121,13 @@ $(document).ready(function(){initNavTree('dictionary_8h_source.html',''); initRe
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">                                Includes</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> ---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace </span>dsc {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/*---------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">                                New types</span></div>
@@ -188,11 +188,9 @@ $(document).ready(function(){initNavTree('dictionary_8h_source.html',''); initRe
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>}</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>} <span class="comment">// namespace dsc</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="adictionary_8h_html_a27f0752948d52ccd2568dae22f5db2bc"><div class="ttname"><a href="dictionary_8h.html#a27f0752948d52ccd2568dae22f5db2bc">dictionary_unset</a></div><div class="ttdeci">void dictionary_unset(dictionary *d, const char *key)</div><div class="ttdoc">Delete a key in a dictionary.</div></div>
 <div class="ttc" id="adictionary_8h_html_a38dc8ef0215587613fb96525478b0a85"><div class="ttname"><a href="dictionary_8h.html#a38dc8ef0215587613fb96525478b0a85">dictionary</a></div><div class="ttdeci">struct _dictionary_ dictionary</div><div class="ttdoc">Dictionary object.</div></div>
 <div class="ttc" id="adictionary_8h_html_a7366a74e2eb8b8528cbec47307cbb2ce"><div class="ttname"><a href="dictionary_8h.html#a7366a74e2eb8b8528cbec47307cbb2ce">dictionary_new</a></div><div class="ttdeci">dictionary * dictionary_new(size_t size)</div><div class="ttdoc">Create a new dictionary object.</div></div>
@@ -202,7 +200,7 @@ $(document).ready(function(){initNavTree('dictionary_8h_source.html',''); initRe
 <div class="ttc" id="adictionary_8h_html_aab65a95ad09062716b24a129d8529b76"><div class="ttname"><a href="dictionary_8h.html#aab65a95ad09062716b24a129d8529b76">dictionary_set</a></div><div class="ttdeci">int dictionary_set(dictionary *vd, const char *key, const char *val)</div><div class="ttdoc">Set a value in a dictionary.</div></div>
 <div class="ttc" id="adictionary_8h_html_ae8d5fc632d7846a6f9f4c8a3ef79d0ce"><div class="ttname"><a href="dictionary_8h.html#ae8d5fc632d7846a6f9f4c8a3ef79d0ce">dictionary_dump</a></div><div class="ttdeci">void dictionary_dump(const dictionary *d, FILE *out)</div><div class="ttdoc">Dump a dictionary to an opened file pointer.</div></div>
 <div class="ttc" id="adictionary__compat_8h_html"><div class="ttname"><a href="dictionary__compat_8h.html">dictionary_compat.h</a></div><div class="ttdoc">All functions to use struct _dictionary_* more than defined in dictionary.h.</div></div>
-<div class="ttc" id="adictionary__iterator_8h_html"><div class="ttname"><a href="dictionary__iterator_8h.html">dictionary_iterator.h</a></div><div class="ttdoc">An iterator for the struct _dictionary_</div></div>
+<div class="ttc" id="adictionary__iterator_8h_html"><div class="ttname"><a href="dictionary__iterator_8h.html">dictionary_iterator.h</a></div><div class="ttdoc">Implements the iterator for struct _dictionary_.</div></div>
 <div class="ttc" id="astruct__dictionary___html"><div class="ttname"><a href="struct__dictionary__.html">_dictionary_</a></div><div class="ttdoc">Dictionary object.</div><div class="ttdef"><b>Definition</b> dictionary.h:48</div></div>
 <div class="ttc" id="astruct__dictionary___html_a017aee3083b2fc453bcf2d7b5b51af86"><div class="ttname"><a href="struct__dictionary__.html#a017aee3083b2fc453bcf2d7b5b51af86">_dictionary_::hash</a></div><div class="ttdeci">unsigned * hash</div><div class="ttdef"><b>Definition</b> dictionary.h:53</div></div>
 <div class="ttc" id="astruct__dictionary___html_a3c962bd7edff49be125396596d1bec75"><div class="ttname"><a href="struct__dictionary__.html#a3c962bd7edff49be125396596d1bec75">_dictionary_::key</a></div><div class="ttdeci">char ** key</div><div class="ttdef"><b>Definition</b> dictionary.h:52</div></div>
@@ -214,7 +212,7 @@ $(document).ready(function(){initNavTree('dictionary_8h_source.html',''); initRe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dictionary_8h.html">dictionary.h</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:34:59 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

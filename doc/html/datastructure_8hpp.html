@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -99,7 +99,8 @@ $(document).ready(function(){initNavTree('datastructure_8hpp.html',''); initResi
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle"><div class="title">datastructure.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -107,18 +108,28 @@ $(document).ready(function(){initNavTree('datastructure_8hpp.html',''); initResi
 <p>A file that defines a generic datastructure interface for C++.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="dictionary_8h_source.html">dictionary.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="dictionary_8hpp_source.html">dictionary.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="map_8hpp_source.html">map.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="classfactory_8hpp_source.html">classfactory.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cdictionary_8hpp_source.html">cdictionary.hpp</a>&quot;</code><br />
+<code>#include &quot;datatype.hpp&quot;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;string_view&gt;</code><br />
 <code>#include &lt;typeinfo&gt;</code><br />
+<code>#include &lt;typeindex&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div>
 <p><a href="datastructure_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdscpp_1_1DataStruct.html">dscpp::DataStruct&lt; InheritingClass &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple generic data structure of <code>libdsC++</code> specializing a <code><a class="el" href="classdscpp_1_1DataClass.html" title="The feature-enabling data class for data types of libdsC/libdsC++.">dscpp::DataClass</a></code> with some functionality.  <a href="classdscpp_1_1DataStruct.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacedscpp" id="r_namespacedscpp"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedscpp.html">dscpp</a></td></tr>
+<tr class="memdesc:namespacedscpp"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>LibdsC++</code>: An intuitive and highly usable API backend for data science and data design with C/C++ <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -130,7 +141,7 @@ Data Structures</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="datastructure_8hpp.html">datastructure.hpp</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:34:59 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

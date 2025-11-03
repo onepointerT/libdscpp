@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -121,29 +121,33 @@ $(document).ready(function(){initNavTree('typefactory_8hpp_source.html',''); ini
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="dataclass_8hpp.html">dataclass.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span>dscpp {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedscpp.html">dscpp</a> {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classdscpp_1_1TypeFactory.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1TypeFactory.html">TypeFactory</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> InheritingFunctionalCls, <span class="keyword">typename</span> DT &gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> DT&amp; getDT( <span class="keyword">const</span> <a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass&lt;InheritingFunctionalCls, DT&gt;</a> datacls ) {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> *datacls;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classdscpp_1_1TypeFactory.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="classdscpp_1_1TypeFactory.html">TypeFactory</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> InheritingFunctionalCls, <span class="keyword">typename</span> DT &gt;</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classdscpp_1_1TypeFactory.html#a6224f52b8d558160bcafe0e9470a826e">   35</a></span>    <span class="keyword">static</span> DT&amp; <a class="code hl_function" href="classdscpp_1_1TypeFactory.html#a6224f52b8d558160bcafe0e9470a826e">getDT</a>( <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code hl_class" href="classdscpp_1_1DataClass.html">DataClass&lt;InheritingFunctionalCls, DT&gt;</a> datacls ) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">return</span> *datacls;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>} <span class="comment">// namespace dscpp</span></div>
-<div class="ttc" id="aclassdscpp_1_1DataClass_html"><div class="ttname"><a href="classdscpp_1_1DataClass.html">dscpp::DataClass</a></div><div class="ttdef"><b>Definition</b> dataclass.hpp:44</div></div>
-<div class="ttc" id="aclassdscpp_1_1TypeFactory_html"><div class="ttname"><a href="classdscpp_1_1TypeFactory.html">dscpp::TypeFactory</a></div><div class="ttdef"><b>Definition</b> typefactory.hpp:22</div></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>} <span class="comment">// namespace dscpp</span></div>
+<div class="ttc" id="aclassdscpp_1_1DataClass_html"><div class="ttname"><a href="classdscpp_1_1DataClass.html">dscpp::DataClass</a></div><div class="ttdoc">The feature-enabling data class for data types of libdsC/libdsC++.</div><div class="ttdef"><b>Definition</b> dataclass.hpp:88</div></div>
+<div class="ttc" id="aclassdscpp_1_1TypeFactory_html"><div class="ttname"><a href="classdscpp_1_1TypeFactory.html">dscpp::TypeFactory</a></div><div class="ttdoc">This class implements functions that are useful for use with dscpp::DataType</div><div class="ttdef"><b>Definition</b> typefactory.hpp:25</div></div>
+<div class="ttc" id="aclassdscpp_1_1TypeFactory_html_a6224f52b8d558160bcafe0e9470a826e"><div class="ttname"><a href="classdscpp_1_1TypeFactory.html#a6224f52b8d558160bcafe0e9470a826e">dscpp::TypeFactory::getDT</a></div><div class="ttdeci">static DT &amp; getDT(const typename DataClass&lt; InheritingFunctionalCls, DT &gt; datacls)</div><div class="ttdoc">Get the data type of a DataClass&lt;InheritingFunctionalCls, DT&gt;</div><div class="ttdef"><b>Definition</b> typefactory.hpp:35</div></div>
 <div class="ttc" id="adataclass_8hpp_html"><div class="ttname"><a href="dataclass_8hpp.html">dataclass.hpp</a></div><div class="ttdoc">A file that defines the specific dataclass for C++.</div></div>
+<div class="ttc" id="anamespacedscpp_html"><div class="ttname"><a href="namespacedscpp.html">dscpp</a></div><div class="ttdoc">LibdsC++: An intuitive and highly usable API backend for data science and data design with C/C++</div><div class="ttdef"><b>Definition</b> cdictionary.hpp:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="typefactory_8hpp.html">typefactory.hpp</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:34:59 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

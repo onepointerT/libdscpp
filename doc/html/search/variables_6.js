@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['n_0',['n',['../struct__datacast__functions__list__.html#a52b4220b69f59c7c87b787cb4e37aee1',1,'_datacast_functions_list_']]],
-  ['npos_1',['npos',['../struct__datacast__.html#a75213236fdff4ad345d0d35400f8339a',1,'_datacast_']]]
+  ['key_0',['key',['../struct__dictionary__.html#a3c962bd7edff49be125396596d1bec75',1,'_dictionary_::key'],['../classdscpp_1_1DictionaryKey.html#adac6499374d40ec870d94134f186e0ae',1,'dscpp::DictionaryKey::key']]]
 ];

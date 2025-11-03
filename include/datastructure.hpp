@@ -14,41 +14,76 @@ extern "C" {
 #include "dictionary.h"
 }
 
-#include "dictionary.hpp"
-#include "map.hpp"
+#include "classfactory.hpp"
+#include "cdictionary.hpp"
+#include "datatype.hpp"
 
 #include <concepts>
 #include <string>
 #include <string_view>
 #include <typeinfo>
+#include <typeindex>
+#include <utility>
 
 
 namespace dscpp {
 
 
+/**
+ * @brief A simple generic data structure of `libdsC++` specializing a
+ *      `dscpp::DataClass` with some functionality
+ * @tparam InheritingClass The class that is giving a `dscpp::DataClass`
+ *      more functionality than simply holding data
+ */
 template< typename InheritingClass >
+    requires dscpp::detail::is_subclass_of_datatype_base< InheritingType >::value
 class DataStruct
-    :   protected _dataclass_<InheritingClass>
+    :   public dscpp::DictionaryC
+    ,   public InheritingClass
 {
 protected:
+    /** 
+     * @brief Setup your `DataStruct` from another format of data
+     * @tparam DataIn The other format of data, e.g. a data protocol providing data
+     * @param data A pointer to the data
+     * @returns True on success
+     */
     template< typename DataIn >
-    bool setupFromData( const DataIn* data ) {
-        
-    }
+    virtual bool setupFromData( const DataIn* data ) = 0;
 
+    /**
+     * @brief Setup your `DataStruct` from another format of data
+     * @tparam DTO The other format of data, e.g. a `libdsC++`-API's `DataClass` or `DataType`
+     * @param dcdata A pointer to the data
+     * @returns True on success
+     */
+    template< class DTO >
     virtual bool setup( void* dcdata ) {
-        Ini::toDataStruct< InheritingClass >( *this, dcdata );
+        return this->copyDataTransform<DTO>( *((DTO*) dcdata) );
     }
 
-    DataStruct( void* dcdata )
-        :   ClassFactory::_dataclass_<InheritingClass>()
+    /**
+     * @brief Constructor. Setup this instance with data
+     * @param dcdata A pointer to the data
+     * @param type The `std::type_info` value as given from `typeid(dcdata)`.
+     */
+    DataStruct( void* dcdata, std::type_info type )
+        :   dscpp::DictionaryC()
+        ,   InheritingClass()
     {
-        this->setup(dcdata);
+        this->setup<decltype(std::declval(std::type_index(type).name()))>(dcdata);
     }
 
+    /**
+     * @brief Constructor. Setup this instance with data of another format
+     * @tparam DataFormat Another data format, e.g. `DataClass` or `DataType`
+     * @param data A pointer to the data
+     * @param type The `std::type_info` value as given from `typeid(dcdata)`.
+     */
     template< class DataFormat >
-    DataStruct( DataFormat* data )
-        :   ClassFactory::_dataclass_<InheritingClass>()
+    explicit DataStruct( DataFormat* data )
+        :   dscpp::DictionaryC()
+        ,   InheritingClass()
     {
         this->setupFromData<DataFormat>(data);
     }

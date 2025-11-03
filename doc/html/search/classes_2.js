@@ -6,5 +6,7 @@ var searchData=
   ['datatypebase_3',['DataTypeBase',['../classdscpp_1_1DataTypeBase.html',1,'dscpp']]],
   ['dictionary_4',['Dictionary',['../classdscpp_1_1Dictionary.html',1,'dscpp']]],
   ['dictionaryc_5',['DictionaryC',['../classdsc_1_1DictionaryC.html',1,'dsc']]],
-  ['dmap_6',['DMap',['../classdscpp_1_1DMap.html',1,'dscpp']]]
+  ['dictionaryiterator_6',['DictionaryIterator',['../classdscpp_1_1Dictionary_1_1DictionaryIterator.html',1,'dscpp::Dictionary']]],
+  ['dictionarykey_7',['DictionaryKey',['../classdscpp_1_1DictionaryKey.html',1,'dscpp']]],
+  ['dmap_8',['DMap',['../classdscpp_1_1DMap.html',1,'dscpp']]]
 ];

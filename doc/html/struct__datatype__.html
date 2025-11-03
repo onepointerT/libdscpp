@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="projectlogo.jpg"/></td>
   <td id="projectalign">
-   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">libdscpp<span id="projectnumber">&#160;0.0.3</span>
    </div>
    <div id="projectbrief">A C++/C library for data design and processing in data science.</div>
   </td>
@@ -137,14 +137,14 @@ struct <a class="el" href="struct__datatype__.html">_datatype_</a> *(*&#160;</td
 struct <a class="el" href="struct__datatype__.html">_datatype_</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> )(const struct <a class="el" href="struct__void__struct__.html">_void_struct_</a> *var_struct)</td></tr>
 <tr class="memdesc:a3466435b2000b5558d17fc30533c5928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a <code>libdsC</code> instance of <code>struct <a class="el" href="struct__datatype__.html" title="The general datatype struct of libdsC. It can save whatever struct/class of your choice at it&#39;s membe...">_datatype_</a></code> by using the pointer to a backend <code>_void_struct_*</code> (of your kind). <br /></td></tr>
 <tr class="separator:a3466435b2000b5558d17fc30533c5928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6230dca958437afa52e17801528fe6a" id="r_ad6230dca958437afa52e17801528fe6a"><td class="memItemLeft" align="right" valign="top"><a id="ad6230dca958437afa52e17801528fe6a" name="ad6230dca958437afa52e17801528fe6a"></a>
-bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>copyFrom</b> )(struct <a class="el" href="struct__datatype__.html">_datatype_</a> self, const struct <a class="el" href="struct__datatype__.html">_datatype_</a> *other)</td></tr>
-<tr class="memdesc:ad6230dca958437afa52e17801528fe6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy one datatype <code>other</code> to another <code>self</code>. <br /></td></tr>
-<tr class="separator:ad6230dca958437afa52e17801528fe6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbe4cc21e1ffbef960a52fb3d845c2e3" id="r_acbe4cc21e1ffbef960a52fb3d845c2e3"><td class="memItemLeft" align="right" valign="top"><a id="acbe4cc21e1ffbef960a52fb3d845c2e3" name="acbe4cc21e1ffbef960a52fb3d845c2e3"></a>
-bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>fromDataclass</b> )(struct <a class="el" href="struct__datatype__.html">_datatype_</a> self, const struct <a class="el" href="struct__dataclass__.html">_dataclass_</a> *some_other)</td></tr>
-<tr class="memdesc:acbe4cc21e1ffbef960a52fb3d845c2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make an update/creation of a datatype <code>self</code> from a <code>dataclass</code>. <br /></td></tr>
-<tr class="separator:acbe4cc21e1ffbef960a52fb3d845c2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c24d1431753f3685c9e6a3f528b57bc" id="r_a9c24d1431753f3685c9e6a3f528b57bc"><td class="memItemLeft" align="right" valign="top"><a id="a9c24d1431753f3685c9e6a3f528b57bc" name="a9c24d1431753f3685c9e6a3f528b57bc"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>copyFrom</b> )(struct <a class="el" href="struct__datatype__.html">_datatype_</a> *self, const struct <a class="el" href="struct__datatype__.html">_datatype_</a> *other)</td></tr>
+<tr class="memdesc:a9c24d1431753f3685c9e6a3f528b57bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy one datatype <code>other</code> to another <code>self</code>. <br /></td></tr>
+<tr class="separator:a9c24d1431753f3685c9e6a3f528b57bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef2bde7af32eea00cf24543d5121ca9" id="r_a7ef2bde7af32eea00cf24543d5121ca9"><td class="memItemLeft" align="right" valign="top"><a id="a7ef2bde7af32eea00cf24543d5121ca9" name="a7ef2bde7af32eea00cf24543d5121ca9"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>fromDataclass</b> )(struct <a class="el" href="struct__datatype__.html">_datatype_</a> *self, const struct <a class="el" href="struct__dataclass__.html">_dataclass_</a> *some_other)</td></tr>
+<tr class="memdesc:a7ef2bde7af32eea00cf24543d5121ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make an update/creation of a datatype <code>self</code> from a <code>dataclass</code>. <br /></td></tr>
+<tr class="separator:a7ef2bde7af32eea00cf24543d5121ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34510b4c50767717f21e81de874715c6" id="r_a34510b4c50767717f21e81de874715c6"><td class="memItemLeft" align="right" valign="top"><a id="a34510b4c50767717f21e81de874715c6" name="a34510b4c50767717f21e81de874715c6"></a>
 struct <a class="el" href="struct__datatype__.html">_datatype_</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><b>fromDict</b> )(const struct <a class="el" href="struct__dictionary__.html">_dictionary_</a> *dict)</td></tr>
 <tr class="separator:a34510b4c50767717f21e81de874715c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,7 +201,7 @@ A <code>struct</code> pointer of a . specific kind .; if other programming facil
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="struct__datatype__.html">_datatype_</a></li>
-    <li class="footer">Generated on Wed Oct 29 2025 17:35:00 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 3 2025 09:20:55 for libdscpp by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
