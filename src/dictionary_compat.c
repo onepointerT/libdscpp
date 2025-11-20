@@ -11,6 +11,7 @@
 #include <ctype.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include <inttypes.h>
 
@@ -662,6 +663,22 @@ const size_t dictionary_key_getnpos(const dictionary * d, const char * key) {
     }
 
     return d->n;
+}
+
+/*-------------------------------------------------------------------------*/
+/**
+  @brief    Get the key string in the format "section:key"; keys are saved as `section:key`
+  @param    section The section's name
+  @param    key Key string to use
+  @return   const char*
+ */
+/*--------------------------------------------------------------------------*/
+const char* dictionary_key_make( const char* section, const char * key) {
+    char* keystr = (char*) malloc(sizeof(char)*(strlen(section)+strlen(key)));
+
+    sprintf( keystr, "%s:%s", section, key );
+
+    return keystr;
 }
 
 /*-------------------------------------------------------------------------*/

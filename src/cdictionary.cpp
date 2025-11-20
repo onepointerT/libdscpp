@@ -47,7 +47,7 @@ bool DictionaryC::update( const struct _dictionary_element_* cdict_elem ) {
     (*((*this)[cdict_elem->section]))[cdict_elem->key]
                     = new dscpp::DictionaryKey( cdict_elem->key, cdict_elem->value );
 
-    return true;
+    return dictionary_elem_set( this, cdict_elem );
 }
 
 DictionaryC& DictionaryC::operator<<( struct _dictionary_* cdict ) {
@@ -63,6 +63,12 @@ DictionaryC& DictionaryC::operator<<( struct _dictionary_* cdict ) {
 
 DictionaryC& DictionaryC::operator<<( const struct _dictionary_element_* cdict_elem ) {
     this->update( cdict_elem );
+    return *this;
+}
+
+DictionaryC& DictionaryC::operator<<( const std::pair< std::pair<std::string, std::string>, std::string > elem ) {
+    this->update( new _dictionary_element_{ .section = elem.first.first.c_str(), .key = elem.first.second.c_str()
+                                            , .value = elem.second.c_str() } );
     return *this;
 }
 

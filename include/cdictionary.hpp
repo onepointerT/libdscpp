@@ -17,6 +17,8 @@ extern "C" {
 
 #include "dictionary.hpp"
 
+#include <utility>
+
 
 namespace dscpp { class Dictionary; }
 
@@ -61,10 +63,18 @@ public:
     DictionaryC& operator<<( struct _dictionary_* cdict );
     /**
      * @brief Update this instance from an C `dictionary_element` instance
-     * @param cdict An C `struct _dictionary_element_` instance
+     * @param cdict_elem An C `struct _dictionary_element_` instance
      * @returns `*this`
      */
     DictionaryC& operator<<( const struct _dictionary_element_* cdict_elem );
+    /**
+     * @brief Update this instance from an pair instance
+     * @param elem An ((section, key), value)-pair-of-pairs
+     * @returns `*this`
+     */
+    DictionaryC& operator<<( const std::pair< std::pair<std::string, std::string>, std::string > elem );
+
+    using Dictionary::operator();
 };
 
 

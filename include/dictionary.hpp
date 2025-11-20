@@ -142,6 +142,27 @@ public:
      */
     bool apply( const Section& section );
 
+
+    /**
+     * @brief Get a reference to a new `Map< Key, T, Compare >::Value` for more actions
+     * @note You may apply a `Value&` with the function `Map< Key, T, Compare >::apply()`
+     * @param key The key where the value is stored
+     * @param default_value The default value, that is thus used for creating a new `Map< Key, T >::Value`,
+     *              if `key` was not found
+     * @returns A reference to a `Map< Key, T >::Value`
+     */
+    Dictionary::Value& operator()( const std::string key
+                                 , Dictionary::Section& default_value ) {
+        for ( const_iterator cit : { this->cbegin(), this->cend() } ) {
+            if ( cit->first == key ) return Dictionary::getValue(cit);
+        }
+        
+        Value& val = Value::make_value(key, &default_value );
+        (*this)[val.key()] = val.value();
+
+        return val;
+    }
+
     /**
      * @brief This is basically a `MMap< std::string, DictionaryKey* >::MapIterator`
      *      with a few additional specialized features and attributes

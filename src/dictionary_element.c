@@ -47,3 +47,23 @@ dictionary_element* dictionary_elem_getpos(const dictionary * d, const unsigned 
     if ( npos >= d->n ) return NULL;
     return dictionary_elem_new( d->key[npos], d->val[npos], npos );
 }
+
+/*--------------------------------------------------------------------------*/
+const unsigned int dictionary_elem_getnpos( const dictionary * d, const char* section, const char* key ) {
+    const char* keystr = dictionary_key_make(section, key);
+    for ( unsigned int dn = 0; dn < d->n; dn++ ) {
+        if ( strcmp( d->key[dn], keystr ) == 0 ) return dn;
+    }
+    return d->size;
+}
+
+/*--------------------------------------------------------------------------*/
+bool dictionary_elem_set( dictionary * d, const dictionary_element* elem ) {
+    const char* keystr = dictionary_key_make( elem->section, elem->key );
+    const unsigned int npos = dictionary_elem_getnpos( d, elem->section, elem->key );
+    if ( npos == d->size && d->size >= d->n )
+        return 0 == dictionary_set( d, keystr, elem->value );
+    else if ( npos < d->n )
+        return 0 == dictionary_set( d, keystr, elem->value );
+    else return false;
+}

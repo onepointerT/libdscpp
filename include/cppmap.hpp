@@ -18,6 +18,7 @@
 #include <ranges>
 #include <stdexcept>
 #include <string>
+#include <type_traits>
 
 
 /**
@@ -46,7 +47,7 @@ public:
      *      object `T` per element.
      */
     class Value
-        :   protected std::pair< Key, T >
+        :   protected std::pair< Key, T& >
     {
     public:
         /**
@@ -54,8 +55,28 @@ public:
          * @param key The key to save
          * @param val The value to save
          */
-        Value( const char* key, T val )
-            :   std::pair< Key, T >{ key, val }
+        static Value& make_value( const std::string key, T val ) {
+            return *new Value( key, std::is_pointer_v<T> ? 
+                                          std::is_pointer_v<decltype(val)> ? val 
+                                                : (std::is_reference_v<decltype(val)> ? val : val )
+                                        : std::is_pointer_v<decltype(val)> ? val : val
+                        );
+        }
+        /**
+         * @brief Constructor
+         * @param key The key to save
+         * @param val The value to save
+         */
+        Value( const char* key, T& val )
+            :   std::pair< Key, T& >{ key, val }
+        {}
+        /**
+         * @brief Constructor
+         * @param key The key to save
+         * @param val The value to save
+         */
+        Value( const std::string key, T& val )
+            :   std::pair< Key, T& >{ key, val }
         {}
 
         /**
@@ -129,7 +150,7 @@ public:
      * @returns A pointer-to-reference of a `const Map<Key, T>::Value`, if `key` was
      *      found, a `std::nullptr_t`, if `key` was not found
      */
-    const Value*& get( const char* key ) const {
+    const Value& get( const char* key ) const {
         if ( ! this->contains(key) ) return std::nullptr_t();
         return (*this)(key, std::nullptr_t());
     }
@@ -189,11 +210,15 @@ public:
      *              if `key` was not found
      * @returns A reference to a `Map< Key, T >::Value`
      */
-    Value& operator()( const Key key, T default_value = T() ) const {
+    Value& operator()( const Key key, T& default_value = *new T() ) {
         for ( iterator it : { this->begin(), this->end() } ) {
             if ( it->first == key ) return this->getValue(it);
         }
-        return *new Value(key, &default_value);
+
+        Value& val = *new Value(key, default_value);
+        (*this)[val.key()] = val.value();
+
+        return val;
     }
     /**
      * @brief Apply a value to its' key inside of the `Map< Key, T >`
@@ -213,8 +238,25 @@ public:
      * @returns A reference to a newly created `Map< Key, T, Compare >::Value` object
      * @note You may apply a `Value&` with the function `Map< Key, T, Compare >::apply()`
      */
-    static Value& getValue( const typename stlmap_t::iterator it ) {
-        return *new Value(it->first, it->second);
+    static Value& getValue( typename stlmap_t::iterator it ) {
+        return Value::make_value( it->first, &(*it->second) );
+                         /*, std::is_pointer_v<T> ?
+                                  std::is_pointer_v<decltype(it->second)> ? it->second : *(it->second)
+                                : std::is_pointer_v<decltype(it->second)> ? *(it->second) : it->second
+                );*/
+    }
+    /**
+     * @brief Get the `Map< Key, T >::Value` of a `stlmap_t::const_iterator cit`
+     * @param cit The iterator to transform to a `Value` object
+     * @returns A reference to a newly created `Map< Key, T, Compare >::Value` object
+     * @note You may apply a `Value&` with the function `Map< Key, T, Compare >::apply()`
+     */
+    static Value& getValue( typename stlmap_t::const_iterator cit ) {
+        return Value::make_value( cit->first.c_str(), &(*cit->second) );
+                         /*, std::is_pointer_v<T> ?
+                                  std::is_pointer_v<decltype(cit->second)> ? cit->second : *cit->second
+                                : std::is_reference_v<decltype(cit->second)> ? *cit->second : cit->second
+                );*/
     }
     /**
      * @brief Append a range of iterators, e.g. from another `Map< Key, T, Compare >` to this map
@@ -359,6 +401,25 @@ public:
             (*this)[k] = new Map< Key, T, Compare >();
         }
     }
+    
+    /**
+     * @brief Get a reference to a new `Map< Key, T, Compare >::Value` for more actions
+     * @note You may apply a `Value&` with the function `Map< Key, T, Compare >::apply()`
+     * @param key The key where the value is stored
+     * @param default_value The default value, that is thus used for creating a new `Map< Key, T >::Value`,
+     *              if `key` was not found
+     * @returns A reference to a `Map< Key, T >::Value`
+     */
+    Value& operator()( const Key key, submap_t& default_submap = submap_t() ) {
+        for ( typename iterator it : { this->begin(), this->end() } ) {
+            if ( it->first == key ) return this->getValue(it);
+        }
+
+        typename Value& val = *new Value(key, default_submap);
+        (*this)[val.key()] = val.value();
+
+        return val;
+    }
 
     /**
      * @brief Get the `end()` of all submaps of the same type
@@ -459,7 +520,7 @@ public:
          */
         submap_t* sub() {
             if ( MMap< Key, T, Compare >::is_end( *this, this->map ) ) return NULL;
-            return this->second;
+            return this->submap_it->second;
         }
 
         /**
@@ -498,6 +559,9 @@ public:
             }
             return false;
         }
+
+        inline bool is_end() const { return *this == map.end(); }
+        inline bool is_end_submap() const { return this->is_end() || map.is_submap_end(this->submap_it); }
     };
 
     /** @brief The `stlmap_t` type of the base class */

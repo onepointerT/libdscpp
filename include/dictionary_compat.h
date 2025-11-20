@@ -373,6 +373,16 @@ const char* dictionary_key_getkey(const char * key);
 /*--------------------------------------------------------------------------*/
 const size_t dictionary_key_getnpos(const dictionary * d, const char * key);
 
+/*-------------------------------------------------------------------------*/
+/**
+  @brief    Get the key string in the format "section:key"; keys are saved as `section:key`
+  @param    section The section's name
+  @param    key Key string to use
+  @return   const char*
+ */
+/*--------------------------------------------------------------------------*/
+const char* dictionary_key_make( const char* section, const char * key);
+
 
 /*-------------------------------------------------------------------------*/
 /**

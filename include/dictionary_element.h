@@ -23,6 +23,7 @@
 extern "C" {
 #endif
 
+#include <stdbool.h>
 
 /*---------------------------------------------------------------------------
                                 New types
@@ -59,6 +60,10 @@ typedef struct _dictionary_ dictionary;
 /*--------------------------------------------------------------------------*/
 dictionary_element* dictionary_elem_get(const dictionary * d, const char * key, const char * def);
 dictionary_element* dictionary_elem_getpos(const dictionary * d, const unsigned int npos, const char * def);
+
+const unsigned int dictionary_elem_getnpos( const dictionary * d, const char* section, const char* key );
+
+bool dictionary_elem_set( dictionary * d, const dictionary_element * elem );
 
 #ifdef __cplusplus
 }
