@@ -1,10 +1,10 @@
 /**
- * @file ini.hpp
- * @brief A file that defines *.ini dictionaries for C++.
+ * @file cdictionary.hpp
+ * @brief A file that defines C dictionaries for C++.
  * @author Sebastian Lau <sebastianlau995 [at] gmail [dot] com>
  **/
 /*
-    LibIniC++: A C++/C library for *.ini files and dictionaries.
+    LibDataScienceC++: A C++/C library for data science processing and data design
     Copyright (C) 2025 Sebastian Lau <sebastianlau995@gmail.com>
 */
 

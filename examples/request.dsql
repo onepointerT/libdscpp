@@ -1,0 +1,34 @@
+SELECT * FROM SECTIONS person,job,address
+    RELATIONAL [person.ID -> address.personID],[person.ID -> job.personID]
+        MAKE { [job.personID <-> address.personID -> person.ID] }
+            BACKEND_ROOT (SINGLE_VIEW §job),(MULTI_VIEW §job.ID <-> §person.jobIDs)
+    ROOT person
+    SINGLE_VIEWS §person;§job
+;;
+SELECT person.name,person.lastname,person.age FROM SECTION person
+    ORDER BY person.age,person.lastname,person.name
+    NAME personal_data
+    DATACLASSTYPE PersonalData
+    DATA $env.personal
+    VIEW NAME Personal
+;;
+SELECT job.name,job.category,job.company,job.sponsor,job.city FROM SECTION job
+    ORDER BY job.category,job.city,job.name
+    VIEW NAME Jobs
+    NAME job_data
+    DATACLASSTYPE JobData
+    DATA $env.jobs
+;;
+SELECT FROM SECTION city DATAKEYS city.name,city.region,city.geogps
+    ORDER BY city.region,city.geogps$$-,city.name
+    SORTER NAME CityOrderedRegion
+    VIEW NAME CityByRegion
+    NAME city_data
+    DATATYPE CityDataSorted
+;;
+DATA RELATIONAL [ personal_data.jobIDs$$_ <-> job_data.ID ] NAME byJobID
+;;
+DATA VIEW {
+
+}
+;;

@@ -14,7 +14,7 @@ extern "C" {
 #include "dictionary.h"
 }
 
-#include "map.hpp"
+#include "cppmap.hpp"
 
 #include <string>
 #include <string_view>

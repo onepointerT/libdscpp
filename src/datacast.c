@@ -14,8 +14,6 @@
  ---------------------------------------------------------------------------*/
 
 #ifdef __cplusplus
-namespace dsc {
-
 extern "C" {
 #endif
 
@@ -122,6 +120,4 @@ struct _datacast_* dc_functions_get_datacast( const char* datatype_name ) {
 
 #ifdef __cplusplus
 }
-
-} // namespace dsc
 #endif

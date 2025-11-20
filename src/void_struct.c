@@ -16,8 +16,6 @@
  ---------------------------------------------------------------------------*/
 
 #ifdef __cplusplus
-namespace dsc {
-
 extern "C" {
 #endif
 
@@ -142,6 +140,4 @@ void* castFromVoidStruct( struct _datatype_* dt, void* (castFunctionForDatatype)
 
 #ifdef __cplusplus
 }
-
-} // namespace dsc
 #endif
