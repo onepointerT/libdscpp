@@ -1,6 +1,8 @@
 # LibDataScienceC++
+
 ##### An intuitive and highly usable API backend for data science and data design with C/C++
-###### v0.1.1
+
+###### v0.1.4-pre
 
 This library aims to be simple, but highly usable backend this provides an front-end to usability of data
 that is in a not ever preliminary predictable format and causes an intuitive behaviour to design of own
@@ -20,11 +22,9 @@ unitions.
 * TODO: Usability example(s).
 * TODO: More documentation and README.
 
-
 #### Currently supported features
 
-* 
-
+*
 
 ## Building
 
@@ -38,7 +38,6 @@ You can simply build this with:
  % cmake .. # You may add CMake options here (see below)
  % make
 ```
-
 
 #### CMake options
 
@@ -56,7 +55,7 @@ Additionally to the default options CMake currently offers the following options
 
 You can define the following with your g++-compiler by `-DOPTION=1` or cmake's `add_definitions( -D$OPTION=1 )` function:
 
-* 
+*
 
 #### Requirements
 
@@ -64,22 +63,18 @@ You can define the following with your g++-compiler by `-DOPTION=1` or cmake's `
 * a c++ compiler (tested for gcc)
 * doxygen (optional for building the [html documentation](https://doc.0ptr.de/libdscpp/))
 
-
 ## Use with CMake
 
-
 The included `LibDSCPPConfig.cmake` module enables you to use `find_package(LibDSCPP >= 1.6)` in CMake:
+
 * `LIBDSCPP_INCLUDE_DIR`: The directory, where the headers are located in `libdscpp/` (usually `/usr/include`)
 * `LIBDSCPP_LIBRARY`: The static library you can link into your program. It's only useful, if you use `stdlog`
 * `LIBDSCPP_VERSION_STRING`: The current version of libdscpp.
 
-
-## License:
+## License
 
 This library is free software; you can redistribute it and/or modify it under the terms of the AFL and the MIT licenses.
 
 * Copyright (C) 2025 Sebastian Lau <sebastianlau995@gmail.com>
 
-
 ## Usage
-
