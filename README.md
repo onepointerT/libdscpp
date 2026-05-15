@@ -2,7 +2,7 @@
 
 ##### An intuitive and highly usable API backend for data science and data design with C/C++
 
-###### v0.1.4-pre
+###### v0.1.5-pre
 
 This library aims to be simple, but highly usable backend this provides an front-end to usability of data
 that is in a not ever preliminary predictable format and causes an intuitive behaviour to design of own

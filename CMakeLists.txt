@@ -4,7 +4,7 @@ cmake_minimum_required( VERSION 3.8 )
 
 set( LIBDSCPP_STABLE_VERSION 0 )
 set( LIBDSCPP_RELEASE 0 )
-set( LIBDSCPP_PATCH_VERSION 4-pre )
+set( LIBDSCPP_PATCH_VERSION 5-pre )
 set( LIBDSCPP_VERSION "${LIBDSCPP_STABLE_VERSION}.${LIBDSCPP_RELEASE}.${LIBDSCPP_PATCH_VERSION}" )
 
 set ( PROJECT_NAME "${CMAKE_PROJECT_NAME}" )
@@ -27,13 +27,16 @@ include_directories( ${PROJECT_SOURCE_DIR}/include )
 file (GLOB LIBDSCPP_HEADERS ${PROJECT_SOURCE_DIR}/include/*.hpp )
 file (GLOB LIBDSCPP_SOURCE_C ${PROJECT_SOURCE_DIR}/src/*.c )
 file (GLOB LIBDSCPP_SOURCE ${PROJECT_SOURCE_DIR}/src/*.cpp )
+file (GLOB LIDSCPP_EXPR_SOURCE ${PROJECT_SOURCE_DIR}/src/ds_*.cpp )
 
 if( DSCPP_SHARED )
 	add_library( dsc SHARED ${LIBDSCPP_SOURCE_C} )
 	add_library( dscpp SHARED ${LIBDSCPP_SOURCE} ${LIBDSCPP_SOURCE_C} )
+	add_library( dscpp_expr SHARED ${LIBDSCPP_EXPR_SOURCE} )
 else()
 	add_library( dsc STATIC ${LIBDSCPP_SOURCE_C} )
 	add_library( dscpp STATIC ${LIBDSCPP_SOURCE} ${LIBDSCPP_SOURCE_C} )
+	add_library( dscpp_expr STATIC ${LIBDSCPP_EXPR_SOURCE} )
 endif()
 
 
