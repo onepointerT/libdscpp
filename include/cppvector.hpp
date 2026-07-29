@@ -48,7 +48,7 @@ public:
 
 namespace details {
 template< class T >
-using is_vector_element = std::is_base_of< typename VectorElementBase, T >;
+using is_vector_element = std::is_base_of< VectorElementBase, T >;
 } // namespace details
 
 /**
@@ -58,15 +58,15 @@ using is_vector_element = std::is_base_of< typename VectorElementBase, T >;
  * @tparam Compare How to compare the elements on such things like sorting, merging and similar.
  *      Defaults to `std::less< Key >` and is optionally omittable
  */
-template< typename T, class Allocator = std::allocator<T> >
-    requires details::is_vector_element<T>::value
+template< typename T, class Allocator = std::allocator<VectorElement<T>*> >
+    //requires details::is_vector_element<T>::value
 class Vector
-    :   protected std::vector< VectorElement<T>, Allocator >
+    :   protected std::vector< VectorElement<T>*, typename Allocator >
 {
 public:
     /** @brief The type of the underlying standard template library vector as typedef */
-    typedef typename std::vector< VectorElement<T>, Allocator > stlvector_t;
-    typedef typename VectorElement<T> value_t;
+    typedef typename std::vector< VectorElement<T>*, typename Allocator > stlvector_t;
+    typedef typename dscpp::VectorElement<T>* value_t;
 
     /**
      * @brief Default Constructor
@@ -113,7 +113,7 @@ public:
          * @brief Constructor
          * @param elem The value to save
          */
-        Value( const typename VectorElement<T>& elem )
+        Value( const typename dscpp::VectorElement<T>& elem )
             :   std::pair< std::string, T >{ ((std::string) elem), elem }
         {}
 
@@ -164,9 +164,11 @@ public:
     }
 
     /** @brief The default `iterator` of `Map< Key, T, Compare >` from `stlvector_t` */
-    typedef typename stlvector_t::iterator iterator;
+    //typedef typename stlvector_t::iterator iterator;
+    using iterator = typename std::vector< VectorElement<T>*, Allocator >::iterator;
     /** @brief The default `const_iterator` of `Map< Key, T, Compare >` from `stlvector_t` */
-    typedef typename stlvector_t::const_iterator const_iterator;
+    //typedef typename stlvector_t::const_iterator const_iterator;
+    using const_iterator = typename stlvector_t::const_iterator;
 
     class VectorIterator
         :   public iterator
@@ -251,7 +253,7 @@ public:
      * @returns A reference to a newly created `Map< Key, T, Compare >::Value` object
      * @note You may apply a `Value&` with the function `Map< Key, T, Compare >::apply()`
      */
-    static Value& getValue( const typename stlvector_t::iterator it ) {
+    static Value& getValue( const typename iterator it ) {
         return *new Value(it);
     }
     /**
@@ -259,7 +261,7 @@ public:
      * @param rng The range to append and insert at the end of this `Map< Key, T, Compare >`
      * @returns The number of elements inserted into the map
      */
-    size_t append_range( std::ranges::subrange<iterator>& rng ) {
+    size_t append_range( std::ranges::subrange<typename iterator>& rng ) {
         return stlvector_t::append_range( rng );
     }
     /**
@@ -271,7 +273,7 @@ public:
     }
 
 private:
-    static inline std::unique_ptr< Vector<T, Allocator> > vectorend;
+    static inline typename std::unique_ptr< Vector<T, Allocator> > vectorend;
 
 public:
     static inline const const_iterator staticend() {
@@ -318,24 +320,33 @@ class SortableVector
     :   public Vector< T, Allocator >
 {
 public:
-    typedef typename Compare compare;
+    using compare = typename Compare;
+    //typedef typename Compare compare;
     /** @brief The own type of the `MMap` */
     typedef Vector<T, Allocator> vector_t;
+    using iterator = typename vector_t::iterator;
+    using const_iterator = typename vector_t::const_iterator;
 
     SortableVector()
         :   vector_t()
     {}
 
-    void swap( const const_iterator lhs, const const_iterator rhs ) {
-        typename iterator lval = this->insert( lhs, *rhs );
-        typename iterator rval = this->insert( rhs, *lhs );
+    void swap( const typename SortableVector< T, Compare, Allocator >::const_iterator lhs
+             , const typename SortableVector< T, Compare, Allocator >::const_iterator rhs
+    ) {
+        typename SortableVector< T, Compare, Allocator >::iterator lval = this->insert( lhs, *rhs );
+        typename SortableVector< T, Compare, Allocator >::iterator rval = this->insert( rhs, *lhs );
         this->erase( lval + 1 );
         this->erase( rval + 1 );
     }
 
-    void sort() {
-        for ( typename const_iterator cit = this->begin(); cit != this->end(); cit++ ) {
-            for ( typename const_iterator cit2 = this->end() - 1; cit2 != cit; cit2-- ) {
+    virtual void sort() {
+        for ( typename SortableVector< T, Compare, Allocator >::const_iterator cit = this->begin()
+            ; cit != this->end(); cit++
+        ) {
+            for ( typename SortableVector< T, Compare, Allocator >::const_iterator cit2 = this->end() - 1
+                ; cit2 != cit; cit2--
+            ) {
                 if ( ((std::string) *cit) >= ((std::string) *cit2) ) this->swap( cit, cit2 );
             }
         }
@@ -488,7 +499,7 @@ public:
      * @brief Get a new `VectorIterator` at the begin position of this `MultiVector< T, Compare, SubVector, Allocator >`
      */
     MultiVector< T, Compare, SubVector, Allocator >::VectorIterator begin() {
-        return *new VectorIterator( vector_t::begin(), vector_t::begin()->begin() );
+        return *new VectorIterator( stlvector_t::begin(), stlvector_t::begin()->begin() );
     }
 
     /**
@@ -496,7 +507,7 @@ public:
      *      `MultiVector< T, Compare, SubVector, Allocator >`
      */
     MultiVector< T, Compare, SubVector, Allocator >::VectorIterator end() {
-        return *new VectorIterator( vector_t::end(), MultiVector< T, Compare, SubVector, Allocator >::static_subvector_end() );
+        return *new VectorIterator( stlvector_t::end(), MultiVector< T, Compare, SubVector, Allocator >::static_subvector_end() );
     }
 
     subvector_iterator_t end_subvectors() const {

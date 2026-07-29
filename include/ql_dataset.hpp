@@ -35,7 +35,7 @@ public:
     public:
         String( const char* str );
 
-        virtual operator std::string() const override final;
+        virtual operator std::string() const;
     };
 
     class Selection

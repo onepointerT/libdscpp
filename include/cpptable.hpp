@@ -23,12 +23,14 @@ extern "C" {
 #include <initializer_list>
 #include <iterator>
 #include <memory>
+#include <ranges>
 #include <set>
 #include <string>
 #include <type_traits>
 #include <unordered_set>
 #include <utility>
 #include <vector>
+#include <cpptable.hpp>
 
 
 namespace dscpp {
@@ -51,24 +53,24 @@ public:
 
 namespace details {
 template< class T >
-using is_table_element = std::is_base_of< typename dscpp::TableElementBase, T >;
+using is_table_element = std::is_base_of< typename dscpp::TableElementBase, T >::value;
 
 template< typename T >
 class CompareTable
 {
 public:
-    constexpr bool operator()( const TableElement<T>& lhs, const TableElement<T>& rhs ) const {
+    bool operator()( const TableElement<T>& lhs, const TableElement<T>& rhs ) const {
         return lhs < rhs;
     }
-    constexpr bool operator()( const T& lhs, const T& rhs ) const {
+    bool operator()( const T& lhs, const T& rhs ) const {
         return ((std::string) lhs) < ((std::string) rhs);
     }
 };
 } // namespace details
 
 
-template< typename T, class Compare = details::CompareTable<T> >
-    requires details::is_table_element< T >::value
+template< class T, class Compare = details::CompareTable<T> >
+//    requires details::is_table_element< T >
 class Table
 {
 public:
@@ -77,7 +79,7 @@ public:
      * @note Inherits `std::set< T, dscpp::details::Compare<T> >`
      */
     class Row
-        :   public std::unordered_set< dscpp::TableElement<T> >
+        :   public std::unordered_set< typename dscpp::TableElement<T> >
     {
     public:
         typedef typename std::unordered_set< dscpp::TableElement<T> > set_row_t;
@@ -118,9 +120,9 @@ public:
         using ConstRowIterator = typename set_row_t::const_iterator;
         using SizeType = typename set_row_t::size_type;
 
-        size_t is_element_pos( const ConstRowIterator cri ) {
+        size_t is_element_pos( const typename ConstRowIterator cri ) {
             size_t pos = 0;
-            for ( ConstRowIterator ri = this->begin()
+            for ( typename dscpp::Table<T>::Row::ConstRowIterator ri = this->begin()
                 ; pos < this->size() && ri != this->end()
                 ; pos++, ri++
             ) {
@@ -128,10 +130,10 @@ public:
             }
             return this->size();
         }
-        const ConstRowIterator iterate_until( const SizeType pos ) {
+        const typename ConstRowIterator iterate_until( const SizeType pos ) {
             if ( pos >= this->size() ) return this->cend();
             size_t p = 0;
-            for ( ConstRowIterator ri = this->begin()
+            for ( typename dscpp::Table<T>::Row::ConstRowIterator ri = this->begin()
                 ; p < this->size() && ri != this->end()
                 ; p++, ri++
             ) {
@@ -140,9 +142,9 @@ public:
             return this->cend();
         }
 
-        void swap( const ConstRowIterator lhs, const ConstRowIterator rhs ) {
-            RowIterator one = this->insert( lhs, *rhs );
-            RowIterator two = this->insert( rhs, *lhs );
+        void swap( const typename ConstRowIterator lhs, const typename ConstRowIterator rhs ) {
+            typename dscpp::Table<T>::Row::RowIterator one = this->insert( lhs, *rhs );
+            typename dscpp::Table<T>::Row::RowIterator two = this->insert( rhs, *lhs );
             this->erase( one + 1 );
             this->erase( two + 1 );
         }
@@ -162,7 +164,7 @@ public:
         }
 
         typedef typename std::pair< SizeType, SizeType > row_range_t;
-        typedef typename std::pair< row_range_t, bool > sorting_result_t;
+        typedef typename std::pair< typename row_range_t, bool > sorting_result_t;
 
         virtual sorting_result_t& sortRange( const ConstRowIterator from
                                                , const ConstRowIterator until
@@ -205,12 +207,12 @@ public:
 
         
     private:
-        static inline std::unique_ptr< Table<T>::Row > endrow;
+        static inline std::unique_ptr< typename Table<T>::Row > endrow;
 
     public:
         static inline const Table<T>::Row::const_iterator static_endrow() {
             if ( ! Table<T>::Row::endrow ) {
-                Table<T>::Row::endrow = std::unique_ptr<Table<T>::Row>( new Table<T>::Row() );
+                Table<T>::Row::endrow = std::unique_ptr<typename Table<T>::Row>( new Table<T>::Row() );
             }
             return Table<T>::Row::endrow->cend();
         }
@@ -221,28 +223,28 @@ public:
     };
 
     class Column
-        :   public dscpp::SortableVector< Table<T>::Row >
+        :   public dscpp::SortableVector< typename Table<T>::Row >
     {
     public:
-        typedef typename dscpp::SortableVector< Table<T>::Row > vector_t;
+        typedef typename dscpp::SortableVector< typename Table<T>::Row > vector_t;
 
         Column()
             :   vector_t()
         {}
-        Column( const vector_t& other )
+        Column( const typename vector_t& other )
             :   vector_t( other )
         {}
 
-        Table<T>::Row& getRow( const unsigned int r ) const {
+        typename Table<T>::Row& getRow( const unsigned int r ) const {
             if ( r >= this->size() ) {
-                Table<T>::Row* row = new Table<T>::Row();
+                typename Table<T>::Row* row = new Table<T>::Row();
                 this->push_back( row );
                 return *row;
             }
             return &this->at( r );
         }
 
-        Column& operator<<( const Table<T>::Row& row ) {
+        Column& operator<<( const typename Table<T>::Row& row ) {
             this->push_back( row );
             return *this;
         }
@@ -269,17 +271,17 @@ public:
             sorting_result_t* sr = new sorting_result_t{ {0, 0}, false };
 
             unsigned int rows_sorted = 0;
-            Table<T>::Row* prev_row = NULL;
+            typename Table<T>::Row* prev_row = NULL;
             for ( const SizeType row_i : rows ) {
-                Table<T>::Row& row = this->at( row_i );
+                typename Table<T>::Row& row = this->at( row_i );
 
                 if ( rows_sorted > 0 && prev_row != NULL ) {
                     
                     for ( unsigned int pri = 1; pri < prev_row->size(); pri++ ) {
                         SizeType pos_last_equal = pri;
 
-                        TableElement<T>& prev = prev_row->at( pri - 1 );
-                        TableElement<T>& current = prev_row->at( pri );
+                        typename dscpp::TableElement<T>& prev = prev_row->at( pri - 1 );
+                        typename dscpp::TableElement<T>& current = prev_row->at( pri );
                         
                         if ( ((std::string) prev) == ((std::string) current) ) {
                             // Find the number of same element keys in this row
@@ -290,7 +292,7 @@ public:
                             
                             // Now sort this range of all equal elements in this interval of the current row
                             // inside of the next row and continue.
-                            Table<T>::Row::sorting_result_t& sr_row = row.sortRange( row.iterate_until(pri-1)
+                            typename dscpp::Table<T>::Row::sorting_result_t& sr_row = row.sortRange( row.iterate_until(pri-1)
                                                                             , row.iterate_until(pos_last_equal) );
                             if ( sr_row.second ) { pri = pos_last_equal; break; }
                             else return *sr;
@@ -301,7 +303,7 @@ public:
                     
                     
                 } else {
-                    Table<T>::Row::sorting_result_t& sr_row = row.sort();
+                    typename dscpp::Table<T>::Row::sorting_result_t& sr_row = row.sort();
                     if ( sr_row.second ) sr->first.first = row.iterate_until(row_i);
                 }
 
@@ -317,7 +319,7 @@ public:
             return *sr;
         }
 
-        sorting_result_t& sortMultivariative( std::ranges::subrange<ConstColumnIterator> row_range ) {
+        typename sorting_result_t& sortMultivariative( std::ranges::subrange<ConstColumnIterator> row_range ) {
             std::vector<SizeType> st_vec;
 
             for ( const ConstColumnIterator cci : row_range ) {
@@ -329,19 +331,19 @@ public:
     };
     
     
-    using Tensor = Table<T>::Column;
+    using Tensor = typename Table<T>::Column;
 
     class Named
-        :   public dscpp::Map< std::string, Table<T>::Row >
+        :   public dscpp::Map< std::string, typename Table<T>::Row >
     {
     public:
-        typedef typename dscpp::Map< std::string, Table<T>::Row > map_t;
+        typedef typename dscpp::Map< std::string, typename Table<T>::Row > map_t;
 
         Named()
-            :   dscpp::Map< std::string, Table<T>::Row >()
+            :   dscpp::Map< std::string, typename Table<T>::Row >()
         {}
-        Named( const dscpp::Map< std::string, Table<T>::Row >& other )
-            :   dscpp::Map< std::string, Table<T>::Row >( other )
+        Named( const dscpp::Map< std::string, typename Table<T>::Row >& other )
+            :   dscpp::Map< std::string, typename Table<T>::Row >( other )
         {}
 
         size_t getPositionOfName( const std::string col_name ) {
@@ -357,9 +359,9 @@ public:
         using SizeType = map_t::size_type;
         using SizeTypeRow = Table<T>::Row::SizeType;
 
-        Table<T>::Row* getRowOfElement( const element_iterator eit ) {
+        typename Table<T>::Row* getRowOfElement( const typename element_iterator eit ) {
             for ( typename Table<T>::Row::const_iterator rit : *this ) {
-                Table<T>::Row& row = rit->second;
+                typename Table<T>::Row& row = rit->second;
                 for ( typename Table<T>::Named::element_iterator eit : row ) {
                     if ( *rit == *eit ) return &row;
                 }
@@ -375,18 +377,18 @@ public:
 
         protected:
             element_iterator get_element_iterator( const iterator it ) {
-                if ( Map<std::string, Table<T>::Row>::is_end(static_cast<iterator>(this)) )
+                if ( Map<std::string, typename Table<T>::Row>::is_end(static_cast<iterator>(this->elem)) )
                     return Table<T>::Row::static_endrow();
                 return (*it)->second.begin();
             }
 
             void set_element_iterator( const iterator it ) {
-                this->elem = this->element_iterator( it );
+                this->elem = this->get_element_iterator( it );
             }
 
         public:
-            Table<T>::Row *const row() const {
-                if ( Table<T>::Named::is_end(static_cast<iterator>(this)) )
+            typename Table<T>::Row *const row() const {
+                if ( Table<T>::Named::is_end(static_cast<iterator>(this->elem)) )
                     return NULL;
                 return &(this->second);
             }
@@ -395,14 +397,14 @@ public:
                 return this->first;
             }
 
-            ElementIterator( const Table<T>::Named::iterator row_it )
+            ElementIterator( const typename Table<T>::Named::iterator row_it )
                 :   iterator( row_it )
             {
-                this->set_element_iterator( static_cast<iterator>(this) );
+                this->set_element_iterator( static_cast<iterator>(this->elem) );
             }
 
-            ElementIterator( const Table<T>::Named::iterator row_it
-                           , const Table<T>::Row::SizeType elem_pos
+            ElementIterator( const typename Table<T>::Named::iterator row_it
+                           , const typename Table<T>::Row::SizeType elem_pos
             )   :   iterator( row_it )
                 ,   elem( this->row() != 0 ?
                                     ( elem_pos < this->row().size() ? this->row().iterate_until(elem_pos)
@@ -426,8 +428,8 @@ public:
                 return *this;
             }
 
-            constexpr inline bool operator==( const ElementIterator another ) {
-                if ( static_cast<iterator>(this) == static_cast<iterator>(&another) ) return true;
+            constexpr inline bool operator==( const ElementIterator& another ) {
+                if ( static_cast<iterator>(this->elem) == static_cast<iterator>(another) ) return true;
                 else if ( Table<T>::Named::is_end(this) && Table<T>::Named::is_end(&another) ) return true;
                 return ~(*this) == ~another;
             }
@@ -442,16 +444,16 @@ public:
         }
 
         void swapRowElement( const element_iterator lhs, const element_iterator rhs ) {
-            Table<T>::Row* lrow = this->getRowOfElement(lhs);
+            typename Table<T>::Row* lrow = this->getRowOfElement(lhs);
             if ( lrow == NULL ) return;
-            Table<T>::Row* rrow = this->getRowOfElement(rhs);
+            typename Table<T>::Row* rrow = this->getRowOfElement(rhs);
             if ( rrow == NULL ) return;
 
             const typename Table<T>::Row::value_type old = lrow->swapElement( lhs, *rhs );
             rrow->swapElement( rhs, old );
         }
 
-        Named& operator<<( const std::pair< std::string, Table<T>::Column > new_value ) {
+        Named& operator<<( const typename std::pair< std::string, typename Table<T>::Column > new_value ) {
             (*this)[new_value.first] = new_value.second;
             return *this;
         }
@@ -474,8 +476,8 @@ public:
 
         
 
-        static SizeTypeRow iterator_find_position_index_in_row( const Table<T>::Row::iterator row_it
-                                                           , Table<T>::Row row
+        static SizeTypeRow iterator_find_position_index_in_row( const typename Table<T>::Row::iterator row_it
+                                                              , typename Table<T>::Row row
         ) {
             for ( unsigned int r = 0; r < row.size(); r++ ) {
                 if ( row.at(r) == *row_it ) return r;
@@ -483,12 +485,12 @@ public:
             return row.size();
         }
 
-        static SizeType iterator_find_position_index_row( const Table<T>::Row::iterator row_it
-                                                           , Table<T>::Named& table
+        static SizeType iterator_find_position_index_row( const typename Table<T>::Row::iterator row_it
+                                                           , typename Table<T>::Named& table
         ) {
             unsigned int r = 0;
             for ( typename Table<T>::Named::iterator tn_it : table ) {
-                Table<T>::Row& row = *tn_it->second;
+                typename Table<T>::Row& row = *tn_it->second;
                 if ( Table<T>::Named::iterator_find_position_index_in_row(row.begin(), row) < row.size() )
                     return r;
                 ++r;
@@ -517,11 +519,11 @@ public:
             :   protected Table<T>::Named::ElementIterator
         {
         protected:
-            Table<T>::Named& table;
-            Table<T>::Row::size_type col_idx;
-            Table<T>::Named::SizeType row_idx;
-            Table<T>::Row& current_row;
-            Table<T>::Row::value_type& current_elem;
+            typename Table<T>::Named& table;
+            typename Table<T>::Row::size_type col_idx;
+            typename Table<T>::Named::SizeType row_idx;
+            typename Table<T>::Row& current_row;
+            typename Table<T>::Row::value_type& current_elem;
 
             friend class Table<T>::Named::ColumnIterator;
 
@@ -557,7 +559,7 @@ public:
             }
         public:
             ColumnIterator( const size_t col_idx
-                          , Table<T>::Named& table )
+                          , typename Table<T>::Named& table )
                 :   Table<T>::Named::ElementIterator( *Table<T>::Named::iterate_until( 0, table ) )
                 ,   table( table )
                 ,   col_idx( col_idx )
@@ -568,7 +570,7 @@ public:
 
             ColumnIterator( const size_t col_idx
                           , const size_t row_idx
-                          , Table<T>::Named& table )
+                          , typename Table<T>::Named& table )
                 :   Table<T>::Named::ElementIterator( *Table<T>::Named::iterate_until( row_idx, table ) )
                 ,   table( table )
                 ,   col_idx( col_idx )
@@ -678,7 +680,7 @@ public:
 
         typedef typename Table<T>::Named::ColumnIterator col_iterator;
         
-        using sorting_result_row_t = Table<T>::Row::sorting_result_t;
+        using sorting_result_row_t = typename Table<T>::Row::sorting_result_t;
 
         ColumnIterator colbegin( const size_t column_idx, const size_t row_idx = 0 ) {
             return *new ColumnIterator( column_idx, row_idx, *this );
@@ -690,14 +692,14 @@ public:
             return *col_it;
         }
 
-        using other_rows_ft = sorting_result_row_t& (*)( const dscpp::Table<T>::Row&, const size_t, const size_t);
+        using other_rows_ft = sorting_result_row_t& (*)( const typename dscpp::Table<T>::Row&, const size_t, const size_t);
         using if_elements_equals_ft = bool& (*)( const ColumnIterator, const ColumnIterator );
         using sorting_result_col_t = std::pair< std::pair< size_t, size_t >, bool >;
         using sorting_assertion_col_ft = bool (*)( const sorting_result_col_t& );
 
-        virtual Table<T>::Named::sorting_result_row_t& sortRow( const size_t row_index
-                                         , const Table<T>::Named::other_rows_ft other_rows_f
-                                         , const Table<T>::Named::if_elements_equals_ft ife_equal_f
+        virtual typename Table<T>::Named::sorting_result_row_t& sortRow( const size_t row_index
+                                         , const typename Table<T>::Named::other_rows_ft other_rows_f
+                                         , const typename Table<T>::Named::if_elements_equals_ft ife_equal_f
         ) {
             typename Table<T>::Named::iterator rowIt = this->atPos( row_index );
             if ( rowIt != this->end() ) {
@@ -730,7 +732,7 @@ public:
             return *src;
         }
 
-        Table<T>::Named& sortBy( const std::initializer_list<std::string> sortColumnsByPriority ) {
+        typename Table<T>::Named& sortBy( const std::initializer_list<std::string> sortColumnsByPriority ) {
             std::vector<size_t>* pos_vec ;
 
             for ( std::string sort_priority : sortColumnsByPriority ) {
@@ -742,56 +744,65 @@ public:
         }
     };
 
-    template< typename Key, class SubType = typename dscpp::Table<T>::Named >
+    template< class Key, class SubType = typename dscpp::Table<T>::Named >
     class SubOrdering
         :   public SubType
     {
     public:
-        const Key name;
+        const typename Key name;
 
-        SubOrdering( const Key ordering_name, SubType& subtype_container )
+        SubOrdering( const Key ordering_name, typename SubType& subtype_container )
             :   SubType( subtype_container )
             ,   name( ordering_name )
         {}
 
-        void set( const SubType::iterator it, const SubType::value_type value ) {
+        void set( const typename SubType::iterator it, const typename SubType::value_type value ) {
             typename SubType::iterator insert_it = this->insert( it, value );
             this->erase( insert_it + 1 );
         }
 
         class SubTypeIterator
-            :   public SubType::iterator
         {
         protected:
+            typename SubType::iterator it;
             typename SubOrdering< SubType >& container;
 
         public:
-            SubTypeIterator( const typename SubType::iterator it
+            SubTypeIterator( const typename SubType::iterator iter
                            , typename SubOrdering< SubType > container )
-                :   SubType::iterator( it )
+                :   it( iter )
                 ,   container( container )
             {}
 
-            using SubType::iterator::operator++;
-            using SubType::iterator::operator--;
-            using SubType::iterator::operator*;
-            using SubType::iterator::operator+;
-            using SubType::iterator::operator-;
-            using SubType::iterator::operator->;
+            operator typename SubType::iterator() const { return this->it; }
+
+            SubTypeIterator& operator++() {
+                ++this->it;
+                return *this;
+            }
+            
+            SubTypeIterator& operator--() {
+                --this->it;
+                return *this;
+            }
+            
+            typename SubType::iterator::value_type& operator*() const {
+                return (*this->it);
+            }
 
             void apply() {
-                this->container.set( *this, **this );
+                this->container.set( *this, *(*this) );
             }
 
             typename SubType::value_type& value() const { return **this; }
             bool is_end() const { return this->container.end() == *this; }
         };
 
-        SubTypeIterator stbegin() {
+        typename dscpp::Table<T>::SubOrdering< Key, SubType >::SubTypeIterator stbegin() {
             return *new SubTypeIterator( this->begin(), *this );
         }
 
-        SubTypeIterator stend() {
+        typename dscpp::Table<T>::SubOrdering< Key, SubType >::SubTypeIterator stend() {
             return *new SubTypeIterator( this->end(), *this );
         }
 
@@ -852,7 +863,9 @@ public:
 
 
 template< typename T >
-inline bool equals( const dscpp::Table<T>::Row::const_iterator lhs, const dscpp::Table<T>::Row::const_iterator rhs ) {
+inline bool equals( const typename dscpp::Table<T>::Row::const_iterator lhs
+                  , const typename dscpp::Table<T>::Row::const_iterator rhs
+) {
     if ( lhs == rhs ) return true;
     else if ( dscpp::Table<T>::Row::is_end(lhs) ) return dscpp::Table<T>::Row::is_end(rhs);
     return false;

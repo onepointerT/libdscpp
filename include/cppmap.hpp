@@ -410,12 +410,13 @@ public:
      *              if `key` was not found
      * @returns A reference to a `Map< Key, T >::Value`
      */
-    Value& operator()( const Key key, submap_t& default_submap = submap_t() ) {
-        for ( typename iterator it : { this->begin(), this->end() } ) {
+    MMap< Key, T, Compare >::Value& operator()( const Key key, submap_t& default_submap = submap_t() ) {
+        for ( typename MMap< Key, T, Compare >::iterator it : { this->begin(), this->end() } ) {
             if ( it->first == key ) return this->getValue(it);
         }
 
-        typename Value& val = *new Value(key, default_submap);
+        typename MMap< Key, T, Compare >::Value& val 
+                        = *new MMap< Key, T, Compare >::Value(key, default_submap);
         (*this)[val.key()] = val.value();
 
         return val;

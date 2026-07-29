@@ -15,6 +15,8 @@ extern "C" {
 
 }
 
+#include "cpptable.hpp"
+
 
 namespace dscpp {
 namespace ql {

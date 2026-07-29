@@ -228,7 +228,7 @@ static bool dc_functions_register_datacast_functions( const char* datatype_name
  * @returns If the `datatype_name` was found, a `struct _datacast_` pointer,
  *    `NULL` otherwise.
  */
-static struct _datacast_* dc_functions_get_datacast( const char* datatype_name );
+struct _datacast_* dc_functions_get_datacast( const char* datatype_name );
 
 /*---------------------------------------------------------------------------
                             Function prototypes
