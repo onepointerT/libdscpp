@@ -1,3 +1,6 @@
 [submodule "lib/jsonc"]
 	path = lib/jsonc
 	url = https://github.com/json-c/json-c.git
+[submodule "lib/uuid_v4"]
+	path = lib/uuid_v4
+	url = https://github.com/crashoz/uuid_v4.git

@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include "uuid.hpp"
+
 #include <concepts>
 #include <string>
 
@@ -19,15 +21,19 @@ namespace dscpp {
 
 class Element {
 public:
-    class UnnamedBase {
+    class UnnamedBase
+        :   public dscpp::id::NID
+    {
     public:
-        UnnamedBase();
+        UnnamedBase( const std::string nid = id::UUID::v4() );
 
-        virtual operator std::string() const = 0;
+        virtual operator std::string() const;
+
+        virtual bool operator<( const dscpp::Element::UnnamedBase& another ) const;
     };
     
     class Base
-        :   Element::UnnamedBase
+        :   public Element::UnnamedBase
     {
     public:
         const std::string name;
@@ -36,15 +42,19 @@ public:
         Base( const std::string key );
 
         virtual operator std::string() const;
+
+        virtual bool operator<( const dscpp::Element::Base& another ) const;
     };
 };
 
 template< class T >
 //    requires std::is_base_of< Element::UnnamedBase, T >::value 
-class ContainerElement final
+class ContainerElement
     :   public T
 {
 public:
+    using base_type = typename T;
+    
     ContainerElement()
         :   T()
     {}
@@ -54,7 +64,7 @@ public:
 
     void set( T& elem ) { *this = T(elem); }
 
-    bool operator<( const ContainerElement<T>& another ) const {
+    virtual bool operator<( const ContainerElement<T>& another ) const {
         return ((std::string) *this) < ((std::string) another);
     }
 };

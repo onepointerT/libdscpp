@@ -23,6 +23,7 @@ endif()
 
 
 include_directories( ${PROJECT_SOURCE_DIR}/include )
+include_directories( ${PROJECT_SOURCE_DIR}/lib/uuid_v4 )
 
 file (GLOB LIBDSCPP_HEADERS ${PROJECT_SOURCE_DIR}/include/*.hpp )
 file (GLOB LIBDSCPP_SOURCE_C ${PROJECT_SOURCE_DIR}/src/*.c )

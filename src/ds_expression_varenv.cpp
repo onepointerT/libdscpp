@@ -1,7 +1,6 @@
 // Copyright 2026 The OnePointer Authors.
 //
 
-#pragma once
 
 #include "ds_expression_varenv.hpp"
 
@@ -51,8 +50,8 @@ std::pair< unsigned int, bool > ExprVarEnv::getVarValues() {
 }
 
 
-const std::string str() const {
-    return std::string_view::data();
+const std::string ExprVarEnv::str() const {
+    return this->substr().data();
 }
 
 } // namespace expr

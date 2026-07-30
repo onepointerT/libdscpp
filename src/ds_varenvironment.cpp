@@ -8,13 +8,15 @@ namespace dscpp {
 namespace expr { // DataScience
 
 
-Variable::Variable( const std::string vname, const std::string vvalue )
+Variable::Variable( const std::string vname, const std::string vvalue, const std::string orig_name )
     :   std::string_view( vvalue )
     ,   name( vname )
+    ,   original_name( orig_name )
 {}
 
 Variable& Variable::setValue( const std::string vvalue ) {
     this->swap( *new std::string_view(vvalue) );
+    return *this;
 }
 
 
